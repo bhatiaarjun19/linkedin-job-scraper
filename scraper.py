@@ -99,6 +99,12 @@ class LinkedInJobScraper:
             print("No new jobs found")
             return
         
+        # Clean job data to remove problematic characters
+        for job in new_jobs:
+            job['title'] = job['title'].replace('\xa0', ' ').replace('\u200b', '')
+            job['company'] = job['company'].replace('\xa0', ' ').replace('\u200b', '')
+            job['location'] = job['location'].replace('\xa0', ' ').replace('\u200b', '')
+        
         # Get email credentials from environment variables
         sender_email = os.environ.get('SENDER_EMAIL')
         sender_password = os.environ.get('SENDER_PASSWORD')
