@@ -99,13 +99,6 @@ class LinkedInJobScraper:
             print("No new jobs found")
             return
         
-        # Clean job data to remove problematic characters
-        for job in new_jobs:
-            # Remove non-ASCII characters that cause email encoding issues
-            job['title'] = job['title'].replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
-            job['company'] = job['company'].replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
-            job['location'] = job['location'].replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
-        
         # Get email credentials from environment variables
         sender_email = os.environ.get('SENDER_EMAIL')
         sender_password = os.environ.get('SENDER_PASSWORD')
@@ -115,26 +108,33 @@ class LinkedInJobScraper:
             print("Email credentials not found in environment variables")
             return
         
-        # Create email content
+        # CRITICAL: Clean job data BEFORE using it in email body
+        # This must happen before building the HTML string
+        for job in new_jobs:
+            job['title'] = str(job['title']).replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
+            job['company'] = str(job['company']).replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
+            job['location'] = str(job['location']).replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
+        
+        # Create email content - now all job data is clean
         subject = f"🚨 {len(new_jobs)} New Investment Banking Job(s) Found!"
         
-        body = f"""
+        body = """
         <html>
         <body>
             <h2>New Investment Banking Jobs in United States</h2>
-            <p>Found {len(new_jobs)} new job posting(s):</p>
-        """
+            <p>Found {} new job posting(s):</p>
+        """.format(len(new_jobs))
         
         for job in new_jobs:
-            body += f"""
+            body += """
             <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px;">
-                <h3 style="color: #0073b1; margin: 0;">{job['title']}</h3>
-                <p style="margin: 5px 0;"><strong>Company:</strong> {job['company']}</p>
-                <p style="margin: 5px 0;"><strong>Location:</strong> {job['location']}</p>
-                <p style="margin: 5px 0;"><a href="{job['url']}" style="color: #0073b1;">View Job Posting</a></p>
-                <p style="margin: 5px 0; color: #666; font-size: 12px;">Found: {job['found_date'][:19]}</p>
+                <h3 style="color: #0073b1; margin: 0;">{}</h3>
+                <p style="margin: 5px 0;"><strong>Company:</strong> {}</p>
+                <p style="margin: 5px 0;"><strong>Location:</strong> {}</p>
+                <p style="margin: 5px 0;"><a href="{}" style="color: #0073b1;">View Job Posting</a></p>
+                <p style="margin: 5px 0; color: #666; font-size: 12px;">Found: {}</p>
             </div>
-            """
+            """.format(job['title'], job['company'], job['location'], job['url'], job['found_date'][:19])
         
         body += """
         </body>
@@ -187,8 +187,8 @@ class LinkedInJobScraper:
             print("\n📋 New Jobs:")
             for job in new_jobs:
                 # Clean the strings for console output
-                title = job['title'].replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
-                company = job['company'].replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
+                title = str(job['title']).replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
+                company = str(job['company']).replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
                 print(f"  - {title} at {company}")
         else:
             print("✅ No new jobs found. Database is up to date.")
