@@ -101,9 +101,10 @@ class LinkedInJobScraper:
         
         # Clean job data to remove problematic characters
         for job in new_jobs:
-            job['title'] = job['title'].replace('\xa0', ' ').replace('\u200b', '')
-            job['company'] = job['company'].replace('\xa0', ' ').replace('\u200b', '')
-            job['location'] = job['location'].replace('\xa0', ' ').replace('\u200b', '')
+            # Remove non-ASCII characters that cause email encoding issues
+            job['title'] = job['title'].replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
+            job['company'] = job['company'].replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
+            job['location'] = job['location'].replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
         
         # Get email credentials from environment variables
         sender_email = os.environ.get('SENDER_EMAIL')
@@ -185,7 +186,10 @@ class LinkedInJobScraper:
             self.send_email_notification(new_jobs)
             print("\n📋 New Jobs:")
             for job in new_jobs:
-                print(f"  - {job['title']} at {job['company']}")
+                # Clean the strings for console output
+                title = job['title'].replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
+                company = job['company'].replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
+                print(f"  - {title} at {company}")
         else:
             print("✅ No new jobs found. Database is up to date.")
 
