@@ -34,18 +34,23 @@ class LinkedInJobScraper:
         with open(self.jobs_file, 'w') as f:
             json.dump(jobs, f, indent=2)
     
+    def clean_text(self, text):
+        """Remove all non-ASCII characters from text"""
+        if not text:
+            return ""
+        return str(text).encode('ascii', 'ignore').decode('ascii').strip()
+    
     def scrape_jobs(self):
         """Scrape investment banking jobs from LinkedIn"""
         params = {
             'keywords': 'investment banking',
             'location': 'United States',
-            'f_TPR': 'r86400',  # Jobs posted in last 24 hours
+            'f_TPR': 'r86400',
             'position': 1,
             'pageNum': 0
         }
         
         try:
-            # Add random delay to be respectful
             time.sleep(random.uniform(2, 5))
             
             response = requests.get(self.base_url, params=params, headers=self.headers, timeout=30)
@@ -56,7 +61,7 @@ class LinkedInJobScraper:
             jobs = []
             job_cards = soup.find_all('div', class_='base-card')
             
-            for card in job_cards[:20]:  # Limit to first 20 results
+            for card in job_cards[:20]:
                 try:
                     job_id = card.get('data-entity-urn', '').split(':')[-1]
                     
@@ -76,13 +81,12 @@ class LinkedInJobScraper:
                         }
                         jobs.append(job)
                 except Exception as e:
-                    print(f"Error parsing job card: {e}")
                     continue
             
             return jobs
             
         except Exception as e:
-            print(f"Error scraping LinkedIn: {e}")
+            print("Error scraping LinkedIn")
             return []
     
     def find_new_jobs(self, current_jobs, existing_jobs):
@@ -99,99 +103,86 @@ class LinkedInJobScraper:
             print("No new jobs found")
             return
         
-        # Get email credentials from environment variables
         sender_email = os.environ.get('SENDER_EMAIL')
         sender_password = os.environ.get('SENDER_PASSWORD')
         recipient_email = os.environ.get('RECIPIENT_EMAIL', sender_email)
         
         if not sender_email or not sender_password:
-            print("Email credentials not found in environment variables")
+            print("Email credentials not found")
             return
         
-        # CRITICAL: Clean job data BEFORE using it in email body
-        # This must happen before building the HTML string
-        for job in new_jobs:
-            job['title'] = str(job['title']).replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
-            job['company'] = str(job['company']).replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
-            job['location'] = str(job['location']).replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
+        # Simple subject with no emojis or special characters
+        subject = "New Investment Banking Jobs - " + str(len(new_jobs)) + " Found"
         
-        # Create email content - now all job data is clean
-        subject = f"🚨 {len(new_jobs)} New Investment Banking Job(s) Found!"
-        
-        body = """
-        <html>
-        <body>
-            <h2>New Investment Banking Jobs in United States</h2>
-            <p>Found {} new job posting(s):</p>
-        """.format(len(new_jobs))
+        # Build email body with cleaned data
+        body_parts = []
+        body_parts.append("<html><body>")
+        body_parts.append("<h2>New Investment Banking Jobs in United States</h2>")
+        body_parts.append("<p>Found " + str(len(new_jobs)) + " new job posting(s):</p>")
         
         for job in new_jobs:
-            body += """
-            <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px;">
-                <h3 style="color: #0073b1; margin: 0;">{}</h3>
-                <p style="margin: 5px 0;"><strong>Company:</strong> {}</p>
-                <p style="margin: 5px 0;"><strong>Location:</strong> {}</p>
-                <p style="margin: 5px 0;"><a href="{}" style="color: #0073b1;">View Job Posting</a></p>
-                <p style="margin: 5px 0; color: #666; font-size: 12px;">Found: {}</p>
-            </div>
-            """.format(job['title'], job['company'], job['location'], job['url'], job['found_date'][:19])
+            title = self.clean_text(job.get('title', ''))
+            company = self.clean_text(job.get('company', ''))
+            location = self.clean_text(job.get('location', ''))
+            url = str(job.get('url', ''))
+            date = str(job.get('found_date', ''))[:19]
+            
+            body_parts.append('<div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px;">')
+            body_parts.append('<h3 style="color: #0073b1; margin: 0;">' + title + '</h3>')
+            body_parts.append('<p style="margin: 5px 0;"><strong>Company:</strong> ' + company + '</p>')
+            body_parts.append('<p style="margin: 5px 0;"><strong>Location:</strong> ' + location + '</p>')
+            body_parts.append('<p style="margin: 5px 0;"><a href="' + url + '" style="color: #0073b1;">View Job Posting</a></p>')
+            body_parts.append('<p style="margin: 5px 0; color: #666; font-size: 12px;">Found: ' + date + '</p>')
+            body_parts.append('</div>')
         
-        body += """
-        </body>
-        </html>
-        """
+        body_parts.append("</body></html>")
+        body = "".join(body_parts)
         
-        # Create message
+        # Create message with UTF-8 encoding
         msg = MIMEMultipart('alternative')
         msg['Subject'] = subject
         msg['From'] = sender_email
         msg['To'] = recipient_email
         
-        html_part = MIMEText(body, 'html')
+        # Use UTF-8 encoding explicitly
+        html_part = MIMEText(body, 'html', 'utf-8')
         msg.attach(html_part)
         
         try:
-            # Send email via Gmail SMTP
             with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
                 server.login(sender_email, sender_password)
                 server.send_message(msg)
-            print(f"✅ Email sent successfully with {len(new_jobs)} new jobs")
+            print("EMAIL SENT SUCCESSFULLY - " + str(len(new_jobs)) + " jobs")
         except Exception as e:
-            print(f"❌ Error sending email: {e}")
+            print("Error sending email: " + str(e))
     
     def run(self):
         """Main execution function"""
-        print(f"🔍 Starting LinkedIn job scraper at {datetime.now()}")
+        print("Starting LinkedIn job scraper")
         
-        # Load existing jobs
         existing_jobs = self.load_existing_jobs()
-        print(f"📊 Loaded {len(existing_jobs)} existing jobs from database")
+        print("Loaded " + str(len(existing_jobs)) + " existing jobs")
         
-        # Scrape current jobs
         current_jobs = self.scrape_jobs()
-        print(f"🌐 Found {len(current_jobs)} jobs in current search")
+        print("Found " + str(len(current_jobs)) + " jobs in current search")
         
-        # Find new jobs
         new_jobs = self.find_new_jobs(current_jobs, existing_jobs)
-        print(f"✨ Detected {len(new_jobs)} new jobs")
+        print("Detected " + str(len(new_jobs)) + " new jobs")
         
-        # Update database with new jobs
         for job in new_jobs:
             existing_jobs[job['id']] = job
         
         self.save_jobs(existing_jobs)
         
-        # Send notification if new jobs found
         if new_jobs:
             self.send_email_notification(new_jobs)
-            print("\n📋 New Jobs:")
+            print("\nNew Jobs Found:")
             for job in new_jobs:
-                # Clean the strings for console output
-                title = str(job['title']).replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
-                company = str(job['company']).replace('\xa0', ' ').replace('\u200b', '').encode('ascii', 'ignore').decode('ascii')
-                print(f"  - {title} at {company}")
+                title = self.clean_text(job['title'])
+                company = self.clean_text(job['company'])
+                print("  - " + title + " at " + company)
         else:
-            print("✅ No new jobs found. Database is up to date.")
+            print("No new jobs found")
 
 if __name__ == "__main__":
     scraper = LinkedInJobScraper()
