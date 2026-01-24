@@ -12,7 +12,7 @@ def clean_text(text):
     # Convert to string
     text = str(text)
     # Replace common problematic characters
-    text = text.replace('\xa0', ' ')  # non-breaking space
+    text = text.replace('\xa0', '')  # non-breaking space
     text = text.replace('\u200b', '')  # zero-width space
     text = text.replace('\u2013', '-')  # en dash
     text = text.replace('\u2014', '-')  # em dash
