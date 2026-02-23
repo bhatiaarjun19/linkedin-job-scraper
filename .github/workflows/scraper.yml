@@ -2,10 +2,11 @@ name: LinkedIn Job Scraper
 
 on:
   schedule:
-    # Runs every 30 minutes between 7 AM - 10 PM EST (12:00 - 03:00 UTC next day)
+    # Runs every 2 hours between 7 AM - 10 PM EST
     # EST is UTC-5, so 7 AM EST = 12:00 UTC, 10 PM EST = 03:00 UTC next day
-    - cron: '0,30 12-23 * * *'    # 7 AM - 11:30 PM EST (12:00-23:30 UTC same day)
-    - cron: '0,30 0-3 * * *'      # 12:00 AM - 3:00 AM EST (05:00-08:00 UTC same day = 12AM-3AM EST previous day)
+    # Schedule: 7 AM, 9 AM, 11 AM, 1 PM, 3 PM, 5 PM, 7 PM, 9 PM EST
+    - cron: '0 12,14,16,18,20,22 * * *'    # 7 AM, 9 AM, 11 AM, 1 PM, 3 PM, 5 PM EST
+    - cron: '0 0,2 * * *'                  # 7 PM, 9 PM EST (next day UTC)
   
   # Allows manual trigger from GitHub Actions tab
   workflow_dispatch:
