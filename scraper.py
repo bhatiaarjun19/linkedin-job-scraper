@@ -39,11 +39,19 @@ class LinkedInJobScraper:
         ]
 
         self.senior_title_keywords = [
+            'senior ', 'sr. ', 'sr ',          # catches "Sr PMM", "Senior Brand Manager"
             'senior director', 'sr. director', 'sr director',
             'vice president', 'vp ', ' vp,', '(vp)', 'svp', 'evp',
             'head of', 'chief ', 'cmo', 'ceo', 'coo',
             'principal ', 'group director', 'global director',
-            'director of', 'director,',
+            'director of', 'director,', 'staff ',
+        ]
+
+        # Title must contain at least one of these to pass role-type filter
+        self.required_title_terms = [
+            'marketing', 'brand', 'gtm', 'go to market', 'go-to-market',
+            'product strategy', 'growth', 'demand generation', 'campaign',
+            'communications', 'commercialization',
         ]
 
         # ── Scoring signals (Prachita Purohit resume) ────────────────
@@ -140,7 +148,13 @@ class LinkedInJobScraper:
         return str(text).encode('ascii', 'ignore').decode('ascii').strip()
 
     def is_senior_role(self, title):
-        return any(kw in title.lower() for kw in self.senior_title_keywords)
+        t = title.lower()
+        if any(kw in t for kw in self.senior_title_keywords):
+            return True
+        # Drop pure "product manager" / "product owner" roles (not product *marketing*)
+        if not any(term in t for term in self.required_title_terms):
+            return True
+        return False
 
     # ── Relevance scoring ─────────────────────────────────────────────
 
@@ -195,46 +209,80 @@ class LinkedInJobScraper:
 
     # ── Outreach helpers ──────────────────────────────────────────────
 
-    def _role_area(self, title):
-        t = title.lower()
-        if 'brand' in t:        return 'brand marketing manager', 'brand director marketing'
-        if 'product marketing'  in t: return 'product marketing manager', 'marketing director'
-        if 'integrated' in t:   return 'integrated marketing manager', 'vp marketing'
-        if 'gtm' in t or 'go to market' in t: return 'go to market manager', 'marketing director'
-        return 'marketing manager', 'marketing director'
-
     def people_search_links(self, company, title):
-        peer_role, mgr_role = self._role_area(title)
+        """
+        5 targeted LinkedIn people searches: same-role peers, direct hiring
+        manager (role-aware title), broader marketing leadership, recruiter
+        focused on marketing, and Babson alumni at the company.
+        Quoted company + title for precision.
+        """
+        t = title.lower()
         def url(q):
-            return 'https://www.linkedin.com/search/results/people/?keywords=' + urllib.parse.quote(q) + '&origin=GLOBAL_SEARCH_HEADER'
+            return ('https://www.linkedin.com/search/results/people/?keywords='
+                    + urllib.parse.quote(q))
+
+        co = '"' + company + '"'
+
+        # Peer: exact same functional area
+        if 'product marketing' in t:
+            peer_q   = co + ' "product marketing manager"'
+            mgr_q    = co + ' "director of product marketing" OR "head of product marketing" OR "VP product marketing"'
+            team_q   = co + ' "product marketing" manager'
+        elif 'brand' in t:
+            peer_q   = co + ' "brand manager" OR "brand marketing manager"'
+            mgr_q    = co + ' "brand director" OR "head of brand" OR "director of brand marketing"'
+            team_q   = co + ' "brand marketing" manager'
+        elif 'gtm' in t or 'go to market' in t:
+            peer_q   = co + ' "go to market manager" OR "GTM manager"'
+            mgr_q    = co + ' "director of marketing" OR "head of marketing" OR "VP marketing"'
+            team_q   = co + ' "growth marketing" OR "demand generation"'
+        elif 'integrated' in t or 'campaign' in t:
+            peer_q   = co + ' "integrated marketing manager" OR "campaign manager"'
+            mgr_q    = co + ' "director of integrated marketing" OR "head of marketing"'
+            team_q   = co + ' "marketing communications" manager'
+        elif 'growth' in t or 'demand' in t:
+            peer_q   = co + ' "growth marketing manager" OR "demand generation manager"'
+            mgr_q    = co + ' "VP growth" OR "director of growth" OR "head of growth"'
+            team_q   = co + ' "growth marketing" OR "performance marketing"'
+        else:
+            peer_q   = co + ' "marketing manager"'
+            mgr_q    = co + ' "marketing director" OR "head of marketing" OR "VP marketing"'
+            team_q   = co + ' marketing manager'
+
+        recruiter_q = co + ' recruiter "marketing" OR "talent acquisition" marketing'
+        alumni_q    = '"Babson" ' + co
+
         return [
-            ('People in Similar Roles',    url(peer_role + ' ' + company)),
-            ('Potential Hiring Managers',  url(mgr_role  + ' ' + company)),
-            ('HR / Recruiters',            url('recruiter talent acquisition ' + company)),
+            ('Same-Role Peers at ' + company,    url(peer_q),     '&#128101;'),
+            ('Hiring Manager (Director / Head)',  url(mgr_q),      '&#128084;'),
+            ('Marketing Leadership at co.',       url(team_q),     '&#127775;'),
+            ('Recruiter for Marketing roles',     url(recruiter_q),'&#128203;'),
+            ('Babson Alumni at ' + company,       url(alumni_q),   '&#127891;'),
         ]
 
     def connection_request(self, company, title, matched):
         skill = next((s for s in matched
                       if s not in ('MBA preferred/required', 'Strong title alignment')), 'brand and GTM marketing')
-        msg = ('Hi [Name], I\'m a Babson MBA with experience in ' + skill.lower() +
-               ' and noticed ' + company + ' is hiring for ' + title +
-               '. Would love to connect and learn about your experience on the team!')
-        return msg[:295]   # LinkedIn connection request limit
+        msg = ('Hi [Name], I\'m a Babson MBA focused on ' + skill.lower() +
+               ' and came across ' + company + '\'s ' + title + ' opening. '
+               'Would love to connect and hear about your experience on the team!')
+        return msg[:295]
 
     def inmail_template(self, company, title, matched):
         skills = [s for s in matched if s not in ('MBA preferred/required', 'Strong title alignment')]
         skills_str = ' and '.join(skills[:2]) if skills else 'brand strategy and go-to-market execution'
         return [
             'Hi [Name],',
-            'I came across the ' + title + ' role at ' + company +
-            ' and was immediately excited — it aligns closely with my background in ' + skills_str + '.',
-            'I\'m a Babson MBA (Marketing & Entrepreneurship, May 2026) with hands-on experience in '
-            'GTM strategy, consumer insights research, and B2B marketing. Recently I built a full '
-            'segmentation-to-launch GTM strategy for a Gates Foundation project and conducted '
-            'consumer research across 52 families for a nonprofit board.',
-            'I\'d love to hear what success looks like in this role and learn more about the team. '
-            'Would you be open to a quick 15-minute chat? Completely no pressure.',
-            'Thank you, Prachita',
+            'I came across the ' + title + ' role at ' + company
+            + ' and was genuinely excited — it maps closely to my background in '
+            + skills_str + '.',
+            'I\'m a Babson MBA (Marketing & Entrepreneurship, May 2026) with '
+            'experience in GTM strategy, consumer insights research, and B2B marketing. '
+            'I recently built a full segmentation-to-launch GTM plan for a Gates Foundation '
+            'project and conducted consumer research across 52 families for a nonprofit.',
+            'I\'d love to hear what success looks like in this role at ' + company
+            + '. Would you be open to a quick 15-min chat? No pressure at all.',
+            'Thank you so much — Prachita',
         ]
 
     # ── JD scraping ───────────────────────────────────────────────────
@@ -448,92 +496,111 @@ class LinkedInJobScraper:
             title   = self.clean_text(job.get('title',''))
             url     = str(job.get('url',''))
             accent  = '#137333' if sc >= 8 else ('#1a73e8' if sc >= 6 else '#e37400')
+            display_matched = [s for s in matched if s not in ('MBA preferred/required', 'Strong title alignment')]
+            links   = self.people_search_links(company, title)
+            conn    = self.connection_request(company, title, matched)
+            inmail  = self.inmail_template(company, title, matched)
 
-            # ── Job details card ──────────────────────────────────────
-            bp.append('<div style="margin:12px 28px 0;border:1px solid #e0e0e0;border-left:4px solid '
-                      + accent + ';border-radius:0 6px 0 0;background:#fff;padding:14px 16px;">')
+            # ── ONE unified card ──────────────────────────────────────
+            bp.append('<div style="margin:12px 28px 16px;border:1px solid #dde3ec;'
+                      'border-left:4px solid ' + accent + ';border-radius:6px;'
+                      'overflow:hidden;background:#fff;">')
 
-            # Title row
-            bp.append('<table width="100%" style="margin-bottom:6px;"><tr>'
-                      '<td style="vertical-align:top;">'
-                      '<span style="font-size:14px;font-weight:700;color:#0073b1;">' + str(idx) + '. ' + title + '</span><br>'
-                      '<span style="font-size:12px;color:#555;">' + company + ' &bull; '
-                      + self.clean_text(job.get('location','')) + '</span></td>'
-                      '<td align="right" style="vertical-align:top;white-space:nowrap;">'
+            # ── Full-width header row ─────────────────────────────────
+            bp.append('<table width="100%" cellpadding="0" cellspacing="0">'
+                      '<tr style="background:#f8f9fc;border-bottom:1px solid #e8ecf2;">'
+                      '<td style="padding:12px 16px;vertical-align:middle;">'
+                      '<span style="font-size:14px;font-weight:700;color:#0073b1;">'
+                      + str(idx) + '. ' + title + '</span><br>'
+                      '<span style="font-size:12px;color:#555;">'
+                      + company + ' &bull; ' + self.clean_text(job.get('location','')) + '</span>'
+                      '</td>'
+                      '<td align="right" style="padding:12px 16px;vertical-align:middle;white-space:nowrap;">'
                       '<span style="background:' + lb + ';color:' + lc + ';font-size:11px;font-weight:700;'
-                      'padding:3px 10px;border-radius:10px;">' + ml + ' &bull; ' + str(sc) + '/10</span>'
+                      'padding:4px 12px;border-radius:12px;">' + ml + ' &bull; ' + str(sc) + '/10</span>'
                       '</td></tr></table>')
 
+            # ── Two-column body ───────────────────────────────────────
+            bp.append('<table width="100%" cellpadding="0" cellspacing="0"><tr>')
+
+            # LEFT: job details (54%)
+            bp.append('<td width="54%" valign="top" style="padding:14px 16px;'
+                      'border-right:1px solid #e8ecf2;vertical-align:top;">')
+
             # Meta pills
-            bp.append('<p style="margin:4px 0;">'
-                      '<span style="background:#f1f3f4;color:#444;font-size:11px;padding:2px 8px;border-radius:10px;margin-right:6px;">'
+            bp.append('<p style="margin:0 0 8px;">'
+                      '<span style="background:#f1f3f4;color:#444;font-size:11px;'
+                      'padding:2px 8px;border-radius:10px;margin-right:6px;">'
                       'Exp: ' + self.clean_text(job.get('years_required','Not specified')) + '</span>')
             if salary:
-                bp.append('<span style="background:#f1f3f4;color:#444;font-size:11px;padding:2px 8px;border-radius:10px;">'
-                          + salary + '</span>')
+                bp.append('<span style="background:#edf7ed;color:#137333;font-size:11px;'
+                          'padding:2px 8px;border-radius:10px;">' + salary + '</span>')
             bp.append('</p>')
 
-            # Matched skills as green chips
-            display_matched = [s for s in matched if s not in ('MBA preferred/required', 'Strong title alignment')]
+            # Matched skills chips
             if display_matched:
-                bp.append('<p style="margin:8px 0 3px;font-size:12px;color:#555;font-weight:600;">Your skills this role values:</p>'
-                          '<p style="margin:2px 0;">')
+                bp.append('<p style="margin:0 0 4px;font-size:11px;font-weight:700;color:#444;">'
+                          'Your skills this role values:</p><p style="margin:0 0 8px;">')
                 for s in display_matched:
-                    bp.append('<span style="display:inline-block;background:#e6f4ea;color:#137333;font-size:11px;'
-                              'font-weight:600;padding:2px 8px;border-radius:10px;margin:2px 4px 2px 0;">'
-                              '&#10003; ' + self.clean_text(s) + '</span>')
+                    bp.append('<span style="display:inline-block;background:#e6f4ea;color:#137333;'
+                              'font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;'
+                              'margin:2px 3px 2px 0;">&#10003; ' + self.clean_text(s) + '</span>')
                 bp.append('</p>')
 
             # Key JD requirements
             if skills:
-                bp.append('<p style="margin:8px 0 3px;font-size:12px;color:#555;font-weight:600;">What they\'re looking for:</p>'
-                          '<ul style="margin:2px 0;padding-left:16px;font-size:12px;color:#444;line-height:1.6;">')
+                bp.append('<p style="margin:0 0 4px;font-size:11px;font-weight:700;color:#444;">'
+                          'What they need:</p>'
+                          '<ul style="margin:0 0 10px;padding-left:14px;font-size:11px;color:#555;line-height:1.7;">')
                 for s in skills:
                     bp.append('<li>' + self.clean_text(s) + '</li>')
                 bp.append('</ul>')
 
             # Apply button
-            bp.append('<div style="margin-top:12px;">'
-                      '<a href="' + url + '" style="display:inline-block;background:#0073b1;color:#fff;'
-                      'font-size:12px;font-weight:700;padding:7px 16px;border-radius:4px;text-decoration:none;">Apply Now &rarr;</a>'
-                      '<span style="font-size:11px;color:#aaa;margin-left:12px;">Found: '
-                      + str(job.get('found_date',''))[:10] + '</span></div>')
-            bp.append('</div>')   # end job card
+            bp.append('<a href="' + url + '" style="display:inline-block;background:#0073b1;color:#fff;'
+                      'font-size:11px;font-weight:700;padding:6px 14px;border-radius:4px;'
+                      'text-decoration:none;">Apply Now &rarr;</a>'
+                      '<span style="font-size:10px;color:#bbb;margin-left:10px;">Found: '
+                      + str(job.get('found_date',''))[:10] + '</span>')
+            bp.append('</td>')  # end left column
 
-            # ── Outreach section (attached below job card) ────────────
-            links   = self.people_search_links(company, title)
-            conn    = self.connection_request(company, title, matched)
-            inmail  = self.inmail_template(company, title, matched)
+            # RIGHT: outreach (46%)
+            bp.append('<td width="46%" valign="top" style="padding:14px 14px;'
+                      'background:#f8faff;vertical-align:top;">')
 
-            bp.append('<div style="margin:0 28px 16px;border:1px solid #e0e0e0;border-top:none;'
-                      'border-radius:0 0 6px 6px;background:#f8faff;padding:14px 16px;">')
-
-            # Who to reach out to
-            bp.append('<p style="margin:0 0 8px;font-size:12px;font-weight:700;color:#0073b1;">Who to reach out to at ' + company + '</p>'
-                      '<table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:12px;">')
-            icons = ['&#128101;', '&#128084;', '&#128203;']
-            for (lbl, href), icon in zip(links, icons):
-                bp.append('<tr><td style="padding:3px 0;font-size:12px;color:#555;width:200px;">'
-                          + icon + ' ' + lbl + '</td>'
-                          '<td style="padding:3px 0;"><a href="' + href + '" style="font-size:12px;color:#0073b1;'
-                          'text-decoration:none;font-weight:600;">Search on LinkedIn &rarr;</a></td></tr>')
+            # People to reach out to
+            bp.append('<p style="margin:0 0 6px;font-size:11px;font-weight:700;color:#0073b1;">'
+                      '&#128269; Who to reach out to</p>'
+                      '<table cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:10px;">')
+            for (lbl, href, icon) in links:
+                bp.append('<tr><td style="padding:2px 0;font-size:10px;color:#555;width:10px;">'
+                          + icon + '</td>'
+                          '<td style="padding:2px 4px;">'
+                          '<a href="' + href + '" style="font-size:10px;color:#0073b1;'
+                          'text-decoration:none;font-weight:600;">' + self.clean_text(lbl) + '</a>'
+                          '</td></tr>')
             bp.append('</table>')
 
             # Connection request
-            bp.append('<p style="margin:0 0 4px;font-size:12px;font-weight:700;color:#333;">'
-                      'Connection Request <span style="font-weight:400;color:#888;">(copy-paste, &lt;300 chars)</span></p>'
-                      '<div style="background:#fff;border:1px solid #dde3f0;border-radius:4px;padding:10px 12px;'
-                      'font-size:12px;color:#333;line-height:1.6;margin-bottom:10px;">'
+            bp.append('<p style="margin:0 0 3px;font-size:11px;font-weight:700;color:#333;">'
+                      '&#9993; Connection Request '
+                      '<span style="font-weight:400;color:#888;font-size:10px;">(&lt;300 chars)</span></p>'
+                      '<div style="background:#fff;border:1px solid #dde3f0;border-radius:4px;'
+                      'padding:8px 10px;font-size:10px;color:#333;line-height:1.6;margin-bottom:8px;">'
                       + self.clean_text(conn) + '</div>')
 
             # InMail
-            bp.append('<p style="margin:0 0 4px;font-size:12px;font-weight:700;color:#333;">'
-                      'LinkedIn InMail <span style="font-weight:400;color:#888;">(for hiring managers)</span></p>'
-                      '<div style="background:#fff;border:1px solid #dde3f0;border-radius:4px;padding:10px 12px;">')
+            bp.append('<p style="margin:0 0 3px;font-size:11px;font-weight:700;color:#333;">'
+                      '&#128231; LinkedIn InMail</p>'
+                      '<div style="background:#fff;border:1px solid #dde3f0;border-radius:4px;'
+                      'padding:8px 10px;">')
             for line in inmail:
-                bp.append('<p style="margin:4px 0;font-size:12px;color:#333;line-height:1.6;">'
+                bp.append('<p style="margin:3px 0;font-size:10px;color:#333;line-height:1.6;">'
                           + self.clean_text(line) + '</p>')
-            bp.append('</div></div>')   # end outreach section
+            bp.append('</div>')
+
+            bp.append('</td></tr></table>')  # end two-column body
+            bp.append('</div>')              # end unified card
 
         # Render by section
         if excellent:
