@@ -53,12 +53,12 @@ def send_saved_jobs_email():
         return
 
     subject = clean_text(
-        f"All Saved Investment Banking Jobs - Total: {len(jobs)}"
+        f"All Saved Product Marketing, Brand & GTM Jobs - Total: {len(jobs)}"
     )
 
     body_parts = []
     body_parts.append("<html><body>")
-    body_parts.append("<h2>All Investment Banking Jobs from Database</h2>")
+    body_parts.append("<h2>All Product Marketing, Brand & GTM Jobs from Database</h2>")
     body_parts.append(f"<p>Here are all {len(jobs)} jobs:</p>")
 
     for idx, job in enumerate(jobs, 1):
