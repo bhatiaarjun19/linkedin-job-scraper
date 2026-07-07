@@ -41,5 +41,5 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add jobs_database.json
+        git add jobs_database.json index.html
         git diff --quiet && git diff --staged --quiet || (git commit -m "Update jobs database - $(date)" && git pull --rebase && git push)

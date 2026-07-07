@@ -634,6 +634,319 @@ class LinkedInJobScraper:
         except Exception as e:
             print("Error sending email: " + str(e))
 
+    # ── Static webpage generator ─────────────────────────────────────
+
+    def generate_html(self, all_jobs_dict):
+        jobs_for_page = sorted(
+            [j for j in all_jobs_dict.values() if j.get('relevance_score', 0) > 5],
+            key=lambda j: j.get('relevance_score', 0), reverse=True
+        )
+        now_str   = datetime.now().strftime('%b %d, %Y — %I:%M %p UTC')
+        total     = len(jobs_for_page)
+        n_exc     = sum(1 for j in jobs_for_page if j.get('relevance_score',0) >= 8)
+        n_str     = sum(1 for j in jobs_for_page if 6 <= j.get('relevance_score',0) < 8)
+        companies = len(set(j.get('company','') for j in jobs_for_page))
+
+        clean = []
+        for job in jobs_for_page:
+            co    = self.clean_text(job.get('company',''))
+            ti    = self.clean_text(job.get('title',''))
+            mat   = job.get('matched_skills', [])
+            links = self.people_search_links(co, ti)
+            clean.append({
+                'title':    ti,
+                'company':  co,
+                'location': self.clean_text(job.get('location','')),
+                'url':      job.get('url',''),
+                'score':    job.get('relevance_score', 0),
+                'label':    job.get('match_label',''),
+                'skills':   [self.clean_text(s) for s in mat
+                             if s not in ('MBA preferred/required','Strong title alignment')],
+                'needs':    [self.clean_text(s) for s in job.get('key_skills',[])],
+                'exp':      self.clean_text(job.get('years_required','Not specified')),
+                'salary':   self.clean_text(job.get('salary','')),
+                'date':     str(job.get('found_date',''))[:10],
+                'people':   [{'label': l, 'url': h, 'icon': ic} for l,h,ic in links],
+                'conn':     self.clean_text(self.connection_request(co, ti, mat)),
+                'inmail':   [self.clean_text(x) for x in self.inmail_template(co, ti, mat)],
+            })
+
+        jobs_json = json.dumps(clean, ensure_ascii=False)
+
+        html = (
+            '<!DOCTYPE html>\n'
+            '<html lang="en">\n'
+            '<head>\n'
+            '<meta charset="UTF-8">\n'
+            '<meta name="viewport" content="width=device-width,initial-scale=1">\n'
+            '<title>Job Dashboard — Prachita Purohit</title>\n'
+            '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
+            '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">\n'
+            '<style>\n'
+            ':root{'
+            '--blue:#0073b1;--navy:#0a192f;--green:#16a34a;--green-bg:#f0fdf4;'
+            '--strong:#2563eb;--strong-bg:#eff6ff;--gold:#b45309;--gold-bg:#fffbeb;'
+            '--bg:#f0f4f8;--card:#fff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b;'
+            '--radius:12px;--shadow:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.06);'
+            '}\n'
+            '*{box-sizing:border-box;margin:0;padding:0}\n'
+            'body{font-family:"Inter",sans-serif;background:var(--bg);color:var(--text);min-height:100vh}\n'
+
+            /* ── header ── */
+            '.hdr{background:var(--navy);padding:20px 28px;position:sticky;top:0;z-index:100;'
+            'box-shadow:0 2px 12px rgba(0,0,0,.3)}\n'
+            '.hdr-top{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px}\n'
+            '.logo{font-size:18px;font-weight:700;color:#fff;white-space:nowrap}'
+            '.logo span{color:#38bdf8}\n'
+            '.updated{font-size:11px;color:#94a3b8;margin-left:auto;white-space:nowrap}\n'
+            '.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}\n'
+            '.search{flex:1;min-width:180px;max-width:280px;padding:8px 12px;border-radius:8px;'
+            'border:1px solid #334155;background:#1e293b;color:#fff;font-size:13px;outline:none}'
+            '.search::placeholder{color:#64748b}\n'
+            '.search:focus{border-color:#38bdf8}\n'
+            '.btn-group{display:flex;gap:4px}\n'
+            '.btn{padding:6px 14px;border-radius:7px;border:1px solid #334155;background:transparent;'
+            'color:#94a3b8;font-size:12px;font-weight:600;cursor:pointer;transition:.15s}\n'
+            '.btn:hover{border-color:#38bdf8;color:#38bdf8}\n'
+            '.btn.active{background:#0073b1;border-color:#0073b1;color:#fff}\n'
+
+            /* ── stats bar ── */
+            '.stats{display:flex;gap:24px;padding:16px 28px;background:#fff;'
+            'border-bottom:1px solid var(--border);flex-wrap:wrap}\n'
+            '.stat{display:flex;flex-direction:column;gap:2px}\n'
+            '.stat-val{font-size:22px;font-weight:700;color:var(--navy)}\n'
+            '.stat-lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}\n'
+            '.stat-val.green{color:var(--green)}.stat-val.blue{color:var(--strong)}\n'
+
+            /* ── grid ── */
+            '.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));'
+            'gap:20px;padding:24px 28px;max-width:1400px;margin:0 auto}\n'
+            '.no-results{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)}\n'
+            '.no-results h3{font-size:18px;margin-bottom:8px}\n'
+
+            /* ── card ── */
+            '.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);'
+            'border:1px solid var(--border);overflow:hidden;transition:transform .15s,box-shadow .15s;'
+            'display:flex;flex-direction:column}\n'
+            '.card:hover{transform:translateY(-2px);box-shadow:0 4px 24px rgba(0,0,0,.12)}\n'
+            '.card-bar{height:4px}\n'
+            '.bar-green{background:linear-gradient(90deg,#16a34a,#4ade80)}\n'
+            '.bar-blue{background:linear-gradient(90deg,#2563eb,#60a5fa)}\n'
+            '.bar-gold{background:linear-gradient(90deg,#b45309,#fbbf24)}\n'
+            '.card-body{padding:16px 18px;flex:1;display:flex;flex-direction:column;gap:10px}\n'
+
+            /* score badge */
+            '.score-row{display:flex;align-items:center;justify-content:space-between}\n'
+            '.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;'
+            'border-radius:20px;font-size:11px;font-weight:700}\n'
+            '.badge-green{background:var(--green-bg);color:var(--green)}\n'
+            '.badge-blue{background:var(--strong-bg);color:var(--strong)}\n'
+            '.badge-gold{background:var(--gold-bg);color:var(--gold)}\n'
+            '.score-num{font-size:28px;font-weight:700;line-height:1}\n'
+            '.score-num.green{color:var(--green)}.score-num.blue{color:var(--strong)}'
+            '.score-num.gold{color:var(--gold)}\n'
+
+            /* title block */
+            '.card-title{font-size:15px;font-weight:700;color:var(--navy);line-height:1.3}\n'
+            '.card-title a{color:inherit;text-decoration:none}\n'
+            '.card-title a:hover{color:var(--blue)}\n'
+            '.card-meta{font-size:12px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;align-items:center}\n'
+            '.dot{color:#cbd5e1}\n'
+
+            /* chips */
+            '.chips{display:flex;flex-wrap:wrap;gap:5px}\n'
+            '.chip{font-size:10px;font-weight:600;padding:3px 9px;border-radius:20px;'
+            'background:var(--green-bg);color:var(--green)}\n'
+            '.chip::before{content:"✓ "}\n'
+
+            /* needs list */
+            '.needs-lbl{font-size:11px;font-weight:700;color:var(--muted);'
+            'text-transform:uppercase;letter-spacing:.04em}\n'
+            '.needs-list{list-style:none;display:flex;flex-direction:column;gap:3px}\n'
+            '.needs-list li{font-size:12px;color:#475569;padding-left:14px;position:relative;line-height:1.5}\n'
+            '.needs-list li::before{content:"›";position:absolute;left:0;color:var(--blue);font-weight:700}\n'
+
+            /* pills row */
+            '.pills{display:flex;gap:6px;flex-wrap:wrap}\n'
+            '.pill{font-size:11px;padding:2px 10px;border-radius:20px;'
+            'background:#f1f5f9;color:var(--muted);font-weight:500}\n'
+            '.pill.salary{background:#f0fdf4;color:var(--green)}\n'
+
+            /* actions */
+            '.card-actions{display:flex;gap:8px;margin-top:auto;padding-top:4px}\n'
+            '.btn-apply{padding:8px 18px;background:var(--blue);color:#fff;border:none;'
+            'border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;text-decoration:none;'
+            'transition:.15s}\n'
+            '.btn-apply:hover{background:#005f94}\n'
+            '.btn-reach{padding:8px 14px;background:#f1f5f9;color:var(--navy);border:1px solid var(--border);'
+            'border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:.15s}\n'
+            '.btn-reach:hover{background:#e2e8f0}\n'
+            '.btn-reach.open{background:var(--navy);color:#fff;border-color:var(--navy)}\n'
+
+            /* outreach panel */
+            '.outreach{border-top:1px solid var(--border);padding:14px 18px;'
+            'background:#f8faff;display:none;flex-direction:column;gap:12px}\n'
+            '.outreach.visible{display:flex}\n'
+            '.out-section-lbl{font-size:11px;font-weight:700;color:var(--blue);'
+            'text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}\n'
+            '.people-links{display:flex;flex-direction:column;gap:4px}\n'
+            '.people-link{display:flex;align-items:center;gap:8px;text-decoration:none;'
+            'font-size:12px;color:var(--text);padding:5px 8px;border-radius:6px;transition:.12s}\n'
+            '.people-link:hover{background:#e8f0fe;color:var(--blue)}\n'
+            '.people-link .icon{font-size:14px;width:20px;text-align:center}\n'
+            '.people-link .arrow{margin-left:auto;color:var(--muted);font-size:11px}\n'
+            '.template-box{background:#fff;border:1px solid var(--border);border-radius:8px;'
+            'padding:10px 12px;font-size:12px;color:#334155;line-height:1.7;position:relative}\n'
+            '.copy-btn{position:absolute;top:8px;right:8px;padding:3px 10px;font-size:10px;'
+            'font-weight:600;border:1px solid var(--border);border-radius:5px;background:#fff;'
+            'cursor:pointer;color:var(--muted);transition:.12s}\n'
+            '.copy-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue)}\n'
+            '.copy-btn.copied{background:#16a34a;color:#fff;border-color:#16a34a}\n'
+
+            /* footer */
+            '.footer{text-align:center;padding:24px;font-size:11px;color:var(--muted)}\n'
+
+            '@media(max-width:600px){'
+            '.hdr{padding:14px 16px}.grid{padding:16px}.stats{padding:12px 16px;gap:16px}'
+            '.stat-val{font-size:18px}}\n'
+            '</style>\n'
+            '</head>\n'
+            '<body>\n'
+
+            '<header class="hdr">\n'
+            '<div class="hdr-top">\n'
+            '<div class="logo">PMM &amp; Brand <span>Jobs</span></div>\n'
+            '<span class="updated">Updated: ' + now_str + '</span>\n'
+            '</div>\n'
+            '<div class="controls">\n'
+            '<input class="search" id="search" type="text" placeholder="Search role or company…" oninput="render()">\n'
+            '<div class="btn-group" id="score-btns">\n'
+            '<button class="btn active" onclick="setFilter(\'score\',\'all\',this)">All</button>\n'
+            '<button class="btn" onclick="setFilter(\'score\',\'6\',this)">6+</button>\n'
+            '<button class="btn" onclick="setFilter(\'score\',\'8\',this)">8+</button>\n'
+            '</div>\n'
+            '<div class="btn-group" id="role-btns">\n'
+            '<button class="btn active" onclick="setFilter(\'role\',\'all\',this)">All Roles</button>\n'
+            '<button class="btn" onclick="setFilter(\'role\',\'brand\',this)">Brand</button>\n'
+            '<button class="btn" onclick="setFilter(\'role\',\'pmm\',this)">PMM</button>\n'
+            '<button class="btn" onclick="setFilter(\'role\',\'gtm\',this)">GTM</button>\n'
+            '<button class="btn" onclick="setFilter(\'role\',\'growth\',this)">Growth</button>\n'
+            '</div>\n'
+            '</div>\n'
+            '</header>\n'
+
+            '<div class="stats">\n'
+            '<div class="stat"><span class="stat-val">' + str(total) + '</span><span class="stat-lbl">Total Roles</span></div>\n'
+            '<div class="stat"><span class="stat-val green">' + str(n_exc) + '</span><span class="stat-lbl">Excellent (8+)</span></div>\n'
+            '<div class="stat"><span class="stat-val blue">' + str(n_str) + '</span><span class="stat-lbl">Strong (6-7)</span></div>\n'
+            '<div class="stat"><span class="stat-val">' + str(companies) + '</span><span class="stat-lbl">Companies</span></div>\n'
+            '</div>\n'
+
+            '<div class="grid" id="grid"></div>\n'
+            '<div class="footer">Entry &amp; manager level only &bull; JD-verified (&le;4 yrs exp) &bull; All US &bull; Scored on 11 resume signals &bull; Auto-updates every 2 hrs</div>\n'
+
+            '<script>\n'
+            'const JOBS=' + jobs_json + ';\n'
+            'let filters={score:"all",role:"all"};\n'
+            'function setFilter(k,v,el){\n'
+            '  filters[k]=v;\n'
+            '  el.closest(".btn-group").querySelectorAll(".btn").forEach(b=>b.classList.remove("active"));\n'
+            '  el.classList.add("active");\n'
+            '  render();\n'
+            '}\n'
+            'function scoreClass(s){return s>=8?"green":s>=6?"blue":"gold";}\n'
+            'function barClass(s){return s>=8?"bar-green":s>=6?"bar-blue":"bar-gold";}\n'
+            'function badgeClass(s){return s>=8?"badge-green":s>=6?"badge-blue":"badge-gold";}\n'
+            'function escHtml(t){return(t||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}\n'
+            'function roleMatch(title,role){\n'
+            '  if(role==="all")return true;\n'
+            '  const t=title.toLowerCase();\n'
+            '  if(role==="brand")return t.includes("brand");\n'
+            '  if(role==="pmm")return t.includes("product marketing");\n'
+            '  if(role==="gtm")return t.includes("gtm")||t.includes("go to market");\n'
+            '  if(role==="growth")return t.includes("growth")||t.includes("demand");\n'
+            '  return true;\n'
+            '}\n'
+            'function copyText(id,btn){\n'
+            '  const el=document.getElementById(id);\n'
+            '  navigator.clipboard.writeText(el.innerText).then(()=>{\n'
+            '    btn.textContent="Copied!";btn.classList.add("copied");\n'
+            '    setTimeout(()=>{btn.textContent="Copy";btn.classList.remove("copied");},2000);\n'
+            '  });\n'
+            '}\n'
+            'function toggleOutreach(idx){\n'
+            '  const panel=document.getElementById("out-"+idx);\n'
+            '  const btn=document.getElementById("rbtn-"+idx);\n'
+            '  const open=panel.classList.toggle("visible");\n'
+            '  btn.textContent=open?"Close ✕":"Reach Out ↓";\n'
+            '  btn.classList.toggle("open",open);\n'
+            '}\n'
+            'function render(){\n'
+            '  const q=document.getElementById("search").value.toLowerCase();\n'
+            '  const filtered=JOBS.filter(j=>{\n'
+            '    if(filters.score!=="all"&&j.score<parseInt(filters.score))return false;\n'
+            '    if(!roleMatch(j.title,filters.role))return false;\n'
+            '    if(q&&!j.title.toLowerCase().includes(q)&&!j.company.toLowerCase().includes(q))return false;\n'
+            '    return true;\n'
+            '  });\n'
+            '  const grid=document.getElementById("grid");\n'
+            '  if(!filtered.length){\n'
+            '    grid.innerHTML=\'<div class="no-results"><h3>No roles found</h3><p>Try adjusting your filters or search.</p></div>\';\n'
+            '    return;\n'
+            '  }\n'
+            '  grid.innerHTML=filtered.map((j,i)=>{\n'
+            '    const sc=scoreClass(j.score),bc=badgeClass(j.score),bar=barClass(j.score);\n'
+            '    const chips=(j.skills||[]).map(s=>`<span class="chip">${escHtml(s)}</span>`).join("");\n'
+            '    const needs=(j.needs||[]).map(n=>`<li>${escHtml(n)}</li>`).join("");\n'
+            '    const pills=`<span class="pill">${escHtml(j.exp||"Exp N/A")}</span>`\n'
+            '      +(j.salary?`<span class="pill salary">${escHtml(j.salary)}</span>`:"");\n'
+            '    const people=(j.people||[]).map(p=>\n'
+            '      `<a class="people-link" href="${escHtml(p.url)}" target="_blank" rel="noopener">`\n'
+            '      +`<span class="icon">${p.icon}</span>`\n'
+            '      +`<span>${escHtml(p.label)}</span>`\n'
+            '      +`<span class="arrow">↗</span></a>`\n'
+            '    ).join("");\n'
+            '    const connId="conn-"+i,mailId="mail-"+i;\n'
+            '    const inmail=(j.inmail||[]).map(l=>`<p>${escHtml(l)}</p>`).join("");\n'
+            '    return `<div class="card">`\n'
+            '      +`<div class="card-bar ${bar}"></div>`\n'
+            '      +`<div class="card-body">`\n'
+            '      +`<div class="score-row">`\n'
+            '      +`<div class="score-num ${sc}">${j.score}<span style="font-size:14px;font-weight:500;color:#94a3b8">/10</span></div>`\n'
+            '      +`<span class="badge ${bc}">${escHtml(j.label)}</span>`\n'
+            '      +`</div>`\n'
+            '      +`<div>`\n'
+            '      +`<div class="card-title"><a href="${escHtml(j.url)}" target="_blank" rel="noopener">${escHtml(j.title)}</a></div>`\n'
+            '      +`<div class="card-meta"><span>${escHtml(j.company)}</span><span class="dot">•</span><span>${escHtml(j.location)}</span><span class="dot">•</span><span>${escHtml(j.date)}</span></div>`\n'
+            '      +`</div>`\n'
+            '      +(chips?`<div class="chips">${chips}</div>`:"") \n'
+            '      +(needs?`<div><div class="needs-lbl">What they need</div><ul class="needs-list">${needs}</ul></div>`:"") \n'
+            '      +`<div class="pills">${pills}</div>`\n'
+            '      +`<div class="card-actions">`\n'
+            '      +`<a class="btn-apply" href="${escHtml(j.url)}" target="_blank" rel="noopener">Apply Now →</a>`\n'
+            '      +`<button class="btn-reach" id="rbtn-${i}" onclick="toggleOutreach(${i})">Reach Out ↓</button>`\n'
+            '      +`</div>`\n'
+            '      +`</div>`\n'
+            '      +`<div class="outreach" id="out-${i}">`\n'
+            '      +`<div><div class="out-section-lbl">Who to reach out to</div><div class="people-links">${people}</div></div>`\n'
+            '      +`<div><div class="out-section-lbl">Connection Request <span style="font-weight:400;text-transform:none;font-size:10px;color:#94a3b8">(&lt;300 chars)</span></div>`\n'
+            '      +`<div class="template-box" style="padding-right:72px"><button class="copy-btn" onclick="copyText(\'${connId}\',this)">Copy</button><span id="${connId}">${escHtml(j.conn)}</span></div></div>`\n'
+            '      +`<div><div class="out-section-lbl">LinkedIn InMail</div>`\n'
+            '      +`<div class="template-box" style="padding-right:72px"><button class="copy-btn" onclick="copyText(\'${mailId}\',this)">Copy</button><div id="${mailId}">${inmail}</div></div></div>`\n'
+            '      +`</div>`\n'
+            '      +`</div>`;\n'
+            '  }).join("");\n'
+            '}\n'
+            'render();\n'
+            '</script>\n'
+            '</body>\n'
+            '</html>\n'
+        )
+
+        with open('index.html', 'w', encoding='utf-8') as f:
+            f.write(html)
+        print("Generated index.html — " + str(total) + " jobs")
+
     # ── Main ──────────────────────────────────────────────────────────
 
     def run(self):
@@ -655,6 +968,8 @@ class LinkedInJobScraper:
             existing[job['id']] = job
         self.save_jobs(existing)
         print("Database: " + str(len(existing)) + " total jobs")
+
+        self.generate_html(existing)
 
         if new_jobs:
             self.send_email_notification(new_jobs)
