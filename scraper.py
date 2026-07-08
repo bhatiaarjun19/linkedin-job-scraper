@@ -126,7 +126,7 @@ class LinkedInJobScraper:
         ]
         # Bonuses: +1 MBA in JD, +1 title match → max raw ~14, clamped to 10
 
-        self.max_years_experience = 4
+        self.max_years_experience = 3
 
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -148,6 +148,50 @@ class LinkedInJobScraper:
     def save_jobs(self, jobs):
         with open(self.jobs_file, 'w') as f:
             json.dump(jobs, f, indent=2)
+
+    def purge_old_jobs(self, existing):
+        from datetime import timedelta
+        cutoff = datetime.now() - timedelta(days=30)
+        before = len(existing)
+        cleaned = {k: v for k, v in existing.items()
+                   if datetime.fromisoformat(str(v.get('found_date','2000-01-01'))[:19]) > cutoff}
+        removed = before - len(cleaned)
+        if removed:
+            print("Purged " + str(removed) + " jobs older than 30 days")
+        return cleaned
+
+    def cleanup_dead_links(self, existing):
+        if datetime.now().weekday() != 6:  # Sunday only
+            return existing
+        print("Sunday cleanup: checking for dead links (" + str(len(existing)) + " jobs)...")
+        live = {}
+        for job_id, job in list(existing.items()):
+            try:
+                r = requests.head(job.get('url',''), headers=self.headers, timeout=10, allow_redirects=True)
+                if r.status_code == 404:
+                    print("  Removed dead link: " + job.get('title','') + " @ " + job.get('company',''))
+                    continue
+            except Exception:
+                pass
+            live[job_id] = job
+            time.sleep(0.5)
+        print("Dead link cleanup: removed " + str(len(existing) - len(live)) + " jobs")
+        return live
+
+    def freshness_label(self, found_date_str):
+        try:
+            found = datetime.fromisoformat(str(found_date_str)[:19])
+            days = (datetime.now() - found).days
+            if days == 0:
+                return ('New Today', '#00875a', '#e3fcef')
+            elif days == 1:
+                return ('Yesterday', '#0052cc', '#deebff')
+            elif days <= 7:
+                return (str(days) + 'd ago', '#42526e', '#ebecf0')
+            else:
+                return (str(days) + 'd ago', '#6b778c', '#f4f5f7')
+        except Exception:
+            return ('', '', '')
 
     def clean_text(self, text):
         if not text:
@@ -313,17 +357,30 @@ class LinkedInJobScraper:
     def extract_min_years(self, description):
         text = description.lower()
         patterns = [
-            r'(\d+)\s*(?:-|to)\s*\d+\s*\+?\s*years?\s*(?:of\s+)?(?:relevant\s+|related\s+)?(?:work\s+)?experience',
-            r'(\d+)\s*\+\s*years?\s*(?:of\s+)?(?:relevant\s+|related\s+)?(?:work\s+)?experience',
+            # "5-7 years of experience" / "5 to 7 years of experience"
+            r'(\d+)\s*(?:-|to)\s*\d+\s*\+?\s*years?\s*(?:of\s+)?(?:[\w\s]{0,30})?experience',
+            # "5+ years of experience"
+            r'(\d+)\s*\+\s*years?\s*(?:of\s+)?(?:[\w\s]{0,30})?experience',
+            # "minimum 5 years" / "at least 5 years"
             r'(?:minimum|at least|min\.?)\s*(?:of\s+)?(\d+)\s*\+?\s*years?',
-            r'(\d+)\s*years?\s*(?:of\s+)?(?:relevant\s+|related\s+)?(?:work\s+)?experience',
+            # "5 years of marketing/relevant/related/work experience"
+            r'(\d+)\s*years?\s*(?:of\s+)?(?:relevant\s+|related\s+|work\s+|professional\s+|[\w]+\s+)?experience',
+            # "experience of 5+ years"
             r'experience\s+of\s+(\d+)\s*\+?\s*years?',
+            # "5-7 years in product marketing" (no "experience" word)
+            r'(\d+)\s*(?:-|to)\s*\d+\s*\+?\s*years?\s+(?:in|of|working)',
+            # "5+ years in a marketing role"
+            r'(\d+)\s*\+\s*years?\s+(?:in|of|working)',
         ]
         years_found = []
         for p in patterns:
             for m in re.finditer(p, text):
-                try: years_found.append(int(m.group(1)))
-                except: continue
+                try:
+                    val = int(m.group(1))
+                    if 1 <= val <= 20:  # sanity check
+                        years_found.append(val)
+                except:
+                    continue
         return min(years_found) if years_found else None
 
     def extract_salary(self, description):
@@ -515,6 +572,9 @@ class LinkedInJobScraper:
                       'overflow:hidden;background:#fff;">')
 
             # ── Full-width header row ─────────────────────────────────
+            fl, fc, fb = self.freshness_label(job.get('found_date',''))
+            fresh_html = ('<span style="background:' + fb + ';color:' + fc + ';font-size:10px;font-weight:700;'
+                          'padding:2px 8px;border-radius:10px;margin-left:6px;">' + fl + '</span>') if fl else ''
             bp.append('<table width="100%" cellpadding="0" cellspacing="0">'
                       '<tr style="background:#f8f9fc;border-bottom:1px solid #e8ecf2;">'
                       '<td style="padding:12px 16px;vertical-align:middle;">'
@@ -526,6 +586,7 @@ class LinkedInJobScraper:
                       '<td align="right" style="padding:12px 16px;vertical-align:middle;white-space:nowrap;">'
                       '<span style="background:' + lb + ';color:' + lc + ';font-size:11px;font-weight:700;'
                       'padding:4px 12px;border-radius:12px;">' + ml + ' &bull; ' + str(sc) + '/10</span>'
+                      + fresh_html +
                       '</td></tr></table>')
 
             # ── Two-column body ───────────────────────────────────────
@@ -786,6 +847,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 .cpb{position:absolute;top:10px;right:10px;padding:3px 10px;font-size:10px;font-weight:700;border:1px solid var(--bd);border-radius:6px;background:var(--s2);color:var(--mu);cursor:pointer;font-family:inherit;transition:.15s}
 .cpb:hover{background:#6366f1;color:#fff;border-color:#6366f1}
 .cpb.ok{background:#059669;color:#fff;border-color:#059669}
+/* Freshness badges */
+.fbadge{font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;text-transform:uppercase;letter-spacing:.06em;display:inline-block}
+.fn{background:rgba(16,185,129,.18);color:#34d399;border:1px solid rgba(16,185,129,.3)}
+.fy{background:rgba(129,140,248,.15);color:#a78bfa;border:1px solid rgba(129,140,248,.25)}
+.fr{background:rgba(94,115,153,.1);color:var(--di);border:1px solid var(--bd)}
+.fo{background:transparent;color:var(--mu);border:1px solid var(--bd)}
 /* Applied state */
 .card-applied{border-color:rgba(16,185,129,.35) !important;box-shadow:0 0 0 1px rgba(16,185,129,.12)}
 .card-applied .cstripe{background:linear-gradient(90deg,#059669,#10b981,#34d399) !important}
@@ -808,10 +875,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
   <h1>Will get you a job bitch</h1>
   <p class="hero-sub">Scored against Prachita&#39;s resume &bull; Entry &amp; manager level &bull; <b>Auto-updates every 2 hrs</b></p>
   <div class="stats-row">
-    <div class="sc"><div class="sc-n g">__TOTAL__</div><div class="sc-l">Total Roles</div></div>
-    <div class="sc"><div class="sc-n e">__EXC__</div><div class="sc-l">Excellent 8+</div></div>
-    <div class="sc"><div class="sc-n i">__STR__</div><div class="sc-l">Strong 6-7</div></div>
-    <div class="sc"><div class="sc-n g">__COS__</div><div class="sc-l">Companies</div></div>
+    <div class="sc"><div class="sc-n g" data-target="__TOTAL__">0</div><div class="sc-l">Total Roles</div></div>
+    <div class="sc"><div class="sc-n e" data-target="__EXC__">0</div><div class="sc-l">Excellent 8+</div></div>
+    <div class="sc"><div class="sc-n i" data-target="__STR__">0</div><div class="sc-l">Strong 6-7</div></div>
+    <div class="sc"><div class="sc-n g" data-target="__COS__">0</div><div class="sc-l">Companies</div></div>
   </div>
 </section>
 
@@ -873,6 +940,14 @@ function ring(s){
   return {col,sc,bc,svg};
 }
 function esc(t){return(t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function fresh(d){
+  if(!d)return{tag:'',days:-1};
+  const diff=Math.floor((Date.now()-new Date(d).getTime())/86400000);
+  if(diff===0)return{tag:'<span class="fbadge fn">New Today</span>',days:0};
+  if(diff===1)return{tag:'<span class="fbadge fy">Yesterday</span>',days:1};
+  if(diff<=7)return{tag:'<span class="fbadge fr">'+diff+'d ago</span>',days:diff};
+  return{tag:'<span class="fbadge fo">'+diff+'d ago</span>',days:diff};
+}
 function rm(title,role){
   if(role==='all')return true;
   const t=title.toLowerCase();
@@ -920,11 +995,23 @@ function render(){
     const isApl=applied.has(j.url);
     const aplBtn=`<button class="bapl${isApl?' done':''}" id="apl-${i}" onclick="toggleApplied('${esc(j.url)}',${i})">${isApl?'\\u2713 Applied':'Mark Applied'}</button>`;
     const aplTag=isApl?'<span class="applied-tag">\\u2713 Applied</span>':'';
-    return `<div class="card${isApl?' card-applied':''}" id="card-${i}"><div class="cstripe ${sc}"></div><div class="cbody"><div class="trow">${svg}<div class="tblock"><div style="display:flex;align-items:flex-start;gap:6px;flex-wrap:wrap"><div class="mbadge ${bc}">${esc(lbl)}</div>${aplTag}</div><div class="jtitle"><a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a></div><div class="jmeta"><span>${esc(j.company)}</span><span class="jdot">&bull;</span><span>${esc(j.location)}</span></div></div></div>${chips?`<div class="chips">${chips}</div>`:''}${needs?`<div><div class="nlbl">What they need</div><ul class="nlist">${needs}</ul></div>`:''}<div class="mpills">${pills}</div><div class="cact"><a class="baply" href="${esc(j.url)}" target="_blank" rel="noopener">Apply Now &rarr;</a>${aplBtn}<button class="brch" id="r${i}" onclick="tog(${i})">Reach Out &darr;</button></div></div><div class="outreach" id="o${i}"><div class="oin"><div><div class="olbl">Who to reach out to</div><div class="plinks">${people}</div></div><div><div class="olbl">Connection Request <span style="font-weight:400;font-size:10px;color:#475569">(&lt;300 chars)</span></div><div class="tbox"><button class="cpb" onclick="cp('${cid}',this)">Copy</button><span id="${cid}">${esc(j.conn)}</span></div></div><div><div class="olbl">LinkedIn InMail</div><div class="tbox"><button class="cpb" onclick="cp('${mid}',this)">Copy</button><div id="${mid}">${inmail}</div></div></div></div></div></div>`;
+    const fsh=fresh(j.date);
+    return `<div class="card${isApl?' card-applied':''}" id="card-${i}" style="opacity:0;transform:translateY(16px)"><div class="cstripe ${sc}"></div><div class="cbody"><div class="trow">${svg}<div class="tblock"><div style="display:flex;align-items:flex-start;gap:6px;flex-wrap:wrap"><div class="mbadge ${bc}">${esc(lbl)}</div>${fsh.tag}${aplTag}</div><div class="jtitle"><a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a></div><div class="jmeta"><span>${esc(j.company)}</span><span class="jdot">&bull;</span><span>${esc(j.location)}</span></div></div></div>${chips?`<div class="chips">${chips}</div>`:''}${needs?`<div><div class="nlbl">What they need</div><ul class="nlist">${needs}</ul></div>`:''}<div class="mpills">${pills}</div><div class="cact"><a class="baply" href="${esc(j.url)}" target="_blank" rel="noopener">Apply Now &rarr;</a>${aplBtn}<button class="brch" id="r${i}" onclick="tog(${i})">Reach Out &darr;</button></div></div><div class="outreach" id="o${i}"><div class="oin"><div><div class="olbl">Who to reach out to</div><div class="plinks">${people}</div></div><div><div class="olbl">Connection Request <span style="font-weight:400;font-size:10px;color:#475569">(&lt;300 chars)</span></div><div class="tbox"><button class="cpb" onclick="cp('${cid}',this)">Copy</button><span id="${cid}">${esc(j.conn)}</span></div></div><div><div class="olbl">LinkedIn InMail</div><div class="tbox"><button class="cpb" onclick="cp('${mid}',this)">Copy</button><div id="${mid}">${inmail}</div></div></div></div></div></div>`;
   }).join('');
+  // Stagger cards in
+  const cards=grid.querySelectorAll('.card');
+  cards.forEach((c,i)=>setTimeout(()=>{c.style.transition='opacity 0.35s ease,transform 0.35s ease';c.style.opacity='1';c.style.transform='translateY(0)';},i*48));
+}
+// Count-up animation for stats
+function countUp(el){
+  const target=parseInt(el.dataset.target)||0;
+  let cur=0;
+  const step=Math.max(1,Math.ceil(target/28));
+  const t=setInterval(()=>{cur=Math.min(cur+step,target);el.textContent=cur;if(cur>=target)clearInterval(t);},35);
 }
 render();
 updateAppliedCount();
+document.querySelectorAll('[data-target]').forEach(el=>countUp(el));
 </script>
 </body>
 </html>"""
@@ -1224,6 +1311,8 @@ updateAppliedCount();
 
         existing = self.load_existing_jobs()
         print("Loaded " + str(len(existing)) + " existing jobs")
+        existing = self.purge_old_jobs(existing)
+        existing = self.cleanup_dead_links(existing)
 
         current  = self.scrape_jobs()
         new_jobs = self.find_new_jobs(current, existing)
