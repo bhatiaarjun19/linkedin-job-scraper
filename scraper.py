@@ -641,7 +641,7 @@ class LinkedInJobScraper:
             [j for j in all_jobs_dict.values() if j.get('relevance_score', 0) > 5],
             key=lambda j: j.get('relevance_score', 0), reverse=True
         )
-        now_str   = datetime.now().strftime('%b %d, %Y — %I:%M %p UTC')
+        now_str   = datetime.now().strftime('%b %d, %Y at %I:%M %p UTC')
         total     = len(jobs_for_page)
         n_exc     = sum(1 for j in jobs_for_page if j.get('relevance_score',0) >= 8)
         n_str     = sum(1 for j in jobs_for_page if 6 <= j.get('relevance_score',0) < 8)
@@ -671,9 +671,239 @@ class LinkedInJobScraper:
                 'inmail':   [self.clean_text(x) for x in self.inmail_template(co, ti, mat)],
             })
 
-        jobs_json = json.dumps(clean, ensure_ascii=False)
+        jobs_json = json.dumps(clean, ensure_ascii=True)
 
-        html = (
+        TMPL = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Job Dashboard — Prachita Purohit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080c14;--s1:rgba(255,255,255,0.04);--s2:rgba(255,255,255,0.07);--bd:rgba(255,255,255,0.08);--bdg:rgba(129,140,248,0.3);--tx:#e2e8f0;--mu:#64748b;--di:#94a3b8;--em:#10b981;--in:#818cf8;--am:#f59e0b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;background-image:radial-gradient(circle,rgba(99,102,241,.055) 1px,transparent 1px);background-size:28px 28px}
+/* HERO */
+.hero{position:relative;padding:64px 32px 48px;text-align:center;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(99,102,241,.14) 0%,transparent 100%);border-bottom:1px solid var(--bd);overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 40% at 80% 110%,rgba(236,72,153,.07) 0%,transparent 100%);pointer-events:none}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;color:var(--in);background:rgba(129,140,248,.1);border:1px solid rgba(129,140,248,.2);border-radius:100px;padding:5px 16px;margin-bottom:22px;letter-spacing:.06em;text-transform:uppercase}
+.dot-live{width:6px;height:6px;background:var(--em);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,6vw,70px);font-weight:800;letter-spacing:-.04em;line-height:1.05;background:linear-gradient(135deg,#fff 15%,#a78bfa 52%,#ec4899 90%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px}
+.hero-sub{font-size:14px;color:var(--mu);margin-bottom:36px}
+.hero-sub b{color:var(--di);font-weight:500}
+/* STATS */
+.stats-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.sc{background:var(--s1);border:1px solid var(--bd);border-radius:16px;padding:16px 26px;text-align:center;backdrop-filter:blur(12px)}
+.sc-n{font-size:32px;font-weight:800;line-height:1;margin-bottom:5px}
+.sc-n.g{background:linear-gradient(135deg,#818cf8,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sc-n.e{color:var(--em)}.sc-n.i{color:var(--in)}
+.sc-l{font-size:10px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.07em}
+/* FILTER BAR */
+.fbar{position:sticky;top:0;z-index:100;padding:11px 32px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:rgba(8,12,20,.88);backdrop-filter:blur(22px);border-bottom:1px solid var(--bd)}
+.srch-wrap{position:relative;flex:1;min-width:180px;max-width:280px}
+.srch-ico{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--mu);width:14px;height:14px;pointer-events:none}
+.srch{width:100%;background:var(--s1);border:1px solid var(--bd);border-radius:100px;padding:8px 16px 8px 36px;color:var(--tx);font-size:12px;font-family:inherit;outline:none;transition:.2s}
+.srch::placeholder{color:var(--mu)}
+.srch:focus{border-color:rgba(129,140,248,.5);box-shadow:0 0 0 3px rgba(99,102,241,.1);background:var(--s2)}
+.fdiv{width:1px;height:22px;background:var(--bd);flex-shrink:0}
+.pg{display:flex;gap:5px;flex-wrap:wrap}
+.fp{padding:6px 15px;border-radius:100px;border:1px solid var(--bd);background:transparent;color:var(--mu);font-size:12px;font-weight:600;font-family:inherit;cursor:pointer;transition:.18s;white-space:nowrap}
+.fp:hover:not(.active){border-color:rgba(129,140,248,.4);color:var(--di)}
+.fp.active{background:linear-gradient(135deg,#6366f1,#8b5cf6);border-color:transparent;color:#fff;box-shadow:0 0 18px rgba(99,102,241,.35)}
+.ts{margin-left:auto;font-size:11px;color:var(--mu);white-space:nowrap}
+/* RESULT BAR */
+.rbar{padding:10px 32px;font-size:12px;color:var(--mu)}
+.rbar b{color:var(--di)}
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:20px;padding:16px 32px 56px;max-width:1440px;margin:0 auto}
+/* CARD */
+.card{position:relative;background:var(--s1);border:1px solid var(--bd);border-radius:20px;overflow:hidden;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;backdrop-filter:blur(14px);display:flex;flex-direction:column}
+.card:hover{transform:translateY(-5px);border-color:var(--bdg);box-shadow:0 24px 64px rgba(0,0,0,.5),0 0 0 1px rgba(129,140,248,.12),inset 0 1px 0 rgba(255,255,255,.05)}
+.cstripe{height:3px}
+.se{background:linear-gradient(90deg,#059669,#10b981,#34d399)}
+.si{background:linear-gradient(90deg,#4f46e5,#818cf8,#a78bfa)}
+.sa{background:linear-gradient(90deg,#d97706,#f59e0b,#fbbf24)}
+.cbody{padding:20px;flex:1;display:flex;flex-direction:column;gap:13px}
+/* Score ring */
+.trow{display:flex;align-items:flex-start;gap:14px}
+.rwrap{position:relative;width:56px;height:56px;flex-shrink:0}
+.rwrap svg{display:block}
+.rnum{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;line-height:1}
+.tblock{flex:1;min-width:0}
+.mbadge{display:inline-block;font-size:10px;font-weight:700;padding:2px 10px;border-radius:100px;margin-bottom:6px;letter-spacing:.04em;text-transform:uppercase}
+.be{background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.2)}
+.bi{background:rgba(129,140,248,.12);color:#a78bfa;border:1px solid rgba(129,140,248,.2)}
+.ba{background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.2)}
+.jtitle{font-size:14px;font-weight:700;line-height:1.3;margin-bottom:3px}
+.jtitle a{color:var(--tx);text-decoration:none;transition:.15s}
+.jtitle a:hover{color:#a78bfa}
+.jmeta{font-size:11px;color:var(--mu);display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.jdot{color:rgba(255,255,255,.12)}
+/* Chips */
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{font-size:10px;font-weight:600;padding:3px 10px;border-radius:100px;background:rgba(16,185,129,.1);color:#34d399;border:1px solid rgba(16,185,129,.15)}
+.chip::before{content:"\\2713  "}
+/* Needs */
+.nlbl{font-size:10px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
+.nlist{list-style:none;display:flex;flex-direction:column;gap:4px}
+.nlist li{font-size:12px;color:var(--di);padding-left:14px;position:relative;line-height:1.5}
+.nlist li::before{content:"\\203A";position:absolute;left:0;color:#818cf8;font-weight:700}
+/* Pills */
+.mpills{display:flex;gap:6px;flex-wrap:wrap}
+.mp{font-size:11px;padding:3px 10px;border-radius:100px;background:var(--s2);color:var(--di);border:1px solid var(--bd);font-weight:500}
+.mps{background:rgba(16,185,129,.08);color:#34d399;border-color:rgba(16,185,129,.15)}
+/* Actions */
+.cact{display:flex;gap:8px;margin-top:auto;padding-top:2px}
+.baply{padding:9px 20px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:.18s;box-shadow:0 4px 14px rgba(99,102,241,.3)}
+.baply:hover{box-shadow:0 6px 22px rgba(99,102,241,.45);transform:translateY(-1px)}
+.brch{flex:1;padding:9px 14px;background:var(--s2);color:var(--di);border:1px solid var(--bd);border-radius:10px;font-size:12px;font-weight:600;font-family:inherit;cursor:pointer;transition:.18s}
+.brch:hover{border-color:rgba(129,140,248,.4);color:var(--in)}
+.brch.open{background:rgba(129,140,248,.12);border-color:rgba(129,140,248,.3);color:#a78bfa}
+/* Outreach panel */
+.outreach{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.outreach.open{max-height:1400px}
+.oin{padding:18px 20px;display:flex;flex-direction:column;gap:14px;background:rgba(0,0,0,.25);border-top:1px solid var(--bd)}
+.olbl{font-size:10px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px}
+.plinks{display:flex;flex-direction:column;gap:3px}
+.plink{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--di);font-size:12px;border:1px solid transparent;transition:.15s}
+.plink:hover{background:rgba(129,140,248,.08);border-color:rgba(129,140,248,.15);color:#a78bfa}
+.pi{font-size:14px;width:20px;text-align:center}
+.pa{margin-left:auto;font-size:10px;opacity:.4}
+.tbox{position:relative;background:rgba(0,0,0,.3);border:1px solid var(--bd);border-radius:10px;padding:12px 14px;padding-right:68px;font-size:12px;color:var(--di);line-height:1.7}
+.tbox p{margin-bottom:4px}.tbox p:last-child{margin-bottom:0}
+.cpb{position:absolute;top:10px;right:10px;padding:3px 10px;font-size:10px;font-weight:700;border:1px solid var(--bd);border-radius:6px;background:var(--s2);color:var(--mu);cursor:pointer;font-family:inherit;transition:.15s}
+.cpb:hover{background:#6366f1;color:#fff;border-color:#6366f1}
+.cpb.ok{background:#059669;color:#fff;border-color:#059669}
+/* No results */
+.nr{grid-column:1/-1;text-align:center;padding:80px 20px;color:var(--mu)}
+.nr h3{font-size:20px;color:var(--di);margin-bottom:8px}
+/* Footer */
+.footer{text-align:center;padding:24px;font-size:11px;color:var(--mu);border-top:1px solid var(--bd)}
+@media(max-width:640px){.hero{padding:40px 20px 32px}.fbar{padding:10px 16px}.grid{padding:14px;gap:14px}.sc{padding:12px 18px}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="eyebrow"><span class="dot-live"></span>Live Job Dashboard</div>
+  <h1>Will get you a job bitch</h1>
+  <p class="hero-sub">Scored against Prachita&#39;s resume &bull; Entry &amp; manager level &bull; <b>Auto-updates every 2 hrs</b></p>
+  <div class="stats-row">
+    <div class="sc"><div class="sc-n g">__TOTAL__</div><div class="sc-l">Total Roles</div></div>
+    <div class="sc"><div class="sc-n e">__EXC__</div><div class="sc-l">Excellent 8+</div></div>
+    <div class="sc"><div class="sc-n i">__STR__</div><div class="sc-l">Strong 6-7</div></div>
+    <div class="sc"><div class="sc-n g">__COS__</div><div class="sc-l">Companies</div></div>
+  </div>
+</section>
+
+<div class="fbar">
+  <div class="srch-wrap">
+    <svg class="srch-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input class="srch" id="srch" type="text" placeholder="Search role or company&#8230;" oninput="render()">
+  </div>
+  <div class="fdiv"></div>
+  <div class="pg" id="sg">
+    <button class="fp active" onclick="sf('score','all',this,'sg')">All</button>
+    <button class="fp" onclick="sf('score','6',this,'sg')">Score 6+</button>
+    <button class="fp" onclick="sf('score','8',this,'sg')">Score 8+</button>
+  </div>
+  <div class="fdiv"></div>
+  <div class="pg" id="rg">
+    <button class="fp active" onclick="sf('role','all',this,'rg')">All Roles</button>
+    <button class="fp" onclick="sf('role','brand',this,'rg')">Brand</button>
+    <button class="fp" onclick="sf('role','pmm',this,'rg')">PMM</button>
+    <button class="fp" onclick="sf('role','gtm',this,'rg')">GTM</button>
+    <button class="fp" onclick="sf('role','growth',this,'rg')">Growth</button>
+  </div>
+  <div class="fdiv"></div>
+  <div class="pg" id="sortg">
+    <button class="fp active" onclick="sf('sort','score',this,'sortg')">&#9733; Top Match</button>
+    <button class="fp" onclick="sf('sort','recent',this,'sortg')">&#128336; Most Recent</button>
+  </div>
+  <span class="ts">__NOW__</span>
+</div>
+
+<div class="rbar" id="rbar"></div>
+<div class="grid" id="grid"></div>
+
+<footer class="footer">Entry &amp; manager level only &bull; JD-verified (max 4 yrs exp) &bull; All US locations &bull; Scored on 11 resume signals &bull; Auto-updates every 2 hrs, 7 AM&ndash;9 PM EST</footer>
+
+<script>
+const JOBS=__JOBS__;
+let F={score:'all',role:'all',sort:'score'};
+function sf(k,v,el,gid){F[k]=v;document.getElementById(gid).querySelectorAll('.fp').forEach(b=>b.classList.remove('active'));el.classList.add('active');render();}
+function ring(s){
+  const r=22,c=2*Math.PI*r,off=c*(1-s/10);
+  const col=s>=8?'#10b981':s>=6?'#818cf8':'#f59e0b';
+  const sc=s>=8?'se':s>=6?'si':'sa';
+  const bc=s>=8?'be':s>=6?'bi':'ba';
+  const svg=`<div class="rwrap"><svg width="56" height="56" viewBox="0 0 56 56"><circle cx="28" cy="28" r="${r}" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="4"/><circle cx="28" cy="28" r="${r}" fill="none" stroke="${col}" stroke-width="4" stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}" stroke-linecap="round" style="transform:rotate(-90deg);transform-origin:28px 28px"/></svg><div class="rnum" style="color:${col}">${s}</div></div>`;
+  return {col,sc,bc,svg};
+}
+function esc(t){return(t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function rm(title,role){
+  if(role==='all')return true;
+  const t=title.toLowerCase();
+  if(role==='brand')return t.includes('brand');
+  if(role==='pmm')return t.includes('product marketing');
+  if(role==='gtm')return t.includes('gtm')||t.includes('go to market');
+  if(role==='growth')return t.includes('growth')||t.includes('demand');
+  return true;
+}
+function cp(id,btn){
+  const el=document.getElementById(id);
+  navigator.clipboard.writeText(el.innerText).then(()=>{btn.textContent='Copied!';btn.classList.add('ok');setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('ok');},2000);});
+}
+function tog(i){
+  const p=document.getElementById('o'+i),b=document.getElementById('r'+i);
+  const open=p.classList.toggle('open');
+  b.textContent=open?'Close ✕':'Reach Out ↓';
+  b.classList.toggle('open',open);
+}
+function render(){
+  const q=document.getElementById('srch').value.toLowerCase();
+  let list=JOBS.filter(j=>{
+    if(F.score!=='all'&&j.score<parseInt(F.score))return false;
+    if(!rm(j.title,F.role))return false;
+    if(q&&!j.title.toLowerCase().includes(q)&&!j.company.toLowerCase().includes(q))return false;
+    return true;
+  });
+  if(F.sort==='recent'){list=[...list].sort((a,b)=>(b.date||'').localeCompare(a.date||''));}
+  else{list=[...list].sort((a,b)=>b.score-a.score);}
+  document.getElementById('rbar').innerHTML=`Showing <b>${list.length}</b> of <b>${JOBS.length}</b> roles`;
+  const grid=document.getElementById('grid');
+  if(!list.length){grid.innerHTML='<div class="nr"><h3>No roles found</h3><p>Try a different filter or search.</p></div>';return;}
+  grid.innerHTML=list.map((j,i)=>{
+    const {sc,bc,svg}=ring(j.score);
+    const lbl=j.label||(j.score>=8?'Excellent Match':j.score>=6?'Strong Match':'Good Match');
+    const chips=(j.skills||[]).map(s=>`<span class="chip">${esc(s)}</span>`).join('');
+    const needs=(j.needs||[]).map(n=>`<li>${esc(n)}</li>`).join('');
+    const pills=`<span class="mp">${esc(j.exp||'Exp N/A')}</span>`+(j.salary?`<span class="mp mps">${esc(j.salary)}</span>`:'')+`<span class="mp">${esc(j.date)}</span>`;
+    const people=(j.people||[]).map(p=>`<a class="plink" href="${esc(p.url)}" target="_blank" rel="noopener"><span class="pi">${p.icon}</span><span>${esc(p.label)}</span><span class="pa">&#8599;</span></a>`).join('');
+    const cid='c'+i,mid='m'+i;
+    const inmail=(j.inmail||[]).map(l=>`<p>${esc(l)}</p>`).join('');
+    return `<div class="card"><div class="cstripe ${sc}"></div><div class="cbody"><div class="trow">${svg}<div class="tblock"><div class="mbadge ${bc}">${esc(lbl)}</div><div class="jtitle"><a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a></div><div class="jmeta"><span>${esc(j.company)}</span><span class="jdot">&bull;</span><span>${esc(j.location)}</span></div></div></div>${chips?`<div class="chips">${chips}</div>`:''}${needs?`<div><div class="nlbl">What they need</div><ul class="nlist">${needs}</ul></div>`:''}<div class="mpills">${pills}</div><div class="cact"><a class="baply" href="${esc(j.url)}" target="_blank" rel="noopener">Apply Now &rarr;</a><button class="brch" id="r${i}" onclick="tog(${i})">Reach Out &darr;</button></div></div><div class="outreach" id="o${i}"><div class="oin"><div><div class="olbl">Who to reach out to</div><div class="plinks">${people}</div></div><div><div class="olbl">Connection Request <span style="font-weight:400;font-size:10px;color:#475569">(&lt;300 chars)</span></div><div class="tbox"><button class="cpb" onclick="cp('${cid}',this)">Copy</button><span id="${cid}">${esc(j.conn)}</span></div></div><div><div class="olbl">LinkedIn InMail</div><div class="tbox"><button class="cpb" onclick="cp('${mid}',this)">Copy</button><div id="${mid}">${inmail}</div></div></div></div></div></div>`;
+  }).join('');
+}
+render();
+</script>
+</body>
+</html>"""
+
+        html = (TMPL
+            .replace('__JOBS__',  jobs_json)
+            .replace('__NOW__',   now_str)
+            .replace('__TOTAL__', str(total))
+            .replace('__EXC__',   str(n_exc))
+            .replace('__STR__',   str(n_str))
+            .replace('__COS__',   str(companies))
+        )
+
+        _old = (
             '<!DOCTYPE html>\n'
             '<html lang="en">\n'
             '<head>\n'
@@ -946,6 +1176,8 @@ class LinkedInJobScraper:
         with open('index.html', 'w', encoding='utf-8') as f:
             f.write(html)
         print("Generated index.html — " + str(total) + " jobs")
+
+        _old  # noqa: suppress unused warning
 
     # ── Main ──────────────────────────────────────────────────────────
 
