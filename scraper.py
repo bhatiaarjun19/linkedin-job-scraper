@@ -778,6 +778,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 .cpb{position:absolute;top:10px;right:10px;padding:3px 10px;font-size:10px;font-weight:700;border:1px solid var(--bd);border-radius:6px;background:var(--s2);color:var(--mu);cursor:pointer;font-family:inherit;transition:.15s}
 .cpb:hover{background:#6366f1;color:#fff;border-color:#6366f1}
 .cpb.ok{background:#059669;color:#fff;border-color:#059669}
+/* Applied state */
+.card-applied{border-color:rgba(16,185,129,.35) !important;box-shadow:0 0 0 1px rgba(16,185,129,.12)}
+.card-applied .cstripe{background:linear-gradient(90deg,#059669,#10b981,#34d399) !important}
+.applied-tag{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;padding:2px 10px;border-radius:100px;background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.25);margin-left:auto;white-space:nowrap}
+.bapl{padding:9px 16px;background:var(--s2);color:var(--di);border:1px solid var(--bd);border-radius:10px;font-size:12px;font-weight:600;font-family:inherit;cursor:pointer;transition:.18s;white-space:nowrap}
+.bapl:hover{border-color:rgba(16,185,129,.4);color:var(--em)}
+.bapl.done{background:rgba(16,185,129,.12);border-color:rgba(16,185,129,.3);color:#34d399}
 /* No results */
 .nr{grid-column:1/-1;text-align:center;padding:80px 20px;color:var(--mu)}
 .nr h3{font-size:20px;color:var(--di);margin-bottom:8px}
@@ -818,6 +825,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
     <button class="fp" onclick="sf('role','pmm',this,'rg')">PMM</button>
     <button class="fp" onclick="sf('role','gtm',this,'rg')">GTM</button>
     <button class="fp" onclick="sf('role','growth',this,'rg')">Growth</button>
+    <button class="fp" onclick="sf('role','applied',this,'rg')" id="applied-pill">&#10003; Applied (<span id="applied-count">0</span>)</button>
   </div>
   <div class="fdiv"></div>
   <div class="pg" id="sortg">
@@ -836,6 +844,18 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-hei
 const JOBS=__JOBS__;
 let F={score:'all',role:'all',sort:'score'};
 function sf(k,v,el,gid){F[k]=v;document.getElementById(gid).querySelectorAll('.fp').forEach(b=>b.classList.remove('active'));el.classList.add('active');render();}
+function getApplied(){return new Set(JSON.parse(localStorage.getItem('ljs_applied')||'[]'));}
+function saveApplied(s){localStorage.setItem('ljs_applied',JSON.stringify([...s]));}
+function updateAppliedCount(){const n=getApplied().size;const el=document.getElementById('applied-count');if(el)el.textContent=n;}
+function toggleApplied(url,i){
+  const s=getApplied();
+  const card=document.getElementById('card-'+i);
+  const btn=document.getElementById('apl-'+i);
+  if(s.has(url)){s.delete(url);if(card)card.classList.remove('card-applied');if(btn){btn.textContent='Mark Applied';btn.classList.remove('done');}}
+  else{s.add(url);if(card)card.classList.add('card-applied');if(btn){btn.textContent='\\u2713 Applied';btn.classList.add('done');}}
+  saveApplied(s);updateAppliedCount();
+  if(F.role==='applied')render();
+}
 function ring(s){
   const r=22,c=2*Math.PI*r,off=c*(1-s/10);
   const col=s>=8?'#10b981':s>=6?'#818cf8':'#f59e0b';
@@ -866,7 +886,10 @@ function tog(i){
 }
 function render(){
   const q=document.getElementById('srch').value.toLowerCase();
+  const applied=getApplied();
+  updateAppliedCount();
   let list=JOBS.filter(j=>{
+    if(F.role==='applied')return applied.has(j.url);
     if(F.score!=='all'&&j.score<parseInt(F.score))return false;
     if(!rm(j.title,F.role))return false;
     if(q&&!j.title.toLowerCase().includes(q)&&!j.company.toLowerCase().includes(q))return false;
@@ -886,10 +909,14 @@ function render(){
     const people=(j.people||[]).map(p=>`<a class="plink" href="${esc(p.url)}" target="_blank" rel="noopener"><span class="pi">${p.icon}</span><span>${esc(p.label)}</span><span class="pa">&#8599;</span></a>`).join('');
     const cid='c'+i,mid='m'+i;
     const inmail=(j.inmail||[]).map(l=>`<p>${esc(l)}</p>`).join('');
-    return `<div class="card"><div class="cstripe ${sc}"></div><div class="cbody"><div class="trow">${svg}<div class="tblock"><div class="mbadge ${bc}">${esc(lbl)}</div><div class="jtitle"><a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a></div><div class="jmeta"><span>${esc(j.company)}</span><span class="jdot">&bull;</span><span>${esc(j.location)}</span></div></div></div>${chips?`<div class="chips">${chips}</div>`:''}${needs?`<div><div class="nlbl">What they need</div><ul class="nlist">${needs}</ul></div>`:''}<div class="mpills">${pills}</div><div class="cact"><a class="baply" href="${esc(j.url)}" target="_blank" rel="noopener">Apply Now &rarr;</a><button class="brch" id="r${i}" onclick="tog(${i})">Reach Out &darr;</button></div></div><div class="outreach" id="o${i}"><div class="oin"><div><div class="olbl">Who to reach out to</div><div class="plinks">${people}</div></div><div><div class="olbl">Connection Request <span style="font-weight:400;font-size:10px;color:#475569">(&lt;300 chars)</span></div><div class="tbox"><button class="cpb" onclick="cp('${cid}',this)">Copy</button><span id="${cid}">${esc(j.conn)}</span></div></div><div><div class="olbl">LinkedIn InMail</div><div class="tbox"><button class="cpb" onclick="cp('${mid}',this)">Copy</button><div id="${mid}">${inmail}</div></div></div></div></div></div>`;
+    const isApl=applied.has(j.url);
+    const aplBtn=`<button class="bapl${isApl?' done':''}" id="apl-${i}" onclick="toggleApplied('${esc(j.url)}',${i})">${isApl?'\\u2713 Applied':'Mark Applied'}</button>`;
+    const aplTag=isApl?'<span class="applied-tag">\\u2713 Applied</span>':'';
+    return `<div class="card${isApl?' card-applied':''}" id="card-${i}"><div class="cstripe ${sc}"></div><div class="cbody"><div class="trow">${svg}<div class="tblock"><div style="display:flex;align-items:flex-start;gap:6px;flex-wrap:wrap"><div class="mbadge ${bc}">${esc(lbl)}</div>${aplTag}</div><div class="jtitle"><a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a></div><div class="jmeta"><span>${esc(j.company)}</span><span class="jdot">&bull;</span><span>${esc(j.location)}</span></div></div></div>${chips?`<div class="chips">${chips}</div>`:''}${needs?`<div><div class="nlbl">What they need</div><ul class="nlist">${needs}</ul></div>`:''}<div class="mpills">${pills}</div><div class="cact"><a class="baply" href="${esc(j.url)}" target="_blank" rel="noopener">Apply Now &rarr;</a>${aplBtn}<button class="brch" id="r${i}" onclick="tog(${i})">Reach Out &darr;</button></div></div><div class="outreach" id="o${i}"><div class="oin"><div><div class="olbl">Who to reach out to</div><div class="plinks">${people}</div></div><div><div class="olbl">Connection Request <span style="font-weight:400;font-size:10px;color:#475569">(&lt;300 chars)</span></div><div class="tbox"><button class="cpb" onclick="cp('${cid}',this)">Copy</button><span id="${cid}">${esc(j.conn)}</span></div></div><div><div class="olbl">LinkedIn InMail</div><div class="tbox"><button class="cpb" onclick="cp('${mid}',this)">Copy</button><div id="${mid}">${inmail}</div></div></div></div></div></div>`;
   }).join('');
 }
 render();
+updateAppliedCount();
 </script>
 </body>
 </html>"""
