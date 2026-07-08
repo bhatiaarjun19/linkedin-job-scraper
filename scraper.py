@@ -50,8 +50,18 @@ class LinkedInJobScraper:
         # Title must contain at least one of these to pass role-type filter
         self.required_title_terms = [
             'marketing', 'brand', 'gtm', 'go to market', 'go-to-market',
-            'product strategy', 'growth', 'demand generation', 'campaign',
+            'product strategy', 'growth marketing', 'demand generation', 'campaign',
             'communications', 'commercialization',
+        ]
+
+        # Drop roles whose titles contain these even if they passed the above check
+        self.blocked_title_keywords = [
+            'sales manager', 'sales operations', 'portfolio manager',
+            'social media manager', 'social media community',
+            'account manager', 'project manager', 'office manager',
+            'operations manager', 'product operations',
+            'influencer manager', 'talent marketing',
+            'events manager', 'event manager',
         ]
 
         # ── Scoring signals (Prachita Purohit resume) ────────────────
@@ -151,8 +161,9 @@ class LinkedInJobScraper:
         t = title.lower()
         if any(kw in t for kw in self.senior_title_keywords):
             return True
-        # Drop pure "product manager" / "product owner" roles (not product *marketing*)
         if not any(term in t for term in self.required_title_terms):
+            return True
+        if any(kw in t for kw in self.blocked_title_keywords):
             return True
         return False
 
