@@ -436,7 +436,7 @@ class LinkedInJobScraper:
 
         sorted_jobs = sorted(
             [j for j in new_jobs if j.get('relevance_score', 0) > 5],
-            key=lambda j: j.get('relevance_score', 0), reverse=True
+            key=lambda j: j.get('found_date', ''), reverse=True
         )
         if not sorted_jobs:
             print("No jobs with score > 5"); return
@@ -646,7 +646,7 @@ class LinkedInJobScraper:
 
     def generate_html(self, all_jobs_dict):
         jobs_for_page = sorted(
-            [j for j in all_jobs_dict.values() if j.get('relevance_score', 0) > 5],
+            list(all_jobs_dict.values()),
             key=lambda j: j.get('relevance_score', 0), reverse=True
         )
         now_str   = datetime.now().strftime('%b %d, %Y at %I:%M %p UTC')
