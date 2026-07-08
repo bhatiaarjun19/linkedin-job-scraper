@@ -692,7 +692,7 @@ class LinkedInJobScraper:
             '*{box-sizing:border-box;margin:0;padding:0}\n'
             'body{font-family:"Inter",sans-serif;background:var(--bg);color:var(--text);min-height:100vh}\n'
 
-            /* ── header ── */
+            
             '.hdr{background:var(--navy);padding:20px 28px;position:sticky;top:0;z-index:100;'
             'box-shadow:0 2px 12px rgba(0,0,0,.3)}\n'
             '.hdr-top{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px}\n'
@@ -710,7 +710,7 @@ class LinkedInJobScraper:
             '.btn:hover{border-color:#38bdf8;color:#38bdf8}\n'
             '.btn.active{background:#0073b1;border-color:#0073b1;color:#fff}\n'
 
-            /* ── stats bar ── */
+            
             '.stats{display:flex;gap:24px;padding:16px 28px;background:#fff;'
             'border-bottom:1px solid var(--border);flex-wrap:wrap}\n'
             '.stat{display:flex;flex-direction:column;gap:2px}\n'
@@ -718,13 +718,13 @@ class LinkedInJobScraper:
             '.stat-lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}\n'
             '.stat-val.green{color:var(--green)}.stat-val.blue{color:var(--strong)}\n'
 
-            /* ── grid ── */
+            
             '.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));'
             'gap:20px;padding:24px 28px;max-width:1400px;margin:0 auto}\n'
             '.no-results{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)}\n'
             '.no-results h3{font-size:18px;margin-bottom:8px}\n'
 
-            /* ── card ── */
+            
             '.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);'
             'border:1px solid var(--border);overflow:hidden;transition:transform .15s,box-shadow .15s;'
             'display:flex;flex-direction:column}\n'
@@ -735,7 +735,7 @@ class LinkedInJobScraper:
             '.bar-gold{background:linear-gradient(90deg,#b45309,#fbbf24)}\n'
             '.card-body{padding:16px 18px;flex:1;display:flex;flex-direction:column;gap:10px}\n'
 
-            /* score badge */
+            
             '.score-row{display:flex;align-items:center;justify-content:space-between}\n'
             '.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;'
             'border-radius:20px;font-size:11px;font-weight:700}\n'
@@ -746,33 +746,33 @@ class LinkedInJobScraper:
             '.score-num.green{color:var(--green)}.score-num.blue{color:var(--strong)}'
             '.score-num.gold{color:var(--gold)}\n'
 
-            /* title block */
+            
             '.card-title{font-size:15px;font-weight:700;color:var(--navy);line-height:1.3}\n'
             '.card-title a{color:inherit;text-decoration:none}\n'
             '.card-title a:hover{color:var(--blue)}\n'
             '.card-meta{font-size:12px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;align-items:center}\n'
             '.dot{color:#cbd5e1}\n'
 
-            /* chips */
+            
             '.chips{display:flex;flex-wrap:wrap;gap:5px}\n'
             '.chip{font-size:10px;font-weight:600;padding:3px 9px;border-radius:20px;'
             'background:var(--green-bg);color:var(--green)}\n'
             '.chip::before{content:"✓ "}\n'
 
-            /* needs list */
+            
             '.needs-lbl{font-size:11px;font-weight:700;color:var(--muted);'
             'text-transform:uppercase;letter-spacing:.04em}\n'
             '.needs-list{list-style:none;display:flex;flex-direction:column;gap:3px}\n'
             '.needs-list li{font-size:12px;color:#475569;padding-left:14px;position:relative;line-height:1.5}\n'
             '.needs-list li::before{content:"›";position:absolute;left:0;color:var(--blue);font-weight:700}\n'
 
-            /* pills row */
+            
             '.pills{display:flex;gap:6px;flex-wrap:wrap}\n'
             '.pill{font-size:11px;padding:2px 10px;border-radius:20px;'
             'background:#f1f5f9;color:var(--muted);font-weight:500}\n'
             '.pill.salary{background:#f0fdf4;color:var(--green)}\n'
 
-            /* actions */
+            
             '.card-actions{display:flex;gap:8px;margin-top:auto;padding-top:4px}\n'
             '.btn-apply{padding:8px 18px;background:var(--blue);color:#fff;border:none;'
             'border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;text-decoration:none;'
@@ -783,7 +783,7 @@ class LinkedInJobScraper:
             '.btn-reach:hover{background:#e2e8f0}\n'
             '.btn-reach.open{background:var(--navy);color:#fff;border-color:var(--navy)}\n'
 
-            /* outreach panel */
+            
             '.outreach{border-top:1px solid var(--border);padding:14px 18px;'
             'background:#f8faff;display:none;flex-direction:column;gap:12px}\n'
             '.outreach.visible{display:flex}\n'
@@ -803,7 +803,7 @@ class LinkedInJobScraper:
             '.copy-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue)}\n'
             '.copy-btn.copied{background:#16a34a;color:#fff;border-color:#16a34a}\n'
 
-            /* footer */
+            
             '.footer{text-align:center;padding:24px;font-size:11px;color:var(--muted)}\n'
 
             '@media(max-width:600px){'

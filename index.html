@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Job Dashboard — Prachita Purohit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0073b1;--navy:#0a192f;--green:#16a34a;--green-bg:#f0fdf4;--strong:#2563eb;--strong-bg:#eff6ff;--gold:#b45309;--gold-bg:#fffbeb;--bg:#f0f4f8;--card:#fff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b;--radius:12px;--shadow:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.06);}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Inter",sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.hdr{background:var(--navy);padding:20px 28px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.hdr-top{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.logo{font-size:18px;font-weight:700;color:#fff;white-space:nowrap}.logo span{color:#38bdf8}
+.updated{font-size:11px;color:#94a3b8;margin-left:auto;white-space:nowrap}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.search{flex:1;min-width:180px;max-width:280px;padding:8px 12px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#fff;font-size:13px;outline:none}.search::placeholder{color:#64748b}
+.search:focus{border-color:#38bdf8}
+.btn-group{display:flex;gap:4px}
+.btn{padding:6px 14px;border-radius:7px;border:1px solid #334155;background:transparent;color:#94a3b8;font-size:12px;font-weight:600;cursor:pointer;transition:.15s}
+.btn:hover{border-color:#38bdf8;color:#38bdf8}
+.btn.active{background:#0073b1;border-color:#0073b1;color:#fff}
+.stats{display:flex;gap:24px;padding:16px 28px;background:#fff;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.stat{display:flex;flex-direction:column;gap:2px}
+.stat-val{font-size:22px;font-weight:700;color:var(--navy)}
+.stat-lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.stat-val.green{color:var(--green)}.stat-val.blue{color:var(--strong)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;padding:24px 28px;max-width:1400px;margin:0 auto}
+.no-results{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)}
+.no-results h3{font-size:18px;margin-bottom:8px}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);overflow:hidden;transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-2px);box-shadow:0 4px 24px rgba(0,0,0,.12)}
+.card-bar{height:4px}
+.bar-green{background:linear-gradient(90deg,#16a34a,#4ade80)}
+.bar-blue{background:linear-gradient(90deg,#2563eb,#60a5fa)}
+.bar-gold{background:linear-gradient(90deg,#b45309,#fbbf24)}
+.card-body{padding:16px 18px;flex:1;display:flex;flex-direction:column;gap:10px}
+.score-row{display:flex;align-items:center;justify-content:space-between}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700}
+.badge-green{background:var(--green-bg);color:var(--green)}
+.badge-blue{background:var(--strong-bg);color:var(--strong)}
+.badge-gold{background:var(--gold-bg);color:var(--gold)}
+.score-num{font-size:28px;font-weight:700;line-height:1}
+.score-num.green{color:var(--green)}.score-num.blue{color:var(--strong)}.score-num.gold{color:var(--gold)}
+.card-title{font-size:15px;font-weight:700;color:var(--navy);line-height:1.3}
+.card-title a{color:inherit;text-decoration:none}
+.card-title a:hover{color:var(--blue)}
+.card-meta{font-size:12px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.dot{color:#cbd5e1}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{font-size:10px;font-weight:600;padding:3px 9px;border-radius:20px;background:var(--green-bg);color:var(--green)}
+.chip::before{content:"✓ "}
+.needs-lbl{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.needs-list{list-style:none;display:flex;flex-direction:column;gap:3px}
+.needs-list li{font-size:12px;color:#475569;padding-left:14px;position:relative;line-height:1.5}
+.needs-list li::before{content:"›";position:absolute;left:0;color:var(--blue);font-weight:700}
+.pills{display:flex;gap:6px;flex-wrap:wrap}
+.pill{font-size:11px;padding:2px 10px;border-radius:20px;background:#f1f5f9;color:var(--muted);font-weight:500}
+.pill.salary{background:#f0fdf4;color:var(--green)}
+.card-actions{display:flex;gap:8px;margin-top:auto;padding-top:4px}
+.btn-apply{padding:8px 18px;background:var(--blue);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;text-decoration:none;transition:.15s}
+.btn-apply:hover{background:#005f94}
+.btn-reach{padding:8px 14px;background:#f1f5f9;color:var(--navy);border:1px solid var(--border);border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:.15s}
+.btn-reach:hover{background:#e2e8f0}
+.btn-reach.open{background:var(--navy);color:#fff;border-color:var(--navy)}
+.outreach{border-top:1px solid var(--border);padding:14px 18px;background:#f8faff;display:none;flex-direction:column;gap:12px}
+.outreach.visible{display:flex}
+.out-section-lbl{font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.people-links{display:flex;flex-direction:column;gap:4px}
+.people-link{display:flex;align-items:center;gap:8px;text-decoration:none;font-size:12px;color:var(--text);padding:5px 8px;border-radius:6px;transition:.12s}
+.people-link:hover{background:#e8f0fe;color:var(--blue)}
+.people-link .icon{font-size:14px;width:20px;text-align:center}
+.people-link .arrow{margin-left:auto;color:var(--muted);font-size:11px}
+.template-box{background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-size:12px;color:#334155;line-height:1.7;position:relative}
+.copy-btn{position:absolute;top:8px;right:8px;padding:3px 10px;font-size:10px;font-weight:600;border:1px solid var(--border);border-radius:5px;background:#fff;cursor:pointer;color:var(--muted);transition:.12s}
+.copy-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.copy-btn.copied{background:#16a34a;color:#fff;border-color:#16a34a}
+.footer{text-align:center;padding:24px;font-size:11px;color:var(--muted)}
+@media(max-width:600px){.hdr{padding:14px 16px}.grid{padding:16px}.stats{padding:12px 16px;gap:16px}.stat-val{font-size:18px}}
+</style>
+</head>
+<body>
+<header class="hdr">
+<div class="hdr-top">
+<div class="logo">PMM &amp; Brand <span>Jobs</span></div>
+<span class="updated">Updated: Jul 07, 2026 — 08:02 PM UTC</span>
+</div>
+<div class="controls">
+<input class="search" id="search" type="text" placeholder="Search role or company…" oninput="render()">
+<div class="btn-group" id="score-btns">
+<button class="btn active" onclick="setFilter('score','all',this)">All</button>
+<button class="btn" onclick="setFilter('score','6',this)">6+</button>
+<button class="btn" onclick="setFilter('score','8',this)">8+</button>
+</div>
+<div class="btn-group" id="role-btns">
+<button class="btn active" onclick="setFilter('role','all',this)">All Roles</button>
+<button class="btn" onclick="setFilter('role','brand',this)">Brand</button>
+<button class="btn" onclick="setFilter('role','pmm',this)">PMM</button>
+<button class="btn" onclick="setFilter('role','gtm',this)">GTM</button>
+<button class="btn" onclick="setFilter('role','growth',this)">Growth</button>
+</div>
+</div>
+</header>
+<div class="stats">
+<div class="stat"><span class="stat-val">0</span><span class="stat-lbl">Total Roles</span></div>
+<div class="stat"><span class="stat-val green">0</span><span class="stat-lbl">Excellent (8+)</span></div>
+<div class="stat"><span class="stat-val blue">0</span><span class="stat-lbl">Strong (6-7)</span></div>
+<div class="stat"><span class="stat-val">0</span><span class="stat-lbl">Companies</span></div>
+</div>
+<div class="grid" id="grid"></div>
+<div class="footer">Entry &amp; manager level only &bull; JD-verified (&le;4 yrs exp) &bull; All US &bull; Scored on 11 resume signals &bull; Auto-updates every 2 hrs</div>
+<script>
+const JOBS=[];
+let filters={score:"all",role:"all"};
+function setFilter(k,v,el){
+  filters[k]=v;
+  el.closest(".btn-group").querySelectorAll(".btn").forEach(b=>b.classList.remove("active"));
+  el.classList.add("active");
+  render();
+}
+function scoreClass(s){return s>=8?"green":s>=6?"blue":"gold";}
+function barClass(s){return s>=8?"bar-green":s>=6?"bar-blue":"bar-gold";}
+function badgeClass(s){return s>=8?"badge-green":s>=6?"badge-blue":"badge-gold";}
+function escHtml(t){return(t||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function roleMatch(title,role){
+  if(role==="all")return true;
+  const t=title.toLowerCase();
+  if(role==="brand")return t.includes("brand");
+  if(role==="pmm")return t.includes("product marketing");
+  if(role==="gtm")return t.includes("gtm")||t.includes("go to market");
+  if(role==="growth")return t.includes("growth")||t.includes("demand");
+  return true;
+}
+function copyText(id,btn){
+  const el=document.getElementById(id);
+  navigator.clipboard.writeText(el.innerText).then(()=>{
+    btn.textContent="Copied!";btn.classList.add("copied");
+    setTimeout(()=>{btn.textContent="Copy";btn.classList.remove("copied");},2000);
+  });
+}
+function toggleOutreach(idx){
+  const panel=document.getElementById("out-"+idx);
+  const btn=document.getElementById("rbtn-"+idx);
+  const open=panel.classList.toggle("visible");
+  btn.textContent=open?"Close ✕":"Reach Out ↓";
+  btn.classList.toggle("open",open);
+}
+function render(){
+  const q=document.getElementById("search").value.toLowerCase();
+  const filtered=JOBS.filter(j=>{
+    if(filters.score!=="all"&&j.score<parseInt(filters.score))return false;
+    if(!roleMatch(j.title,filters.role))return false;
+    if(q&&!j.title.toLowerCase().includes(q)&&!j.company.toLowerCase().includes(q))return false;
+    return true;
+  });
+  const grid=document.getElementById("grid");
+  if(!filtered.length){
+    grid.innerHTML='<div class="no-results"><h3>No roles found</h3><p>Try adjusting your filters or search.</p></div>';
+    return;
+  }
+  grid.innerHTML=filtered.map((j,i)=>{
+    const sc=scoreClass(j.score),bc=badgeClass(j.score),bar=barClass(j.score);
+    const chips=(j.skills||[]).map(s=>`<span class="chip">${escHtml(s)}</span>`).join("");
+    const needs=(j.needs||[]).map(n=>`<li>${escHtml(n)}</li>`).join("");
+    const pills=`<span class="pill">${escHtml(j.exp||"Exp N/A")}</span>`
+      +(j.salary?`<span class="pill salary">${escHtml(j.salary)}</span>`:"");
+    const people=(j.people||[]).map(p=>
+      `<a class="people-link" href="${escHtml(p.url)}" target="_blank" rel="noopener">`
+      +`<span class="icon">${p.icon}</span>`
+      +`<span>${escHtml(p.label)}</span>`
+      +`<span class="arrow">↗</span></a>`
+    ).join("");
+    const connId="conn-"+i,mailId="mail-"+i;
+    const inmail=(j.inmail||[]).map(l=>`<p>${escHtml(l)}</p>`).join("");
+    return `<div class="card">`
+      +`<div class="card-bar ${bar}"></div>`
+      +`<div class="card-body">`
+      +`<div class="score-row">`
+      +`<div class="score-num ${sc}">${j.score}<span style="font-size:14px;font-weight:500;color:#94a3b8">/10</span></div>`
+      +`<span class="badge ${bc}">${escHtml(j.label)}</span>`
+      +`</div>`
+      +`<div>`
+      +`<div class="card-title"><a href="${escHtml(j.url)}" target="_blank" rel="noopener">${escHtml(j.title)}</a></div>`
+      +`<div class="card-meta"><span>${escHtml(j.company)}</span><span class="dot">•</span><span>${escHtml(j.location)}</span><span class="dot">•</span><span>${escHtml(j.date)}</span></div>`
+      +`</div>`
+      +(chips?`<div class="chips">${chips}</div>`:"") 
+      +(needs?`<div><div class="needs-lbl">What they need</div><ul class="needs-list">${needs}</ul></div>`:"") 
+      +`<div class="pills">${pills}</div>`
+      +`<div class="card-actions">`
+      +`<a class="btn-apply" href="${escHtml(j.url)}" target="_blank" rel="noopener">Apply Now →</a>`
+      +`<button class="btn-reach" id="rbtn-${i}" onclick="toggleOutreach(${i})">Reach Out ↓</button>`
+      +`</div>`
+      +`</div>`
+      +`<div class="outreach" id="out-${i}">`
+      +`<div><div class="out-section-lbl">Who to reach out to</div><div class="people-links">${people}</div></div>`
+      +`<div><div class="out-section-lbl">Connection Request <span style="font-weight:400;text-transform:none;font-size:10px;color:#94a3b8">(&lt;300 chars)</span></div>`
+      +`<div class="template-box" style="padding-right:72px"><button class="copy-btn" onclick="copyText('${connId}',this)">Copy</button><span id="${connId}">${escHtml(j.conn)}</span></div></div>`
+      +`<div><div class="out-section-lbl">LinkedIn InMail</div>`
+      +`<div class="template-box" style="padding-right:72px"><button class="copy-btn" onclick="copyText('${mailId}',this)">Copy</button><div id="${mailId}">${inmail}</div></div></div>`
+      +`</div>`
+      +`</div>`;
+  }).join("");
+}
+render();
+</script>
+</body>
+</html>
