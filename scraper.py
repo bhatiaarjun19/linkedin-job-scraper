@@ -56,12 +56,9 @@ class LinkedInJobScraper:
 
         # Drop roles whose titles contain these even if they passed the above check
         self.blocked_title_keywords = [
-            'sales manager', 'sales operations', 'portfolio manager',
-            'social media manager', 'social media community',
+            'sales manager', 'sales operations',
             'account manager', 'project manager', 'office manager',
             'operations manager', 'product operations',
-            'influencer manager', 'talent marketing',
-            'events manager', 'event manager',
         ]
 
         # ── Scoring signals (Prachita Purohit resume) ────────────────
