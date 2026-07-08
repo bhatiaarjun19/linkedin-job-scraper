@@ -815,7 +815,7 @@ class LinkedInJobScraper:
 
             '<header class="hdr">\n'
             '<div class="hdr-top">\n'
-            '<div class="logo">PMM &amp; Brand <span>Jobs</span></div>\n'
+            '<div class="logo">Will get you a job <span>bitch</span></div>\n'
             '<span class="updated">Updated: ' + now_str + '</span>\n'
             '</div>\n'
             '<div class="controls">\n'
