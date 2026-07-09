@@ -149,10 +149,26 @@ body{font-family:var(--font);background:var(--bg);color:var(--t1);-webkit-font-s
 .empty h3{font-size:18px;font-weight:700;color:var(--t1);margin-bottom:6px}
 .empty p{font-size:14px}
 
+/* ─── STATS BAR ─── */
+.stats-bar{background:var(--surface);border-bottom:1px solid var(--border)}
+.stats-inner{max-width:1280px;margin:0 auto;padding:0 28px;display:flex;gap:0}
+.stat-item{flex:1;padding:18px 24px;display:flex;align-items:center;gap:14px;border-right:1px solid var(--border)}
+.stat-item:last-child{border-right:none}
+.stat-n{font-size:28px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.stat-n.total{color:var(--t1)}.stat-n.exc{color:var(--green)}.stat-n.str{color:var(--blue)}.stat-n.cos{color:var(--indigo)}
+.stat-text{}
+.stat-label{font-size:13px;font-weight:600;color:var(--t1)}
+.stat-sub{font-size:11px;color:var(--t3);margin-top:1px}
+
 /* ─── FOOTER ─── */
 footer{text-align:center;padding:24px;font-size:12px;color:var(--t3);border-top:1px solid var(--border);margin-top:0}
 
 /* ─── MOBILE ─── */
+@media(max-width:640px){
+  .stats-inner{flex-wrap:wrap}
+  .stat-item{flex:1 1 calc(50% - 1px);border-right:none;border-bottom:1px solid var(--border);padding:14px 18px}
+  .stat-n{font-size:22px}
+}
 @media(max-width:860px){
   .layout{flex-direction:column;padding:16px 16px 48px}
   .sidebar{width:100%;position:static}
@@ -186,10 +202,32 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--t3);border-top:
   </div>
   <div class="header-right">
     <div class="live-badge"><span class="live-dot"></span>Updating live</div>
-    <span class="header-time">Jul 08, 2026 at 09:24 PM UTC</span>
+    <span class="header-time">Jul 08, 2026 at 09:26 PM UTC</span>
   </div>
 </div>
 </header>
+
+<!-- Stats Bar -->
+<div class="stats-bar">
+<div class="stats-inner">
+  <div class="stat-item">
+    <div class="stat-n total" data-target="113">0</div>
+    <div class="stat-text"><div class="stat-label">Total Roles</div><div class="stat-sub">Across all types</div></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-n exc" data-target="18">0</div>
+    <div class="stat-text"><div class="stat-label">Excellent Match</div><div class="stat-sub">Score 8 or above</div></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-n str" data-target="28">0</div>
+    <div class="stat-text"><div class="stat-label">Strong Match</div><div class="stat-sub">Score 6 or 7</div></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-n cos" data-target="101">0</div>
+    <div class="stat-text"><div class="stat-label">Companies</div><div class="stat-sub">Unique employers</div></div>
+  </div>
+</div>
+</div>
 
 <!-- Layout -->
 <div class="layout">
@@ -416,7 +454,14 @@ function render(){
   }).join('');
 }
 
+function countUp(el){
+  const target=parseInt(el.dataset.target)||0;
+  if(!target){el.textContent=0;return;}
+  let cur=0;const step=Math.max(1,Math.ceil(target/30));
+  const t=setInterval(()=>{cur=Math.min(cur+step,target);el.textContent=cur;if(cur>=target)clearInterval(t);},30);
+}
 render();
+document.querySelectorAll('[data-target]').forEach(el=>countUp(el));
 </script>
 </body>
 </html>
