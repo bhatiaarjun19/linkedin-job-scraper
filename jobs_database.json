@@ -3099,5 +3099,103 @@
     "matched_skills": [
       "Healthcare / Global Health"
     ]
+  },
+  "4437554210": {
+    "id": "4437554210",
+    "title": "Associate Brand Manager",
+    "company": "The Hartz Mountain Corporation",
+    "location": "Secaucus, NJ",
+    "url": "https://www.linkedin.com/jobs/view/associate-brand-manager-at-the-hartz-mountain-corporation-4437554210",
+    "found_date": "2026-07-09T17:51:33.967413",
+    "search_keyword": "associate brand manager",
+    "years_required": "1+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 8,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Consumer & Market Research",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "Healthcare / Global Health",
+      "Strong title alignment"
+    ]
+  },
+  "4438542037": {
+    "id": "4438542037",
+    "title": "Associate Brand Marketing Manager",
+    "company": "CooperVision",
+    "location": "Victor, NY",
+    "url": "https://www.linkedin.com/jobs/view/associate-brand-marketing-manager-at-coopervision-4438542037",
+    "found_date": "2026-07-09T17:51:33.968317",
+    "search_keyword": "associate brand manager",
+    "years_required": "1+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 10,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "Healthcare / Global Health",
+      "MBA preferred/required",
+      "Strong title alignment"
+    ]
+  },
+  "4419572260": {
+    "id": "4419572260",
+    "title": "Brand Manager",
+    "company": "Wonderful Pistachios & Almonds",
+    "location": "Los Angeles, CA",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-at-wonderful-pistachios-almonds-4419572260",
+    "found_date": "2026-07-09T17:51:37.303682",
+    "search_keyword": "brand marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$140,000 - $150,000 ",
+    "relevance_score": 7,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "MBA preferred/required",
+      "Strong title alignment"
+    ]
+  },
+  "4437323163": {
+    "id": "4437323163",
+    "title": "Digital Marketing Manager",
+    "company": "Tremendous",
+    "location": "United States",
+    "url": "https://www.linkedin.com/jobs/view/digital-marketing-manager-at-tremendous-4437323163",
+    "found_date": "2026-07-09T17:51:54.567536",
+    "search_keyword": "corporate brand manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": "$80k to $110k",
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "B2B / Enterprise Marketing",
+      "Integrated & Campaign Marketing",
+      "Strong title alignment"
+    ]
   }
 }
