@@ -734,7 +734,7 @@ class LinkedInJobScraper:
                 'needs':    [self.clean_text(s) for s in job.get('key_skills',[])],
                 'exp':      self.clean_text(job.get('years_required','Not specified')),
                 'salary':   self.clean_text(job.get('salary','')),
-                'date':     str(job.get('found_date',''))[:10],
+                'date':     str(job.get('found_date',''))[:19],
                 'people':   [{'label': l, 'url': h, 'icon': ic} for l,h,ic in links],
                 'conn':     self.clean_text(self.connection_request(co, ti, mat)),
                 'inmail':   [self.clean_text(x) for x in self.inmail_template(co, ti, mat)],
@@ -1121,7 +1121,7 @@ function render(){
     if(q&&!j.title.toLowerCase().includes(q)&&!j.company.toLowerCase().includes(q))return false;
     return true;
   });
-  if(F.sort==='recent')list=[...list].sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+  if(F.sort==='recent')list=[...list].sort((a,b)=>new Date(b.date||0)-new Date(a.date||0));
   else list=[...list].sort((a,b)=>b.score-a.score);
 
   document.getElementById('rbar').innerHTML=`Showing <b>${list.length}</b> of <b>${JOBS.length}</b> roles`;
@@ -1142,6 +1142,7 @@ function render(){
     const people=(j.people||[]).map(p=>`<a class="p-link" href="${esc(p.url)}" target="_blank" rel="noopener"><span class="p-ico">${p.icon}</span><span>${esc(p.label)}</span><span class="p-arr">↗</span></a>`).join('');
     const cid='c'+i,mid='m'+i;
     const inmail=(j.inmail||[]).map(l=>`<p>${esc(l)}</p>`).join('');
+    const displayDate=(j.date||'').slice(0,10);
 
     return `<div class="job-item${isApl?' applied':''}" id="ji-${i}">
 <div class="job-row">
@@ -1164,6 +1165,8 @@ function render(){
       <span>${esc(j.location)}</span>
       <span class="jdot">•</span>
       <span>${esc(j.exp||'Exp N/A')}</span>
+      <span class="jdot">•</span>
+      <span>${esc(displayDate)}</span>
       <span class="jdot">•</span>
       <span style="font-size:12px;font-weight:600;color:${cls==='sg'?'var(--green)':cls==='si'?'var(--blue)':'var(--amber)'}">${label} match</span>
     </div>
