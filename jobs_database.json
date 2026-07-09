@@ -2560,5 +2560,161 @@
       "CPG / Consumer Goods",
       "MBA preferred/required"
     ]
+  },
+  "4437312655": {
+    "id": "4437312655",
+    "title": "associate brand manager, Starbucks Merchandise",
+    "company": "Starbucks",
+    "location": "Seattle, WA",
+    "url": "https://www.linkedin.com/jobs/view/associate-brand-manager-starbucks-merchandise-at-starbucks-4437312655",
+    "found_date": "2026-07-09T01:49:05.732302",
+    "search_keyword": "product marketing associate",
+    "years_required": "1+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 7,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4438187708": {
+    "id": "4438187708",
+    "title": "Product Marketing Manager - San Jose",
+    "company": "Allied Telesis",
+    "location": "San Jose, CA",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-san-jose-at-allied-telesis-4438187708",
+    "found_date": "2026-07-09T01:49:12.928261",
+    "search_keyword": "B2B product marketing manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 7,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4437308868": {
+    "id": "4437308868",
+    "title": "Product Marketing Manager",
+    "company": "The Sage Group",
+    "location": "United States",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-at-the-sage-group-4437308868",
+    "found_date": "2026-07-09T01:49:12.928382",
+    "search_keyword": "B2B product marketing manager",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 7,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "B2B / Enterprise Marketing",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4437312903": {
+    "id": "4437312903",
+    "title": "Brand Manager",
+    "company": "Delicato Family Wines",
+    "location": "Napa, CA",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-at-delicato-family-wines-4437312903",
+    "found_date": "2026-07-09T01:49:25.919541",
+    "search_keyword": "brand manager",
+    "years_required": "1+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 10,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Integrated & Campaign Marketing",
+      "Pricing, Segmentation & Competitive",
+      "CPG / Consumer Goods",
+      "MBA preferred/required",
+      "Strong title alignment"
+    ]
+  },
+  "4437330251": {
+    "id": "4437330251",
+    "title": "Social Media Marketing Manager",
+    "company": "Amaze",
+    "location": "United States",
+    "url": "https://www.linkedin.com/jobs/view/social-media-marketing-manager-at-amaze-4437330251",
+    "found_date": "2026-07-09T01:49:28.958944",
+    "search_keyword": "associate brand manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Strong title alignment"
+    ]
+  },
+  "4438553165": {
+    "id": "4438553165",
+    "title": "Brand Specialist",
+    "company": "Imperial Dade",
+    "location": "Milford, CT",
+    "url": "https://www.linkedin.com/jobs/view/brand-specialist-at-imperial-dade-4438553165",
+    "found_date": "2026-07-09T01:49:35.179953",
+    "search_keyword": "brand associate",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Tech / SaaS / Startup"
+    ]
+  },
+  "4438241707": {
+    "id": "4438241707",
+    "title": "Integrated Marketing Manager, Global Brand",
+    "company": "GE Vernova",
+    "location": "New York, NY",
+    "url": "https://www.linkedin.com/jobs/view/integrated-marketing-manager-global-brand-at-ge-vernova-4438241707",
+    "found_date": "2026-07-09T01:49:44.886271",
+    "search_keyword": "brand and integrated marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Strong title alignment"
+    ]
   }
 }
