@@ -4878,5 +4878,96 @@
       "Healthcare / Global Health",
       "Strong title alignment"
     ]
+  },
+  "4436624707": {
+    "id": "4436624707",
+    "title": "Commercial Marketing Associate",
+    "company": "FanDuel",
+    "location": "Los Angeles, CA",
+    "url": "https://www.linkedin.com/jobs/view/commercial-marketing-associate-at-fanduel-4436624707",
+    "found_date": "2026-07-10T22:55:43.662041",
+    "search_keyword": "associate product marketing manager",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Marketing Analytics & Performance",
+      "B2B / Enterprise Marketing",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4438376072": {
+    "id": "4438376072",
+    "title": "Brand Manager, Knorr Innovation & Commercialization",
+    "company": "Unilever",
+    "location": "Hoboken, NJ",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-knorr-innovation-commercialization-at-unilever-4438376072",
+    "found_date": "2026-07-10T22:56:04.796895",
+    "search_keyword": "product launch manager",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": "$103,000 to $154,400",
+    "relevance_score": 7,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "MBA preferred/required",
+      "Strong title alignment"
+    ]
+  },
+  "4438332395": {
+    "id": "4438332395",
+    "title": "Brand Manager, PriorityPet Urgent Care (Remote)",
+    "company": "Alliance Animal Health",
+    "location": "Rye Brook, NY",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-prioritypet-urgent-care-remote-at-alliance-animal-health-4438332395",
+    "found_date": "2026-07-10T22:56:08.135364",
+    "search_keyword": "brand manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Integrated & Campaign Marketing",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4436625362": {
+    "id": "4436625362",
+    "title": "Entry Level Marketing",
+    "company": "True Blue Marketing Inc.",
+    "location": "Atlanta Metropolitan Area",
+    "url": "https://www.linkedin.com/jobs/view/entry-level-marketing-at-true-blue-marketing-inc-4436625362",
+    "found_date": "2026-07-10T22:56:17.761912",
+    "search_keyword": "brand associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Integrated & Campaign Marketing"
+    ]
   }
 }
