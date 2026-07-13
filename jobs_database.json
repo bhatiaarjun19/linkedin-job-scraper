@@ -8119,5 +8119,88 @@
       "Cross-functional & Stakeholder",
       "Strong title alignment"
     ]
+  },
+  "4401456737": {
+    "id": "4401456737",
+    "title": "GTM Specialist",
+    "company": "Ivo",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/gtm-specialist-at-ivo-4401456737",
+    "found_date": "2026-07-13T01:29:42.645197",
+    "search_keyword": "product marketing specialist",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$100K - $120K",
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4439122330": {
+    "id": "4439122330",
+    "title": "Marketing Manager",
+    "company": "Zero Heroes",
+    "location": "Los Angeles, CA",
+    "url": "https://www.linkedin.com/jobs/view/marketing-manager-at-zero-heroes-4439122330",
+    "found_date": "2026-07-13T01:29:59.226361",
+    "search_keyword": "brand manager",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Marketing Analytics & Performance",
+      "Integrated & Campaign Marketing",
+      "Strong title alignment"
+    ]
+  },
+  "4413315424": {
+    "id": "4413315424",
+    "title": "Marketing Leader",
+    "company": "Moment",
+    "location": "New York, NY",
+    "url": "https://www.linkedin.com/jobs/view/marketing-leader-at-moment-4413315424",
+    "found_date": "2026-07-13T01:30:13.372790",
+    "search_keyword": "brand strategist",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$180K to $250K",
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Tech / SaaS / Startup"
+    ]
+  },
+  "4439112123": {
+    "id": "4439112123",
+    "title": "Marketing Strategy Manager",
+    "company": "RemoteHunter",
+    "location": "United States",
+    "url": "https://www.linkedin.com/jobs/view/marketing-strategy-manager-at-remotehunter-4439112123",
+    "found_date": "2026-07-13T01:30:48.155524",
+    "search_keyword": "campaign marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$65,000 to $100,000 ",
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Marketing Analytics & Performance",
+      "Integrated & Campaign Marketing"
+    ]
   }
 }
