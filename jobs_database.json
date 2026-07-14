@@ -9475,5 +9475,28 @@
     "matched_skills": [
       "Integrated & Campaign Marketing"
     ]
+  },
+  "4440365254": {
+    "id": "4440365254",
+    "title": "Marketing Manager",
+    "company": "HSBC",
+    "location": "New York, NY",
+    "url": "https://www.linkedin.com/jobs/view/marketing-manager-at-hsbc-4440365254",
+    "found_date": "2026-07-14T01:19:09.707225",
+    "search_keyword": "brand marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Consumer & Market Research",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
   }
 }
