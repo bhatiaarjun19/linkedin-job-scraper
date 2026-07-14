@@ -9883,5 +9883,49 @@
     "matched_skills": [
       "Strong title alignment"
     ]
+  },
+  "4438016007": {
+    "id": "4438016007",
+    "title": "Product Marketing",
+    "company": "Applied Materials",
+    "location": "Santa Clara, CA",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-at-applied-materials-4438016007",
+    "found_date": "2026-07-14T17:08:47.179858",
+    "search_keyword": "associate product marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Pricing, Segmentation & Competitive",
+      "Strong title alignment"
+    ]
+  },
+  "4439833722": {
+    "id": "4439833722",
+    "title": "Marketing Manager",
+    "company": "AdLift Inc.",
+    "location": "Burlingame, CA",
+    "url": "https://www.linkedin.com/jobs/view/marketing-manager-at-adlift-inc-4439833722",
+    "found_date": "2026-07-14T17:09:03.803526",
+    "search_keyword": "launch marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Marketing Analytics & Performance",
+      "B2B / Enterprise Marketing",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
   }
 }
