@@ -10628,5 +10628,73 @@
       "Tech / SaaS / Startup",
       "Strong title alignment"
     ]
+  },
+  "4440986820": {
+    "id": "4440986820",
+    "title": "Field Marketing Manager (Celsius and Alani Nu)",
+    "company": "CELSIUS",
+    "location": "Orlando, FL",
+    "url": "https://www.linkedin.com/jobs/view/field-marketing-manager-celsius-and-alani-nu-at-celsius-4440986820",
+    "found_date": "2026-07-15T15:23:03.510962",
+    "search_keyword": "product marketing specialist",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": "$60-$70k",
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "MBA preferred/required",
+      "Strong title alignment"
+    ]
+  },
+  "4440986821": {
+    "id": "4440986821",
+    "title": "Field Marketing Manager (Celsius and Alani Nu)",
+    "company": "CELSIUS",
+    "location": "New York, NY",
+    "url": "https://www.linkedin.com/jobs/view/field-marketing-manager-celsius-and-alani-nu-at-celsius-4440986821",
+    "found_date": "2026-07-15T15:23:25.087573",
+    "search_keyword": "associate brand manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": "$60-$70k",
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "MBA preferred/required",
+      "Strong title alignment"
+    ]
+  },
+  "4440203201": {
+    "id": "4440203201",
+    "title": "Brand Manager",
+    "company": "Jobgether",
+    "location": "United States",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-at-jobgether-4440203201",
+    "found_date": "2026-07-15T15:23:28.285437",
+    "search_keyword": "brand marketing manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Strong title alignment"
+    ]
   }
 }
