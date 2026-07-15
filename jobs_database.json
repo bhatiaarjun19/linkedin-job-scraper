@@ -10233,5 +10233,91 @@
     "matched_skills": [
       "Strong title alignment"
     ]
+  },
+  "4438031433": {
+    "id": "4438031433",
+    "title": "Product Marketing Manager",
+    "company": "Thoughtly",
+    "location": "New York, NY",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-at-thoughtly-4438031433",
+    "found_date": "2026-07-15T01:15:23.672969",
+    "search_keyword": "product marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 7,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "B2B / Enterprise Marketing",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4439935229": {
+    "id": "4439935229",
+    "title": "Product Marketing Manager, Research & Safety",
+    "company": "OpenAI",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-research-safety-at-openai-4439935229",
+    "found_date": "2026-07-15T01:15:27.483632",
+    "search_keyword": "associate product marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$221K - $245K",
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4438019910": {
+    "id": "4438019910",
+    "title": "Associate Omni Retail Marketing Analyst",
+    "company": "Mattel, Inc.",
+    "location": "El Segundo, CA",
+    "url": "https://www.linkedin.com/jobs/view/associate-omni-retail-marketing-analyst-at-mattel-inc-4438019910",
+    "found_date": "2026-07-15T01:16:02.436424",
+    "search_keyword": "brand associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Consumer & Market Research",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods"
+    ]
+  },
+  "4439849746": {
+    "id": "4439849746",
+    "title": "Marketing Manager - Global Security Vendor",
+    "company": "StealthWatch",
+    "location": "United States",
+    "url": "https://www.linkedin.com/jobs/view/marketing-manager-global-security-vendor-at-stealthwatch-4439849746",
+    "found_date": "2026-07-15T01:16:13.257310",
+    "search_keyword": "brand and integrated marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Strong title alignment"
+    ]
   }
 }
