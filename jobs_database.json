@@ -12272,5 +12272,168 @@
     "matched_skills": [
       "MBA preferred/required"
     ]
+  },
+  "4441625142": {
+    "id": "4441625142",
+    "title": "Product Marketing Manager",
+    "company": "Best Buy",
+    "location": "New York, NY",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-at-best-buy-4441625142",
+    "found_date": "2026-07-16T19:02:04.570224",
+    "search_keyword": "associate product marketing manager",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4441499837": {
+    "id": "4441499837",
+    "title": "Marketing Specialist",
+    "company": "Four Hands",
+    "location": "Austin, TX",
+    "url": "https://www.linkedin.com/jobs/view/marketing-specialist-at-four-hands-4441499837",
+    "found_date": "2026-07-16T19:02:08.240295",
+    "search_keyword": "product marketing associate",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Integrated & Campaign Marketing",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder"
+    ]
+  },
+  "4438751137": {
+    "id": "4438751137",
+    "title": "Associate Manager, Product Marketing - Monster High",
+    "company": "Mattel, Inc.",
+    "location": "El Segundo, CA",
+    "url": "https://www.linkedin.com/jobs/view/associate-manager-product-marketing-monster-high-at-mattel-inc-4438751137",
+    "found_date": "2026-07-16T19:02:08.240578",
+    "search_keyword": "product marketing associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 10,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Integrated & Campaign Marketing",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "MBA preferred/required",
+      "Strong title alignment"
+    ]
+  },
+  "4441644447": {
+    "id": "4441644447",
+    "title": "Brand Manager - Hendrick's",
+    "company": "Women of the Vine & Spirits",
+    "location": "New York, NY",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-hendrick-s-at-women-of-the-vine-spirits-4441644447",
+    "found_date": "2026-07-16T19:02:28.943876",
+    "search_keyword": "brand manager",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": "$107,000 - $130,000",
+    "relevance_score": 7,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "Healthcare / Global Health",
+      "Strong title alignment"
+    ]
+  },
+  "4440759686": {
+    "id": "4440759686",
+    "title": "Brand Strategy Manager",
+    "company": "Akkodis",
+    "location": "Burbank, CA",
+    "url": "https://www.linkedin.com/jobs/view/brand-strategy-manager-at-akkodis-4440759686",
+    "found_date": "2026-07-16T19:02:28.944744",
+    "search_keyword": "brand manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$45-$50 ",
+    "relevance_score": 8,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Consumer & Market Research",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "Tech / SaaS / Startup",
+      "MBA preferred/required",
+      "Strong title alignment"
+    ]
+  },
+  "4440751104": {
+    "id": "4440751104",
+    "title": "Marketing Specialist",
+    "company": "LHH",
+    "location": "Columbus, Ohio Metropolitan Area",
+    "url": "https://www.linkedin.com/jobs/view/marketing-specialist-at-lhh-4440751104",
+    "found_date": "2026-07-16T19:02:40.410749",
+    "search_keyword": "brand associate",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 7,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Consumer & Market Research",
+      "Integrated & Campaign Marketing",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup"
+    ]
+  },
+  "4441499231": {
+    "id": "4441499231",
+    "title": "Influencer Marketing Associate",
+    "company": "Kaleidos Makeup",
+    "location": "Austin, TX",
+    "url": "https://www.linkedin.com/jobs/view/influencer-marketing-associate-at-kaleidos-makeup-4441499231",
+    "found_date": "2026-07-16T19:02:40.411113",
+    "search_keyword": "brand associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Strong title alignment"
+    ]
   }
 }
