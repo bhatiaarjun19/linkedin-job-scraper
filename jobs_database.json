@@ -4222,31 +4222,6 @@
       "Strong title alignment"
     ]
   },
-  "4438846832": {
-    "id": "4438846832",
-    "title": "Marketing Manager",
-    "company": "Safeway",
-    "location": "Pleasanton, CA",
-    "url": "https://www.linkedin.com/jobs/view/marketing-manager-at-safeway-4438846832",
-    "found_date": "2026-07-10T14:10:49.910413",
-    "search_keyword": "brand marketing manager",
-    "years_required": "Not specified",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 8,
-    "match_label": "Excellent Match",
-    "label_color": "#137333",
-    "label_bg": "#e6f4ea",
-    "matched_skills": [
-      "Brand Strategy & Management",
-      "Go-To-Market & Product Launch",
-      "Consumer & Market Research",
-      "Marketing Analytics & Performance",
-      "Integrated & Campaign Marketing",
-      "Cross-functional & Stakeholder",
-      "Strong title alignment"
-    ]
-  },
   "4390602860": {
     "id": "4390602860",
     "title": "Marketing Associate",
@@ -15406,6 +15381,276 @@
       "Marketing Analytics & Performance",
       "Cross-functional & Stakeholder",
       "Strong title alignment"
+    ]
+  },
+  "4441786271": {
+    "id": "4441786271",
+    "title": "Product Marketing Manager ($130k-$170k + Equity) at Hyperbound",
+    "company": "Jack & Jill",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-%24130k-%24170k-%2B-equity-at-hyperbound-at-jack-jill-4441786271",
+    "found_date": "2026-07-19T15:03:02.148164",
+    "search_keyword": "product marketing manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": "$130k-$170k",
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "B2B / Enterprise Marketing",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4411547165": {
+    "id": "4411547165",
+    "title": "Product Marketing Manager",
+    "company": "KLA",
+    "location": "Totowa, NJ",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-at-kla-4411547165",
+    "found_date": "2026-07-19T15:03:08.245227",
+    "search_keyword": "product marketing associate",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Pricing, Segmentation & Competitive",
+      "Strong title alignment"
+    ]
+  },
+  "4434209912": {
+    "id": "4434209912",
+    "title": "Field Marketing Manager, Amazon Business",
+    "company": "Amazon",
+    "location": "Austin, TX",
+    "url": "https://www.linkedin.com/jobs/view/field-marketing-manager-amazon-business-at-amazon-4434209912",
+    "found_date": "2026-07-19T15:03:11.737232",
+    "search_keyword": "product marketing specialist",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "B2B / Enterprise Marketing",
+      "Integrated & Campaign Marketing",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4384319520": {
+    "id": "4384319520",
+    "title": "Social Media Marketing Manager",
+    "company": "SOPHiA GENETICS",
+    "location": "Boston, MA",
+    "url": "https://www.linkedin.com/jobs/view/social-media-marketing-manager-at-sophia-genetics-4384319520",
+    "found_date": "2026-07-19T15:03:19.457572",
+    "search_keyword": "SaaS product marketing manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": "$71,250 - $143,750 ",
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "B2B / Enterprise Marketing",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "Healthcare / Global Health",
+      "Strong title alignment"
+    ]
+  },
+  "4441784279": {
+    "id": "4441784279",
+    "title": "Content Marketing Manager ($150K - $200K + Equity) at Console",
+    "company": "Jack & Jill",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/content-marketing-manager-%24150k-%24200k-%2B-equity-at-console-at-jack-jill-4441784279",
+    "found_date": "2026-07-19T15:03:22.490715",
+    "search_keyword": "launch marketing manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": "$150K - $200K",
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "B2B / Enterprise Marketing",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4442475522": {
+    "id": "4442475522",
+    "title": "Manager, Marketing Operations",
+    "company": "Swooped",
+    "location": "United States",
+    "url": "https://www.linkedin.com/jobs/view/manager-marketing-operations-at-swooped-4442475522",
+    "found_date": "2026-07-19T15:03:22.491217",
+    "search_keyword": "launch marketing manager",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Marketing Analytics & Performance",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup"
+    ]
+  },
+  "4411513030": {
+    "id": "4411513030",
+    "title": "Marketing Manager",
+    "company": "MASA",
+    "location": "Miami-Fort Lauderdale Area",
+    "url": "https://www.linkedin.com/jobs/view/marketing-manager-at-masa-4411513030",
+    "found_date": "2026-07-19T15:03:22.491449",
+    "search_keyword": "launch marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Marketing Analytics & Performance",
+      "Integrated & Campaign Marketing",
+      "Healthcare / Global Health",
+      "Strong title alignment"
+    ]
+  },
+  "4441737973": {
+    "id": "4441737973",
+    "title": "Marketing Specialist",
+    "company": "Bell Flavors & Fragrances",
+    "location": "Northbrook, IL",
+    "url": "https://www.linkedin.com/jobs/view/marketing-specialist-at-bell-flavors-fragrances-4441737973",
+    "found_date": "2026-07-19T15:03:38.170054",
+    "search_keyword": "brand associate",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": "$70,000 - $85,000 ",
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Marketing Analytics & Performance",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder"
+    ]
+  },
+  "4412073395": {
+    "id": "4412073395",
+    "title": "Specialist, Marketing Compliance",
+    "company": "Ross Stores, Inc.",
+    "location": "Dublin, CA",
+    "url": "https://www.linkedin.com/jobs/view/specialist-marketing-compliance-at-ross-stores-inc-4412073395",
+    "found_date": "2026-07-19T15:03:38.170392",
+    "search_keyword": "brand associate",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": "$70,310 - $101,400",
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Cross-functional & Stakeholder"
+    ]
+  },
+  "4439272582": {
+    "id": "4439272582",
+    "title": "Event Marketing Associate",
+    "company": "Thatch",
+    "location": "Austin, TX",
+    "url": "https://www.linkedin.com/jobs/view/event-marketing-associate-at-thatch-4439272582",
+    "found_date": "2026-07-19T15:03:38.170506",
+    "search_keyword": "brand associate",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "B2B / Enterprise Marketing",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "Healthcare / Global Health",
+      "Strong title alignment"
+    ]
+  },
+  "4414276592": {
+    "id": "4414276592",
+    "title": "Manager, Marketing Strategy",
+    "company": "iHeartMedia",
+    "location": "Los Angeles, CA",
+    "url": "https://www.linkedin.com/jobs/view/manager-marketing-strategy-at-iheartmedia-4414276592",
+    "found_date": "2026-07-19T15:03:44.701265",
+    "search_keyword": "brand strategy manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$96,000 - $120,000 ",
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Marketing Analytics & Performance",
+      "Cross-functional & Stakeholder"
+    ]
+  },
+  "4397331327": {
+    "id": "4397331327",
+    "title": "Mgr, B2B Marketing",
+    "company": "Tractor Supply Company",
+    "location": "Brentwood, TN",
+    "url": "https://www.linkedin.com/jobs/view/mgr-b2b-marketing-at-tractor-supply-company-4397331327",
+    "found_date": "2026-07-19T15:03:54.471680",
+    "search_keyword": "B2B brand manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 8,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Marketing Analytics & Performance",
+      "B2B / Enterprise Marketing",
+      "Integrated & Campaign Marketing",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder"
     ]
   }
 }
