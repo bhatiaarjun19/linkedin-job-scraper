@@ -17877,5 +17877,49 @@
       "CPG / Consumer Goods",
       "Strong title alignment"
     ]
+  },
+  "4442211545": {
+    "id": "4442211545",
+    "title": "Digital Marketing Specialist",
+    "company": "81 North",
+    "location": "New York City Metropolitan Area",
+    "url": "https://www.linkedin.com/jobs/view/digital-marketing-specialist-at-81-north-4442211545",
+    "found_date": "2026-07-20T22:54:26.904943",
+    "search_keyword": "product marketing specialist",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "B2B / Enterprise Marketing"
+    ]
+  },
+  "4434319844": {
+    "id": "4434319844",
+    "title": "Marketing Manager, Go-To-Market",
+    "company": "Imprint",
+    "location": "New York City Metropolitan Area",
+    "url": "https://www.linkedin.com/jobs/view/marketing-manager-go-to-market-at-imprint-4434319844",
+    "found_date": "2026-07-20T22:54:36.553968",
+    "search_keyword": "launch marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 8,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Marketing Analytics & Performance",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "Healthcare / Global Health",
+      "Strong title alignment"
+    ]
   }
 }
