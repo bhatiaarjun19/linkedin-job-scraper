@@ -18443,5 +18443,75 @@
       "CPG / Consumer Goods",
       "Strong title alignment"
     ]
+  },
+  "4434798054": {
+    "id": "4434798054",
+    "title": "Product Marketing Manager",
+    "company": "Zello",
+    "location": "Austin, TX",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-at-zello-4434798054",
+    "found_date": "2026-07-21T17:11:59.564628",
+    "search_keyword": "SaaS product marketing manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "B2B / Enterprise Marketing",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4443366570": {
+    "id": "4443366570",
+    "title": "Partner Marketing Manager",
+    "company": "OperatorVC",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/partner-marketing-manager-at-operatorvc-4443366570",
+    "found_date": "2026-07-21T17:12:02.635851",
+    "search_keyword": "launch marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$235,000-$260,000 ",
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Marketing Analytics & Performance",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4431557647": {
+    "id": "4431557647",
+    "title": "Brand Manager, Melissa & Doug",
+    "company": "Spin Master",
+    "location": "Wilton, CT",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-melissa-doug-at-spin-master-4431557647",
+    "found_date": "2026-07-21T17:12:06.583762",
+    "search_keyword": "product launch manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$100,000 to $120,000 ",
+    "relevance_score": 7,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "Strong title alignment"
+    ]
   }
 }
