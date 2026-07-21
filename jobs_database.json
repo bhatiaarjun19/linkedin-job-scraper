@@ -18055,5 +18055,98 @@
       "MBA preferred/required",
       "Strong title alignment"
     ]
+  },
+  "4443075660": {
+    "id": "4443075660",
+    "title": "Product Marketing Manager",
+    "company": "Zscaler",
+    "location": "San Jose, CA",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-at-zscaler-4443075660",
+    "found_date": "2026-07-21T04:56:47.287861",
+    "search_keyword": "product marketing manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 8,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "B2B / Enterprise Marketing",
+      "Integrated & Campaign Marketing",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4442265309": {
+    "id": "4442265309",
+    "title": "Product Marketing Manager ($130k-$170k + Equity) at Hyperbound",
+    "company": "Jack & Jill",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-%24130k-%24170k-%2B-equity-at-hyperbound-at-jack-jill-4442265309",
+    "found_date": "2026-07-21T04:56:47.288631",
+    "search_keyword": "product marketing manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": "$130k-$170k",
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "B2B / Enterprise Marketing",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4440421103": {
+    "id": "4440421103",
+    "title": "Product Marketing Manager, Retail",
+    "company": "Uber",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-retail-at-uber-4440421103",
+    "found_date": "2026-07-21T04:57:00.588923",
+    "search_keyword": "B2B product marketing manager",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4443042815": {
+    "id": "4443042815",
+    "title": "Product Marketing Manager - Tech, Product Marketing, Agentic AI Developer Tools",
+    "company": "Amazon Web Services (AWS)",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-tech-product-marketing-agentic-ai-developer-tools-at-amazon-web-services-aws-4443042815",
+    "found_date": "2026-07-21T04:57:03.944462",
+    "search_keyword": "SaaS product marketing manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Pricing, Segmentation & Competitive",
+      "Tech / SaaS / Startup",
+      "MBA preferred/required",
+      "Strong title alignment"
+    ]
   }
 }
