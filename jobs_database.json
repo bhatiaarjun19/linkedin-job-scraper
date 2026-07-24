@@ -21961,5 +21961,74 @@
       "Healthcare / Global Health",
       "Strong title alignment"
     ]
+  },
+  "4444005729": {
+    "id": "4444005729",
+    "title": "Brand Management Specialist",
+    "company": "24 Seven Talent",
+    "location": "Los Angeles, CA",
+    "url": "https://www.linkedin.com/jobs/view/brand-management-specialist-at-24-seven-talent-4444005729",
+    "found_date": "2026-07-24T01:28:50.062831",
+    "search_keyword": "product marketing associate",
+    "years_required": "1+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder"
+    ]
+  },
+  "4444719176": {
+    "id": "4444719176",
+    "title": "Product Marketing Manager",
+    "company": "Hammer Media",
+    "location": "Austin, TX",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-at-hammer-media-4444719176",
+    "found_date": "2026-07-24T01:29:03.653213",
+    "search_keyword": "launch marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4413637650": {
+    "id": "4413637650",
+    "title": "Retail Marketing Associate",
+    "company": "HEYDUDE",
+    "location": "Westwood, MA",
+    "url": "https://www.linkedin.com/jobs/view/retail-marketing-associate-at-heydude-4413637650",
+    "found_date": "2026-07-24T01:29:51.725319",
+    "search_keyword": "marketing associate",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": "$60,000 - $70,000 ",
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Marketing Analytics & Performance",
+      "Integrated & Campaign Marketing",
+      "CPG / Consumer Goods",
+      "Strong title alignment"
+    ]
   }
 }
