@@ -22313,5 +22313,91 @@
       "Cross-functional & Stakeholder",
       "MBA preferred/required"
     ]
+  },
+  "4444349872": {
+    "id": "4444349872",
+    "title": "Influencer Marketing Specialist",
+    "company": "Autumn Communications",
+    "location": "New York, United States",
+    "url": "https://www.linkedin.com/jobs/view/influencer-marketing-specialist-at-autumn-communications-4444349872",
+    "found_date": "2026-07-24T15:21:58.276826",
+    "search_keyword": "product marketing associate",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Integrated & Campaign Marketing"
+    ]
+  },
+  "4444949275": {
+    "id": "4444949275",
+    "title": "Product Marketing Manager (US)",
+    "company": "PVcase",
+    "location": "United States",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-us-at-pvcase-4444949275",
+    "found_date": "2026-07-24T15:21:58.276959",
+    "search_keyword": "product marketing associate",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Pricing, Segmentation & Competitive",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4444733579": {
+    "id": "4444733579",
+    "title": "Marketing Specialist",
+    "company": "Net2Source (N2S)",
+    "location": "United States",
+    "url": "https://www.linkedin.com/jobs/view/marketing-specialist-at-net2source-n2s-4444733579",
+    "found_date": "2026-07-24T15:21:58.277023",
+    "search_keyword": "product marketing associate",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": "$38-$42",
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "B2B / Enterprise Marketing",
+      "Cross-functional & Stakeholder"
+    ]
+  },
+  "4321401207": {
+    "id": "4321401207",
+    "title": "Lead Product Marketing Manager",
+    "company": "Abacum",
+    "location": "New York, NY",
+    "url": "https://www.linkedin.com/jobs/view/lead-product-marketing-manager-at-abacum-4321401207",
+    "found_date": "2026-07-24T15:22:01.912753",
+    "search_keyword": "product marketing specialist",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "B2B / Enterprise Marketing",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
   }
 }
