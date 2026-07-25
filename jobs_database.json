@@ -23474,5 +23474,91 @@
       "CPG / Consumer Goods",
       "Strong title alignment"
     ]
+  },
+  "4445279776": {
+    "id": "4445279776",
+    "title": "Product Marketing Manager",
+    "company": "Laurel",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-at-laurel-4445279776",
+    "found_date": "2026-07-25T16:51:30.584084",
+    "search_keyword": "product marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Strong title alignment"
+    ]
+  },
+  "4399098441": {
+    "id": "4399098441",
+    "title": "Product Marketing Manager, Chronosphere",
+    "company": "Palo Alto Networks",
+    "location": "Santa Clara, CA",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-chronosphere-at-palo-alto-networks-4399098441",
+    "found_date": "2026-07-25T16:51:44.425967",
+    "search_keyword": "B2B product marketing manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "B2B / Enterprise Marketing",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4398843937": {
+    "id": "4398843937",
+    "title": "Brand Marketing Lead, Wholesale Premium",
+    "company": "Ralph Lauren",
+    "location": "New York, NY",
+    "url": "https://www.linkedin.com/jobs/view/brand-marketing-lead-wholesale-premium-at-ralph-lauren-4398843937",
+    "found_date": "2026-07-25T16:52:18.430455",
+    "search_keyword": "brand and integrated marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$90,000 - $180,000 ",
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4408039193": {
+    "id": "4408039193",
+    "title": "Category Manager - Private Brands",
+    "company": "Chewy",
+    "location": "Plantation, FL",
+    "url": "https://www.linkedin.com/jobs/view/category-manager-private-brands-at-chewy-4408039193",
+    "found_date": "2026-07-25T16:52:24.260359",
+    "search_keyword": "B2B brand manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": "$110,500 - $176,000",
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "CPG / Consumer Goods"
+    ]
   }
 }
