@@ -23635,5 +23635,86 @@
     "label_color": "#e37400",
     "label_bg": "#fef7e0",
     "matched_skills": []
+  },
+  "4445240210": {
+    "id": "4445240210",
+    "title": "Product Marketing, Data Products",
+    "company": "Stripe",
+    "location": "United States",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-data-products-at-stripe-4445240210",
+    "found_date": "2026-07-25T20:43:15.956356",
+    "search_keyword": "associate product marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Strong title alignment"
+    ]
+  },
+  "4427255444": {
+    "id": "4427255444",
+    "title": "Marketing Manager, Digital Events",
+    "company": "Whatnot",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/marketing-manager-digital-events-at-whatnot-4427255444",
+    "found_date": "2026-07-25T20:43:33.576183",
+    "search_keyword": "launch marketing manager",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": "$126K - $140K",
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4427613244": {
+    "id": "4427613244",
+    "title": "Program Manager Commercialization Cobra Golf",
+    "company": "PUMA Group",
+    "location": "Carlsbad, CA",
+    "url": "https://www.linkedin.com/jobs/view/program-manager-commercialization-cobra-golf-at-puma-group-4427613244",
+    "found_date": "2026-07-25T20:43:36.924707",
+    "search_keyword": "product launch manager",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": "$70,304 - $83,380 ",
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup"
+    ]
+  },
+  "4445333900": {
+    "id": "4445333900",
+    "title": "Entry-Level Direct Marketing Associate",
+    "company": "NY Eventss",
+    "location": "New York City Metropolitan Area",
+    "url": "https://www.linkedin.com/jobs/view/entry-level-direct-marketing-associate-at-ny-eventss-4445333900",
+    "found_date": "2026-07-25T20:43:50.874550",
+    "search_keyword": "brand associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Integrated & Campaign Marketing",
+      "Strong title alignment"
+    ]
   }
 }
