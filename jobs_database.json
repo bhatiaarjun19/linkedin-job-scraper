@@ -25474,5 +25474,136 @@
     "label_color": "#e37400",
     "label_bg": "#fef7e0",
     "matched_skills": []
+  },
+  "4445670643": {
+    "id": "4445670643",
+    "title": "Product Marketing Manager, Core Product",
+    "company": "Andrew & Brothers, Inc.",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-core-product-at-andrew-brothers-inc-4445670643",
+    "found_date": "2026-07-27T05:37:50.309317",
+    "search_keyword": "associate product marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$175,000 - $225,000 ",
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4445662398": {
+    "id": "4445662398",
+    "title": "Brand Portfolio Manager",
+    "company": "Community Coffee",
+    "location": "Baton Rouge, LA",
+    "url": "https://www.linkedin.com/jobs/view/brand-portfolio-manager-at-community-coffee-4445662398",
+    "found_date": "2026-07-27T05:38:13.574968",
+    "search_keyword": "brand manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 8,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods"
+    ]
+  },
+  "4444873144": {
+    "id": "4444873144",
+    "title": "Associate Marketer-Category Marketing",
+    "company": "Lowe's Companies, Inc.",
+    "location": "Mooresville, NC",
+    "url": "https://www.linkedin.com/jobs/view/associate-marketer-category-marketing-at-lowe-s-companies-inc-4444873144",
+    "found_date": "2026-07-27T05:38:23.492143",
+    "search_keyword": "brand associate",
+    "years_required": "1+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder"
+    ]
+  },
+  "4444872505": {
+    "id": "4444872505",
+    "title": "Marketing Associate",
+    "company": "S.H.O.W. ATL",
+    "location": "Atlanta, GA",
+    "url": "https://www.linkedin.com/jobs/view/marketing-associate-at-s-h-o-w-atl-4444872505",
+    "found_date": "2026-07-27T05:38:54.693229",
+    "search_keyword": "marketing associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Consumer & Market Research",
+      "Integrated & Campaign Marketing",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4444893085": {
+    "id": "4444893085",
+    "title": "Marketing Communications Associate",
+    "company": "Enlightened ATL",
+    "location": "Marietta, GA",
+    "url": "https://www.linkedin.com/jobs/view/marketing-communications-associate-at-enlightened-atl-4444893085",
+    "found_date": "2026-07-27T05:38:54.693939",
+    "search_keyword": "marketing associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Integrated & Campaign Marketing"
+    ]
+  },
+  "4445674510": {
+    "id": "4445674510",
+    "title": "Field Marketing Manager - Urology",
+    "company": "Boston Scientific",
+    "location": "Washington, DC",
+    "url": "https://www.linkedin.com/jobs/view/field-marketing-manager-urology-at-boston-scientific-4445674510",
+    "found_date": "2026-07-27T05:39:11.617311",
+    "search_keyword": "segment marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Healthcare / Global Health",
+      "Strong title alignment"
+    ]
   }
 }
