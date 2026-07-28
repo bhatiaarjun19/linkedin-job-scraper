@@ -27813,5 +27813,71 @@
     "matched_skills": [
       "Brand Strategy & Management"
     ]
+  },
+  "4446389276": {
+    "id": "4446389276",
+    "title": "Content Marketing",
+    "company": "talentpluto",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/content-marketing-at-talentpluto-4446389276",
+    "found_date": "2026-07-28T22:54:16.945904",
+    "search_keyword": "product marketing associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Tech / SaaS / Startup"
+    ]
+  },
+  "4446380579": {
+    "id": "4446380579",
+    "title": "Marketing Specialist",
+    "company": "Nimble Gravity",
+    "location": "Denver, CO",
+    "url": "https://www.linkedin.com/jobs/view/marketing-specialist-at-nimble-gravity-4446380579",
+    "found_date": "2026-07-28T22:54:16.946455",
+    "search_keyword": "product marketing associate",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Marketing Analytics & Performance",
+      "B2B / Enterprise Marketing",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder"
+    ]
+  },
+  "4443632449": {
+    "id": "4443632449",
+    "title": "Associate Manager, Toy Marketing - American Girl",
+    "company": "Mattel, Inc.",
+    "location": "El Segundo, CA",
+    "url": "https://www.linkedin.com/jobs/view/associate-manager-toy-marketing-american-girl-at-mattel-inc-4443632449",
+    "found_date": "2026-07-28T22:54:42.376837",
+    "search_keyword": "associate brand manager",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Consumer & Market Research",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "MBA preferred/required"
+    ]
   }
 }
