@@ -29171,5 +29171,44 @@
       "Tech / SaaS / Startup",
       "Strong title alignment"
     ]
+  },
+  "4444137241": {
+    "id": "4444137241",
+    "title": "Brand Management Specialist",
+    "company": "Rad Marketing Agency",
+    "location": "Greater Phoenix Area",
+    "url": "https://www.linkedin.com/jobs/view/brand-management-specialist-at-rad-marketing-agency-4444137241",
+    "found_date": "2026-07-30T04:46:18.838289",
+    "search_keyword": "brand associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Marketing Analytics & Performance"
+    ]
+  },
+  "4446437668": {
+    "id": "4446437668",
+    "title": "Growth Marketing Manager",
+    "company": "BillGO",
+    "location": "United States",
+    "url": "https://www.linkedin.com/jobs/view/growth-marketing-manager-at-billgo-4446437668",
+    "found_date": "2026-07-30T04:46:57.068647",
+    "search_keyword": "campaign marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Strong title alignment"
+    ]
   }
 }
