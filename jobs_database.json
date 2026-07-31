@@ -30471,5 +30471,66 @@
       "MBA preferred/required",
       "Strong title alignment"
     ]
+  },
+  "4447262882": {
+    "id": "4447262882",
+    "title": "Technical Product Marketing, Content",
+    "company": "Exa",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/technical-product-marketing-content-at-exa-4447262882",
+    "found_date": "2026-07-31T17:41:54.324154",
+    "search_keyword": "associate product marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$150K - $250K",
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4392880527": {
+    "id": "4392880527",
+    "title": "Technical Product Marketing Manager",
+    "company": "Port.io",
+    "location": "Boston, MA",
+    "url": "https://www.linkedin.com/jobs/view/technical-product-marketing-manager-at-port-io-4392880527",
+    "found_date": "2026-07-31T17:41:54.324643",
+    "search_keyword": "associate product marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4446947872": {
+    "id": "4446947872",
+    "title": "Associate Business Manager, Own Brands",
+    "company": "Advantage Solutions",
+    "location": "Chicago, IL",
+    "url": "https://www.linkedin.com/jobs/view/associate-business-manager-own-brands-at-advantage-solutions-4446947872",
+    "found_date": "2026-07-31T17:42:22.250347",
+    "search_keyword": "associate brand manager",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management"
+    ]
   }
 }
