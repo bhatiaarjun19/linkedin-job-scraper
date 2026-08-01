@@ -31991,5 +31991,91 @@
       "Integrated & Campaign Marketing",
       "MBA preferred/required"
     ]
+  },
+  "4445555139": {
+    "id": "4445555139",
+    "title": "Marketing Specialist",
+    "company": "Vynca",
+    "location": "Colorado, United States",
+    "url": "https://www.linkedin.com/jobs/view/marketing-specialist-at-vynca-4445555139",
+    "found_date": "2026-08-01T20:44:02.252705",
+    "search_keyword": "brand associate",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": "$85K - $100K",
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Healthcare / Global Health"
+    ]
+  },
+  "4447417644": {
+    "id": "4447417644",
+    "title": "Director-Brand Marketing Innovation",
+    "company": "GuruNanda LLC",
+    "location": "Buena Park, CA",
+    "url": "https://www.linkedin.com/jobs/view/director-brand-marketing-innovation-at-gurunanda-llc-4447417644",
+    "found_date": "2026-08-01T20:44:05.204383",
+    "search_keyword": "brand strategist",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "CPG / Consumer Goods",
+      "Strong title alignment"
+    ]
+  },
+  "4436621191": {
+    "id": "4436621191",
+    "title": "Advisor, Marketing Manager - Retail Grinds",
+    "company": "Cargill",
+    "location": "Wayzata, MN",
+    "url": "https://www.linkedin.com/jobs/view/advisor-marketing-manager-retail-grinds-at-cargill-4436621191",
+    "found_date": "2026-08-01T20:44:18.251352",
+    "search_keyword": "B2B brand manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$130,000 - $175,000",
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "Strong title alignment"
+    ]
+  },
+  "4445543377": {
+    "id": "4445543377",
+    "title": "Partnership Marketing Associate",
+    "company": "Affilial.com",
+    "location": "New York, United States",
+    "url": "https://www.linkedin.com/jobs/view/partnership-marketing-associate-at-affilial-com-4445543377",
+    "found_date": "2026-08-01T20:44:31.929338",
+    "search_keyword": "marketing associate",
+    "years_required": "1+ years",
+    "key_skills": [],
+    "salary": "$30,000 to $45,000 ",
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Marketing Analytics & Performance",
+      "B2B / Enterprise Marketing",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
   }
 }
