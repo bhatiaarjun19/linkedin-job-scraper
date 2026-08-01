@@ -31603,5 +31603,88 @@
       "Healthcare / Global Health",
       "Strong title alignment"
     ]
+  },
+  "4447813366": {
+    "id": "4447813366",
+    "title": "Marketing & LeadGen",
+    "company": "Soofa",
+    "location": "United States",
+    "url": "https://www.linkedin.com/jobs/view/marketing-leadgen-at-soofa-4447813366",
+    "found_date": "2026-08-01T14:55:47.619270",
+    "search_keyword": "product marketing associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch"
+    ]
+  },
+  "4447199513": {
+    "id": "4447199513",
+    "title": "Technical Product Marketing Engineer",
+    "company": "NVIDIA",
+    "location": "Santa Clara, CA",
+    "url": "https://www.linkedin.com/jobs/view/technical-product-marketing-engineer-at-nvidia-4447199513",
+    "found_date": "2026-08-01T14:55:50.719324",
+    "search_keyword": "product marketing specialist",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4447532794": {
+    "id": "4447532794",
+    "title": "Marketing Specialist",
+    "company": "Net2Source (N2S)",
+    "location": "Washington DC-Baltimore Area",
+    "url": "https://www.linkedin.com/jobs/view/marketing-specialist-at-net2source-n2s-4447532794",
+    "found_date": "2026-08-01T14:56:20.599381",
+    "search_keyword": "brand associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Cross-functional & Stakeholder"
+    ]
+  },
+  "4445565801": {
+    "id": "4445565801",
+    "title": "Agency Marketing Manager",
+    "company": "Meta",
+    "location": "Chicago, IL",
+    "url": "https://www.linkedin.com/jobs/view/agency-marketing-manager-at-meta-4445565801",
+    "found_date": "2026-08-01T14:56:42.365156",
+    "search_keyword": "integrated marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Integrated & Campaign Marketing",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
   }
 }
