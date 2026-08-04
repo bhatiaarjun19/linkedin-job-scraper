@@ -34954,5 +34954,52 @@
     "matched_skills": [
       "Brand Strategy & Management"
     ]
+  },
+  "4413358496": {
+    "id": "4413358496",
+    "title": "Marketing Manager",
+    "company": "Blue Heron",
+    "location": "Las Vegas, NV",
+    "url": "https://www.linkedin.com/jobs/view/marketing-manager-at-blue-heron-4413358496",
+    "found_date": "2026-08-04T01:21:02.612220",
+    "search_keyword": "brand marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 7,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Marketing Analytics & Performance",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4446253445": {
+    "id": "4446253445",
+    "title": "Corporate Marketing Comms Lead",
+    "company": "Avalere Health",
+    "location": "New York City Metropolitan Area",
+    "url": "https://www.linkedin.com/jobs/view/corporate-marketing-comms-lead-at-avalere-health-4446253445",
+    "found_date": "2026-08-04T01:21:19.449677",
+    "search_keyword": "corporate brand manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Marketing Analytics & Performance",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "Healthcare / Global Health"
+    ]
   }
 }
