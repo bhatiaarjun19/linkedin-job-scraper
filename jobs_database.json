@@ -35269,5 +35269,65 @@
       "Brand Strategy & Management",
       "Integrated & Campaign Marketing"
     ]
+  },
+  "4449004010": {
+    "id": "4449004010",
+    "title": "Marketing Specialist",
+    "company": "INNERGY",
+    "location": "Austin, TX",
+    "url": "https://www.linkedin.com/jobs/view/marketing-specialist-at-innergy-4449004010",
+    "found_date": "2026-08-04T16:12:50.633337",
+    "search_keyword": "product marketing associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Marketing Analytics & Performance",
+      "Integrated & Campaign Marketing",
+      "Tech / SaaS / Startup"
+    ]
+  },
+  "4448510564": {
+    "id": "4448510564",
+    "title": "Marketing Specialist",
+    "company": "LHH",
+    "location": "Florida, United States",
+    "url": "https://www.linkedin.com/jobs/view/marketing-specialist-at-lhh-4448510564",
+    "found_date": "2026-08-04T16:13:21.185602",
+    "search_keyword": "brand associate",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Tech / SaaS / Startup"
+    ]
+  },
+  "4448663851": {
+    "id": "4448663851",
+    "title": "Brand Manager (East Coast)",
+    "company": "O&M",
+    "location": "United States",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-east-coast-at-o-m-4448663851",
+    "found_date": "2026-08-04T16:13:37.745948",
+    "search_keyword": "B2B brand manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Strong title alignment"
+    ]
   }
 }
