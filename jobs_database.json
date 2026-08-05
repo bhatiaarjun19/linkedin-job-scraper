@@ -36147,5 +36147,67 @@
       "MBA preferred/required",
       "Strong title alignment"
     ]
+  },
+  "4448966349": {
+    "id": "4448966349",
+    "title": "Product Marketing Manager, Core Product",
+    "company": "Cl\u00e9op\u00e2tre",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-core-product-at-cl%C3%A9op%C3%A2tre-4448966349",
+    "found_date": "2026-08-05T15:59:10.835259",
+    "search_keyword": "SaaS product marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$175,000 - $225,000 ",
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4447372688": {
+    "id": "4447372688",
+    "title": "Go-to-Market Product Manager",
+    "company": "NVIDIA AI",
+    "location": "Santa Clara, CA",
+    "url": "https://www.linkedin.com/jobs/view/go-to-market-product-manager-at-nvidia-ai-4447372688",
+    "found_date": "2026-08-05T15:59:18.173218",
+    "search_keyword": "product launch manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Tech / SaaS / Startup"
+    ]
+  },
+  "4449128400": {
+    "id": "4449128400",
+    "title": "Brand Manager, Entertainment (Thalia and Neil Lane)",
+    "company": "Authentic Brands Group",
+    "location": "New York, NY",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-entertainment-thalia-and-neil-lane-at-authentic-brands-group-4449128400",
+    "found_date": "2026-08-05T15:59:21.899286",
+    "search_keyword": "brand manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$85,000 - $95,000 ",
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Strong title alignment"
+    ]
   }
 }
