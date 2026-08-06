@@ -36683,5 +36683,92 @@
       "MBA preferred/required",
       "Strong title alignment"
     ]
+  },
+  "4449124843": {
+    "id": "4449124843",
+    "title": "Product Marketing Manager",
+    "company": "24 Seven Talent",
+    "location": "New York, NY",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-at-24-seven-talent-4449124843",
+    "found_date": "2026-08-06T01:22:41.895443",
+    "search_keyword": "product marketing associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4449950219": {
+    "id": "4449950219",
+    "title": "Product Evangelist I (Global Product Marketing)",
+    "company": "Razer",
+    "location": "Irvine, CA",
+    "url": "https://www.linkedin.com/jobs/view/product-evangelist-i-global-product-marketing-at-razer-4449950219",
+    "found_date": "2026-08-06T01:22:45.784106",
+    "search_keyword": "product marketing specialist",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4448075106": {
+    "id": "4448075106",
+    "title": "TikTok Influencer Marketing Manager, Bliss",
+    "company": "AS Beauty Group",
+    "location": "New York, NY",
+    "url": "https://www.linkedin.com/jobs/view/tiktok-influencer-marketing-manager-bliss-at-as-beauty-group-4448075106",
+    "found_date": "2026-08-06T01:22:55.710972",
+    "search_keyword": "launch marketing manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "Strong title alignment"
+    ]
+  },
+  "4449136555": {
+    "id": "4449136555",
+    "title": "Marketing Manager",
+    "company": "Insight Global",
+    "location": "Los Angeles Metropolitan Area",
+    "url": "https://www.linkedin.com/jobs/view/marketing-manager-at-insight-global-4449136555",
+    "found_date": "2026-08-06T01:22:55.712304",
+    "search_keyword": "launch marketing manager",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
   }
 }
