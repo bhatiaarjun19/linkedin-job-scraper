@@ -37031,5 +37031,96 @@
     "matched_skills": [
       "Strong title alignment"
     ]
+  },
+  "4449747762": {
+    "id": "4449747762",
+    "title": "Brand Manager",
+    "company": "The HEINEKEN Company",
+    "location": "White Plains, NY",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-at-the-heineken-company-4449747762",
+    "found_date": "2026-08-06T16:12:14.635743",
+    "search_keyword": "brand manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": "$110,000 - $125,000 ",
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Marketing Analytics & Performance",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "Strong title alignment"
+    ]
+  },
+  "4449757278": {
+    "id": "4449757278",
+    "title": "Junior Marketing Associate",
+    "company": "S.H.O.W. ATL",
+    "location": "Atlanta, GA",
+    "url": "https://www.linkedin.com/jobs/view/junior-marketing-associate-at-s-h-o-w-atl-4449757278",
+    "found_date": "2026-08-06T16:12:24.437489",
+    "search_keyword": "brand associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Consumer & Market Research",
+      "Integrated & Campaign Marketing",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4449738842": {
+    "id": "4449738842",
+    "title": "Marketing Communications Associate",
+    "company": "S.H.O.W. ATL",
+    "location": "Atlanta Metropolitan Area",
+    "url": "https://www.linkedin.com/jobs/view/marketing-communications-associate-at-s-h-o-w-atl-4449738842",
+    "found_date": "2026-08-06T16:12:24.437694",
+    "search_keyword": "brand associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Consumer & Market Research",
+      "Integrated & Campaign Marketing",
+      "Tech / SaaS / Startup"
+    ]
+  },
+  "4449745806": {
+    "id": "4449745806",
+    "title": "Event Marketing Associate",
+    "company": "S.H.O.W. ATL",
+    "location": "Atlanta Metropolitan Area",
+    "url": "https://www.linkedin.com/jobs/view/event-marketing-associate-at-s-h-o-w-atl-4449745806",
+    "found_date": "2026-08-06T16:12:24.437899",
+    "search_keyword": "brand associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Consumer & Market Research",
+      "Integrated & Campaign Marketing",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
   }
 }
