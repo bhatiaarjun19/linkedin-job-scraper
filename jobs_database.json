@@ -1,96 +1,4 @@
 {
-  "4433288305": {
-    "id": "4433288305",
-    "title": "Product Marketing Manager",
-    "company": "Thomson Reuters",
-    "location": "Eagan, MN",
-    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-at-thomson-reuters-4433288305",
-    "found_date": "2026-07-19T01:38:08.941567",
-    "search_keyword": "product marketing specialist",
-    "years_required": "3+ years",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 7,
-    "match_label": "Strong Match",
-    "label_color": "#1a73e8",
-    "label_bg": "#e8f0fe",
-    "matched_skills": [
-      "Go-To-Market & Product Launch",
-      "B2B / Enterprise Marketing",
-      "Pricing, Segmentation & Competitive",
-      "Cross-functional & Stakeholder",
-      "Tech / SaaS / Startup",
-      "Strong title alignment"
-    ]
-  },
-  "4433897270": {
-    "id": "4433897270",
-    "title": "Institutional Marketing Manager",
-    "company": "Securitize",
-    "location": "United States",
-    "url": "https://www.linkedin.com/jobs/view/institutional-marketing-manager-at-securitize-4433897270",
-    "found_date": "2026-07-19T01:38:20.047115",
-    "search_keyword": "launch marketing manager",
-    "years_required": "2+ years",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 5,
-    "match_label": "Good Match",
-    "label_color": "#e37400",
-    "label_bg": "#fef7e0",
-    "matched_skills": [
-      "Marketing Analytics & Performance",
-      "B2B / Enterprise Marketing",
-      "Integrated & Campaign Marketing",
-      "Pricing, Segmentation & Competitive",
-      "Strong title alignment"
-    ]
-  },
-  "4439624967": {
-    "id": "4439624967",
-    "title": "Brand Strategy and Campaigns, Manager",
-    "company": "Medidata Solutions",
-    "location": "New York, United States",
-    "url": "https://www.linkedin.com/jobs/view/brand-strategy-and-campaigns-manager-at-medidata-solutions-4439624967",
-    "found_date": "2026-07-19T01:38:34.207892",
-    "search_keyword": "brand marketing manager",
-    "years_required": "2+ years",
-    "key_skills": [],
-    "salary": "$96,000-$128,000",
-    "relevance_score": 6,
-    "match_label": "Strong Match",
-    "label_color": "#1a73e8",
-    "label_bg": "#e8f0fe",
-    "matched_skills": [
-      "Brand Strategy & Management",
-      "Marketing Analytics & Performance",
-      "B2B / Enterprise Marketing",
-      "Cross-functional & Stakeholder",
-      "Strong title alignment"
-    ]
-  },
-  "4424114296": {
-    "id": "4424114296",
-    "title": "Insomniac - Marketing Campaign Specialist, YouTube",
-    "company": "Live Nation Entertainment",
-    "location": "Calabasas, CA",
-    "url": "https://www.linkedin.com/jobs/view/insomniac-marketing-campaign-specialist-youtube-at-live-nation-entertainment-4424114296",
-    "found_date": "2026-07-19T01:38:37.364852",
-    "search_keyword": "brand associate",
-    "years_required": "3+ years",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 4,
-    "match_label": "Good Match",
-    "label_color": "#e37400",
-    "label_bg": "#fef7e0",
-    "matched_skills": [
-      "Brand Strategy & Management",
-      "Marketing Analytics & Performance",
-      "Integrated & Campaign Marketing",
-      "Cross-functional & Stakeholder"
-    ]
-  },
   "4442492957": {
     "id": "4442492957",
     "title": "Product Marketing Manager, Core Product",
@@ -33191,6 +33099,55 @@
     "matched_skills": [
       "Cross-functional & Stakeholder",
       "Tech / SaaS / Startup"
+    ]
+  },
+  "4454476153": {
+    "id": "4454476153",
+    "title": "Brand Manager",
+    "company": "Premier Nutrition: The Good Energy People",
+    "location": "Emeryville, CA",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-at-premier-nutrition-the-good-energy-people-4454476153",
+    "found_date": "2026-08-18T02:52:10.852059",
+    "search_keyword": "brand manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": "$150k to $165k",
+    "relevance_score": 8,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "Strong title alignment"
+    ]
+  },
+  "4454476154": {
+    "id": "4454476154",
+    "title": "Associate Brand Manager",
+    "company": "Premier Nutrition: The Good Energy People",
+    "location": "Emeryville, CA",
+    "url": "https://www.linkedin.com/jobs/view/associate-brand-manager-at-premier-nutrition-the-good-energy-people-4454476154",
+    "found_date": "2026-08-18T02:52:14.275770",
+    "search_keyword": "associate brand manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": "$110k to $120k",
+    "relevance_score": 8,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "MBA preferred/required",
+      "Strong title alignment"
     ]
   }
 }
