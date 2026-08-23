@@ -1,73 +1,4 @@
 {
-  "4444005729": {
-    "id": "4444005729",
-    "title": "Brand Management Specialist",
-    "company": "24 Seven Talent",
-    "location": "Los Angeles, CA",
-    "url": "https://www.linkedin.com/jobs/view/brand-management-specialist-at-24-seven-talent-4444005729",
-    "found_date": "2026-07-24T01:28:50.062831",
-    "search_keyword": "product marketing associate",
-    "years_required": "1+ years",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 6,
-    "match_label": "Strong Match",
-    "label_color": "#1a73e8",
-    "label_bg": "#e8f0fe",
-    "matched_skills": [
-      "Brand Strategy & Management",
-      "Go-To-Market & Product Launch",
-      "Consumer & Market Research",
-      "Integrated & Campaign Marketing",
-      "Cross-functional & Stakeholder"
-    ]
-  },
-  "4444719176": {
-    "id": "4444719176",
-    "title": "Product Marketing Manager",
-    "company": "Hammer Media",
-    "location": "Austin, TX",
-    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-at-hammer-media-4444719176",
-    "found_date": "2026-07-24T01:29:03.653213",
-    "search_keyword": "launch marketing manager",
-    "years_required": "Not specified",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 5,
-    "match_label": "Good Match",
-    "label_color": "#e37400",
-    "label_bg": "#fef7e0",
-    "matched_skills": [
-      "Go-To-Market & Product Launch",
-      "Consumer & Market Research",
-      "Integrated & Campaign Marketing",
-      "Cross-functional & Stakeholder",
-      "Strong title alignment"
-    ]
-  },
-  "4413637650": {
-    "id": "4413637650",
-    "title": "Retail Marketing Associate",
-    "company": "HEYDUDE",
-    "location": "Westwood, MA",
-    "url": "https://www.linkedin.com/jobs/view/retail-marketing-associate-at-heydude-4413637650",
-    "found_date": "2026-07-24T01:29:51.725319",
-    "search_keyword": "marketing associate",
-    "years_required": "2+ years",
-    "key_skills": [],
-    "salary": "$60,000 - $70,000 ",
-    "relevance_score": 5,
-    "match_label": "Good Match",
-    "label_color": "#e37400",
-    "label_bg": "#fef7e0",
-    "matched_skills": [
-      "Brand Strategy & Management",
-      "Marketing Analytics & Performance",
-      "Integrated & Campaign Marketing",
-      "CPG / Consumer Goods",
-      "Strong title alignment"
-    ]
-  },
   "4441585176": {
     "id": "4441585176",
     "title": "Global Product Marketing Specialist",
@@ -30303,6 +30234,112 @@
       "Cross-functional & Stakeholder",
       "Tech / SaaS / Startup",
       "Strong title alignment"
+    ]
+  },
+  "4456801523": {
+    "id": "4456801523",
+    "title": "Founding Go-To-Market Operator at Known",
+    "company": "Jack & Jill",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/founding-go-to-market-operator-at-known-at-jack-jill-4456801523",
+    "found_date": "2026-08-23T03:25:44.191683",
+    "search_keyword": "brand associate",
+    "years_required": "1+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Tech / SaaS / Startup"
+    ]
+  },
+  "4430739255": {
+    "id": "4430739255",
+    "title": "B2C Marketing Associate",
+    "company": "VettaFi",
+    "location": "New York, NY",
+    "url": "https://www.linkedin.com/jobs/view/b2c-marketing-associate-at-vettafi-4430739255",
+    "found_date": "2026-08-23T03:26:15.309367",
+    "search_keyword": "marketing associate",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Marketing Analytics & Performance",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4420632025": {
+    "id": "4420632025",
+    "title": "Marketing Associate",
+    "company": "AIPAC",
+    "location": "New York, NY",
+    "url": "https://www.linkedin.com/jobs/view/marketing-associate-at-aipac-4420632025",
+    "found_date": "2026-08-23T03:26:15.309474",
+    "search_keyword": "marketing associate",
+    "years_required": "1+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Marketing Analytics & Performance",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4457834231": {
+    "id": "4457834231",
+    "title": "Direct Marketing Assistant",
+    "company": "Imperio Global",
+    "location": "Rochester, NY",
+    "url": "https://www.linkedin.com/jobs/view/direct-marketing-assistant-at-imperio-global-4457834231",
+    "found_date": "2026-08-23T03:26:15.309576",
+    "search_keyword": "marketing associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Marketing Analytics & Performance",
+      "Integrated & Campaign Marketing"
+    ]
+  },
+  "4455044601": {
+    "id": "4455044601",
+    "title": "Marketing Assistant",
+    "company": "Stone 2000 Enterprises Inc.",
+    "location": "Augusta, GA",
+    "url": "https://www.linkedin.com/jobs/view/marketing-assistant-at-stone-2000-enterprises-inc-4455044601",
+    "found_date": "2026-08-23T03:26:15.309784",
+    "search_keyword": "marketing associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$58,000 - $65,000 ",
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Marketing Analytics & Performance",
+      "Integrated & Campaign Marketing"
     ]
   }
 }
