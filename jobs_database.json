@@ -1,85 +1,4 @@
 {
-  "4445240210": {
-    "id": "4445240210",
-    "title": "Product Marketing, Data Products",
-    "company": "Stripe",
-    "location": "United States",
-    "url": "https://www.linkedin.com/jobs/view/product-marketing-data-products-at-stripe-4445240210",
-    "found_date": "2026-07-25T20:43:15.956356",
-    "search_keyword": "associate product marketing manager",
-    "years_required": "Not specified",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 1,
-    "match_label": "Good Match",
-    "label_color": "#e37400",
-    "label_bg": "#fef7e0",
-    "matched_skills": [
-      "Strong title alignment"
-    ]
-  },
-  "4427255444": {
-    "id": "4427255444",
-    "title": "Marketing Manager, Digital Events",
-    "company": "Whatnot",
-    "location": "San Francisco, CA",
-    "url": "https://www.linkedin.com/jobs/view/marketing-manager-digital-events-at-whatnot-4427255444",
-    "found_date": "2026-07-25T20:43:33.576183",
-    "search_keyword": "launch marketing manager",
-    "years_required": "2+ years",
-    "key_skills": [],
-    "salary": "$126K - $140K",
-    "relevance_score": 3,
-    "match_label": "Good Match",
-    "label_color": "#e37400",
-    "label_bg": "#fef7e0",
-    "matched_skills": [
-      "Cross-functional & Stakeholder",
-      "Tech / SaaS / Startup",
-      "Strong title alignment"
-    ]
-  },
-  "4427613244": {
-    "id": "4427613244",
-    "title": "Program Manager Commercialization Cobra Golf",
-    "company": "PUMA Group",
-    "location": "Carlsbad, CA",
-    "url": "https://www.linkedin.com/jobs/view/program-manager-commercialization-cobra-golf-at-puma-group-4427613244",
-    "found_date": "2026-07-25T20:43:36.924707",
-    "search_keyword": "product launch manager",
-    "years_required": "2+ years",
-    "key_skills": [],
-    "salary": "$70,304 - $83,380 ",
-    "relevance_score": 3,
-    "match_label": "Good Match",
-    "label_color": "#e37400",
-    "label_bg": "#fef7e0",
-    "matched_skills": [
-      "Go-To-Market & Product Launch",
-      "Cross-functional & Stakeholder",
-      "Tech / SaaS / Startup"
-    ]
-  },
-  "4445333900": {
-    "id": "4445333900",
-    "title": "Entry-Level Direct Marketing Associate",
-    "company": "NY Eventss",
-    "location": "New York City Metropolitan Area",
-    "url": "https://www.linkedin.com/jobs/view/entry-level-direct-marketing-associate-at-ny-eventss-4445333900",
-    "found_date": "2026-07-25T20:43:50.874550",
-    "search_keyword": "brand associate",
-    "years_required": "Not specified",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 2,
-    "match_label": "Good Match",
-    "label_color": "#e37400",
-    "label_bg": "#fef7e0",
-    "matched_skills": [
-      "Integrated & Campaign Marketing",
-      "Strong title alignment"
-    ]
-  },
   "4425315938": {
     "id": "4425315938",
     "title": "Product Manager, Marketing Technology",
@@ -31245,6 +31164,253 @@
       "Brand Strategy & Management",
       "Integrated & Campaign Marketing",
       "CPG / Consumer Goods"
+    ]
+  },
+  "4456518481": {
+    "id": "4456518481",
+    "title": "Consumer Go-to-Market Marketing Manager",
+    "company": "AMD",
+    "location": "Austin, TX",
+    "url": "https://www.linkedin.com/jobs/view/consumer-go-to-market-marketing-manager-at-amd-4456518481",
+    "found_date": "2026-08-24T22:16:36.720015",
+    "search_keyword": "launch marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Integrated & Campaign Marketing",
+      "Tech / SaaS / Startup",
+      "Healthcare / Global Health",
+      "Strong title alignment"
+    ]
+  },
+  "4453725934": {
+    "id": "4453725934",
+    "title": "Product Go to Market Manager II",
+    "company": "Cambia Health Solutions",
+    "location": "Fargo, ND",
+    "url": "https://www.linkedin.com/jobs/view/product-go-to-market-manager-ii-at-cambia-health-solutions-4453725934",
+    "found_date": "2026-08-24T22:16:40.082725",
+    "search_keyword": "product launch manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": "$101,200 - $136,900, ",
+    "relevance_score": 6,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Cross-functional & Stakeholder",
+      "Healthcare / Global Health",
+      "Strong title alignment"
+    ]
+  },
+  "4457180422": {
+    "id": "4457180422",
+    "title": "Brand Manager",
+    "company": "Hill's Pet Nutrition",
+    "location": "Overland Park, KS",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-at-hill-s-pet-nutrition-4457180422",
+    "found_date": "2026-08-24T22:16:43.224359",
+    "search_keyword": "brand manager",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 9,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "Healthcare / Global Health",
+      "Strong title alignment"
+    ]
+  },
+  "4458515085": {
+    "id": "4458515085",
+    "title": "Brand Manager",
+    "company": "Lack + Daily Marketing Recruiting Experts",
+    "location": "White Plains, NY",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-at-lack-%2B-daily-marketing-recruiting-experts-4458515085",
+    "found_date": "2026-08-24T22:16:49.189630",
+    "search_keyword": "brand marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Integrated & Campaign Marketing",
+      "CPG / Consumer Goods",
+      "Strong title alignment"
+    ]
+  },
+  "4456530294": {
+    "id": "4456530294",
+    "title": "Marketing Associate",
+    "company": "Ireti Provisions Inc",
+    "location": "Greater Houston",
+    "url": "https://www.linkedin.com/jobs/view/marketing-associate-at-ireti-provisions-inc-4456530294",
+    "found_date": "2026-08-24T22:16:52.059062",
+    "search_keyword": "brand associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Integrated & Campaign Marketing",
+      "Strong title alignment"
+    ]
+  },
+  "4458280105": {
+    "id": "4458280105",
+    "title": "Regional Marketing Manager (USA)",
+    "company": "Ferrari",
+    "location": "Englewood Cliffs, NJ",
+    "url": "https://www.linkedin.com/jobs/view/regional-marketing-manager-usa-at-ferrari-4458280105",
+    "found_date": "2026-08-24T22:17:02.039467",
+    "search_keyword": "brand and integrated marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Strong title alignment"
+    ]
+  },
+  "4437698883": {
+    "id": "4437698883",
+    "title": "Consumer Marketing Lead \u2013 Activation & Growth (FMCG/Consumer)",
+    "company": "Hays",
+    "location": "Raleigh, NC",
+    "url": "https://www.linkedin.com/jobs/view/consumer-marketing-lead-%E2%80%93-activation-growth-fmcg-consumer-at-hays-4437698883",
+    "found_date": "2026-08-24T22:17:15.902664",
+    "search_keyword": "integrated marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods"
+    ]
+  },
+  "4456504779": {
+    "id": "4456504779",
+    "title": "Marketing Manager",
+    "company": "Teachers Federal Credit Union",
+    "location": "Hauppauge, NY",
+    "url": "https://www.linkedin.com/jobs/view/marketing-manager-at-teachers-federal-credit-union-4456504779",
+    "found_date": "2026-08-24T22:17:18.717487",
+    "search_keyword": "marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$107,000 - $133,700 ",
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Consumer & Market Research",
+      "Marketing Analytics & Performance",
+      "Integrated & Campaign Marketing",
+      "Strong title alignment"
+    ]
+  },
+  "4458286303": {
+    "id": "4458286303",
+    "title": "Marketing Manager",
+    "company": "Gallery Residential",
+    "location": "Atlanta, GA",
+    "url": "https://www.linkedin.com/jobs/view/marketing-manager-at-gallery-residential-4458286303",
+    "found_date": "2026-08-24T22:17:18.717792",
+    "search_keyword": "marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "MBA preferred/required",
+      "Strong title alignment"
+    ]
+  },
+  "4458500116": {
+    "id": "4458500116",
+    "title": "Marketing Manager",
+    "company": "HOLT Group",
+    "location": "San Antonio, TX",
+    "url": "https://www.linkedin.com/jobs/view/marketing-manager-at-holt-group-4458500116",
+    "found_date": "2026-08-24T22:17:18.717862",
+    "search_keyword": "marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 9,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Marketing Analytics & Performance",
+      "B2B / Enterprise Marketing",
+      "Integrated & Campaign Marketing",
+      "Pricing, Segmentation & Competitive",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4458257151": {
+    "id": "4458257151",
+    "title": "Marketing Manager",
+    "company": "Threekit",
+    "location": "Chicago, IL",
+    "url": "https://www.linkedin.com/jobs/view/marketing-manager-at-threekit-4458257151",
+    "found_date": "2026-08-24T22:17:18.717933",
+    "search_keyword": "marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "B2B / Enterprise Marketing",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
     ]
   }
 }
