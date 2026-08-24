@@ -1,66 +1,4 @@
 {
-  "4444605287": {
-    "id": "4444605287",
-    "title": "Marketing / Marketing Specialist- # 26-17023",
-    "company": "US Tech Solutions",
-    "location": "Sacramento, CA",
-    "url": "https://www.linkedin.com/jobs/view/marketing-marketing-specialist-%23-26-17023-at-us-tech-solutions-4444605287",
-    "found_date": "2026-07-25T01:28:30.054113",
-    "search_keyword": "product marketing associate",
-    "years_required": "2+ years",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 1,
-    "match_label": "Good Match",
-    "label_color": "#e37400",
-    "label_bg": "#fef7e0",
-    "matched_skills": [
-      "Healthcare / Global Health"
-    ]
-  },
-  "4444394487": {
-    "id": "4444394487",
-    "title": "Brand Manager",
-    "company": "Mahou USA",
-    "location": "Grand Rapids, MI",
-    "url": "https://www.linkedin.com/jobs/view/brand-manager-at-mahou-usa-4444394487",
-    "found_date": "2026-07-25T01:28:50.197526",
-    "search_keyword": "brand manager",
-    "years_required": "Not specified",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 6,
-    "match_label": "Strong Match",
-    "label_color": "#1a73e8",
-    "label_bg": "#e8f0fe",
-    "matched_skills": [
-      "Brand Strategy & Management",
-      "Consumer & Market Research",
-      "Integrated & Campaign Marketing",
-      "Cross-functional & Stakeholder",
-      "MBA preferred/required",
-      "Strong title alignment"
-    ]
-  },
-  "4444337182": {
-    "id": "4444337182",
-    "title": "Marketing Lead",
-    "company": "CGL Consulting Co., Ltd",
-    "location": "United States",
-    "url": "https://www.linkedin.com/jobs/view/marketing-lead-at-cgl-consulting-co-ltd-4444337182",
-    "found_date": "2026-07-25T01:29:03.419125",
-    "search_keyword": "brand strategist",
-    "years_required": "Not specified",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 1,
-    "match_label": "Good Match",
-    "label_color": "#e37400",
-    "label_bg": "#fef7e0",
-    "matched_skills": [
-      "Brand Strategy & Management"
-    ]
-  },
   "4444980416": {
     "id": "4444980416",
     "title": "Growth Marketing Manager, Lifecycle",
@@ -30513,6 +30451,91 @@
     "matched_skills": [
       "Brand Strategy & Management",
       "Integrated & Campaign Marketing"
+    ]
+  },
+  "4456854066": {
+    "id": "4456854066",
+    "title": "Founding Go-To-Market Operator at Known",
+    "company": "Jack & Jill",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/founding-go-to-market-operator-at-known-at-jack-jill-4456854066",
+    "found_date": "2026-08-24T02:59:13.679732",
+    "search_keyword": "product marketing associate",
+    "years_required": "1+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Tech / SaaS / Startup"
+    ]
+  },
+  "4458144802": {
+    "id": "4458144802",
+    "title": "Brand Manager (2027 Undergrad and Master's - Non MBA)",
+    "company": "Procter & Gamble",
+    "location": "Cincinnati, OH",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-2027-undergrad-and-master-s-non-mba-at-procter-gamble-4458144802",
+    "found_date": "2026-08-24T02:59:34.331782",
+    "search_keyword": "brand manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Consumer & Market Research",
+      "Strong title alignment"
+    ]
+  },
+  "4456857073": {
+    "id": "4456857073",
+    "title": "Founding Marketing Lead ($70k-$100k + Equity) at Solea AI",
+    "company": "Jack & Jill",
+    "location": "United States",
+    "url": "https://www.linkedin.com/jobs/view/founding-marketing-lead-%2470k-%24100k-%2B-equity-at-solea-ai-at-jack-jill-4456857073",
+    "found_date": "2026-08-24T02:59:48.387876",
+    "search_keyword": "brand strategist",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$70k-$100k",
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup"
+    ]
+  },
+  "4455837396": {
+    "id": "4455837396",
+    "title": "Junior Integrated Marketing Specialist",
+    "company": "moomoo",
+    "location": "Jersey City, NJ",
+    "url": "https://www.linkedin.com/jobs/view/junior-integrated-marketing-specialist-at-moomoo-4455837396",
+    "found_date": "2026-08-24T03:00:14.418834",
+    "search_keyword": "marketing associate",
+    "years_required": "1+ years",
+    "key_skills": [],
+    "salary": "$55,000 - $70,000",
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Marketing Analytics & Performance",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
     ]
   }
 }
