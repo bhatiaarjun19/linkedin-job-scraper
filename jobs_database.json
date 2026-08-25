@@ -1,66 +1,4 @@
 {
-  "4445333198": {
-    "id": "4445333198",
-    "title": "Channel Marketing Manager",
-    "company": "Rippling",
-    "location": "New York, NY",
-    "url": "https://www.linkedin.com/jobs/view/channel-marketing-manager-at-rippling-4445333198",
-    "found_date": "2026-07-26T05:38:10.492754",
-    "search_keyword": "launch marketing manager",
-    "years_required": "Not specified",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 6,
-    "match_label": "Strong Match",
-    "label_color": "#1a73e8",
-    "label_bg": "#e8f0fe",
-    "matched_skills": [
-      "Go-To-Market & Product Launch",
-      "B2B / Enterprise Marketing",
-      "Integrated & Campaign Marketing",
-      "Cross-functional & Stakeholder",
-      "Tech / SaaS / Startup",
-      "Strong title alignment"
-    ]
-  },
-  "4418001543": {
-    "id": "4418001543",
-    "title": "Email Marketing Associate",
-    "company": "Kforce Inc",
-    "location": "St Louis, MO",
-    "url": "https://www.linkedin.com/jobs/view/email-marketing-associate-at-kforce-inc-4418001543",
-    "found_date": "2026-07-26T05:38:27.975489",
-    "search_keyword": "brand associate",
-    "years_required": "3+ years",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 3,
-    "match_label": "Good Match",
-    "label_color": "#e37400",
-    "label_bg": "#fef7e0",
-    "matched_skills": [
-      "Integrated & Campaign Marketing",
-      "Cross-functional & Stakeholder",
-      "Strong title alignment"
-    ]
-  },
-  "4445349654": {
-    "id": "4445349654",
-    "title": "Marketing AssistantCalifornia , USA.",
-    "company": "reVnt - Discover YOU",
-    "location": "California, United States",
-    "url": "https://www.linkedin.com/jobs/view/marketing-assistantcalifornia-usa-at-revnt-discover-you-4445349654",
-    "found_date": "2026-07-26T05:38:27.975627",
-    "search_keyword": "brand associate",
-    "years_required": "Not specified",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 0,
-    "match_label": "Good Match",
-    "label_color": "#e37400",
-    "label_bg": "#fef7e0",
-    "matched_skills": []
-  },
   "4368247676": {
     "id": "4368247676",
     "title": "Associate Brand & Product Marketing Manager",
@@ -31287,6 +31225,79 @@
       "Pricing, Segmentation & Competitive",
       "Cross-functional & Stakeholder",
       "Healthcare / Global Health",
+      "Strong title alignment"
+    ]
+  },
+  "4456917060": {
+    "id": "4456917060",
+    "title": "Product Marketing Manager",
+    "company": "Wayve",
+    "location": "Sunnyvale, CA",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-manager-at-wayve-4456917060",
+    "found_date": "2026-08-25T12:29:36.684650",
+    "search_keyword": "product marketing manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$173,800 to $250,400, ",
+    "relevance_score": 7,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "B2B / Enterprise Marketing",
+      "Integrated & Campaign Marketing",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Tech / SaaS / Startup",
+      "Strong title alignment"
+    ]
+  },
+  "4457476279": {
+    "id": "4457476279",
+    "title": "Brand Manager",
+    "company": "Roylo Partners",
+    "location": "Indianapolis, IN",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-at-roylo-partners-4457476279",
+    "found_date": "2026-08-25T12:30:03.515249",
+    "search_keyword": "brand manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 9,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Marketing Analytics & Performance",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4458576667": {
+    "id": "4458576667",
+    "title": "Associate Brand Manager II",
+    "company": "BioSpace",
+    "location": "North Chicago, IL",
+    "url": "https://www.linkedin.com/jobs/view/associate-brand-manager-ii-at-biospace-4458576667",
+    "found_date": "2026-08-25T12:30:07.066503",
+    "search_keyword": "associate brand manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Cross-functional & Stakeholder",
+      "MBA preferred/required",
       "Strong title alignment"
     ]
   }
