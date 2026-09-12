@@ -26862,5 +26862,69 @@
       "Cross-functional & Stakeholder",
       "Healthcare / Global Health"
     ]
+  },
+  "4464289455": {
+    "id": "4464289455",
+    "title": "Retail Marketing Associate",
+    "company": "CoMark",
+    "location": "Charlotte Metro",
+    "url": "https://www.linkedin.com/jobs/view/retail-marketing-associate-at-comark-4464289455",
+    "found_date": "2026-09-12T20:17:49.018318",
+    "search_keyword": "brand associate",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "CPG / Consumer Goods",
+      "Strong title alignment"
+    ]
+  },
+  "4409928950": {
+    "id": "4409928950",
+    "title": "Marketing Associate",
+    "company": "Mid-States Distributing, LLC",
+    "location": "Fort Worth, TX",
+    "url": "https://www.linkedin.com/jobs/view/marketing-associate-at-mid-states-distributing-llc-4409928950",
+    "found_date": "2026-09-12T20:17:49.018647",
+    "search_keyword": "brand associate",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4466704819": {
+    "id": "4466704819",
+    "title": "Marketing Associate",
+    "company": "Lega Nova Group",
+    "location": "Raleigh-Durham-Chapel Hill Area",
+    "url": "https://www.linkedin.com/jobs/view/marketing-associate-at-lega-nova-group-4466704819",
+    "found_date": "2026-09-12T20:17:49.018700",
+    "search_keyword": "brand associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Integrated & Campaign Marketing",
+      "Strong title alignment"
+    ]
   }
 }
