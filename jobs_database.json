@@ -1,70 +1,4 @@
 {
-  "4417660316": {
-    "id": "4417660316",
-    "title": "Digital Brand & Reputation Manager",
-    "company": "Beztak",
-    "location": "Farmington Hills, MI",
-    "url": "https://www.linkedin.com/jobs/view/digital-brand-reputation-manager-at-beztak-4417660316",
-    "found_date": "2026-08-22T22:13:28.268424",
-    "search_keyword": "corporate brand manager",
-    "years_required": "Not specified",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 4,
-    "match_label": "Good Match",
-    "label_color": "#e37400",
-    "label_bg": "#fef7e0",
-    "matched_skills": [
-      "Brand Strategy & Management",
-      "Marketing Analytics & Performance",
-      "Cross-functional & Stakeholder"
-    ]
-  },
-  "4456679243": {
-    "id": "4456679243",
-    "title": "Market Area Marketing Manager",
-    "company": "Reimer Home Services",
-    "location": "Buffalo, NY",
-    "url": "https://www.linkedin.com/jobs/view/market-area-marketing-manager-at-reimer-home-services-4456679243",
-    "found_date": "2026-08-22T22:13:34.852167",
-    "search_keyword": "commercial marketing manager",
-    "years_required": "Not specified",
-    "key_skills": [],
-    "salary": "$80,000 - $100,000 ",
-    "relevance_score": 4,
-    "match_label": "Good Match",
-    "label_color": "#e37400",
-    "label_bg": "#fef7e0",
-    "matched_skills": [
-      "Brand Strategy & Management",
-      "Consumer & Market Research",
-      "Integrated & Campaign Marketing",
-      "Strong title alignment"
-    ]
-  },
-  "4435906436": {
-    "id": "4435906436",
-    "title": "Integrated Marketing Manager",
-    "company": "Hinge Health",
-    "location": "San Francisco, CA",
-    "url": "https://www.linkedin.com/jobs/view/integrated-marketing-manager-at-hinge-health-4435906436",
-    "found_date": "2026-08-22T22:13:38.271912",
-    "search_keyword": "integrated marketing manager",
-    "years_required": "3+ years",
-    "key_skills": [],
-    "salary": "$150K - $206K",
-    "relevance_score": 5,
-    "match_label": "Good Match",
-    "label_color": "#e37400",
-    "label_bg": "#fef7e0",
-    "matched_skills": [
-      "Marketing Analytics & Performance",
-      "Integrated & Campaign Marketing",
-      "Cross-functional & Stakeholder",
-      "Healthcare / Global Health",
-      "Strong title alignment"
-    ]
-  },
   "4456683218": {
     "id": "4456683218",
     "title": "Marketing Associate",
@@ -24759,6 +24693,142 @@
     "matched_skills": [
       "Brand Strategy & Management",
       "Marketing Analytics & Performance"
+    ]
+  },
+  "4469992268": {
+    "id": "4469992268",
+    "title": "Associate Brand Manager (CPG)",
+    "company": "Creative Circle",
+    "location": "Burlington, MA",
+    "url": "https://www.linkedin.com/jobs/view/associate-brand-manager-cpg-at-creative-circle-4469992268",
+    "found_date": "2026-09-22T00:25:10.258708",
+    "search_keyword": "associate product marketing manager",
+    "years_required": "1+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 10,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "MBA preferred/required",
+      "Strong title alignment"
+    ]
+  },
+  "4469987541": {
+    "id": "4469987541",
+    "title": "Associate Brand Manager",
+    "company": "ForceBrands",
+    "location": "Little Chute, WI",
+    "url": "https://www.linkedin.com/jobs/view/associate-brand-manager-at-forcebrands-4469987541",
+    "found_date": "2026-09-22T00:25:10.258919",
+    "search_keyword": "associate product marketing manager",
+    "years_required": "2+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 9,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Integrated & Campaign Marketing",
+      "Pricing, Segmentation & Competitive",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "MBA preferred/required",
+      "Strong title alignment"
+    ]
+  },
+  "4463916546": {
+    "id": "4463916546",
+    "title": "Product Marketing Engineer",
+    "company": "Nexperia",
+    "location": "Dallas, TX",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-engineer-at-nexperia-4463916546",
+    "found_date": "2026-09-22T00:25:13.338488",
+    "search_keyword": "product marketing associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Strong title alignment"
+    ]
+  },
+  "4469978730": {
+    "id": "4469978730",
+    "title": "Brand Manager (CPG)",
+    "company": "Creative Circle",
+    "location": "Burlington, MA",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-cpg-at-creative-circle-4469978730",
+    "found_date": "2026-09-22T00:25:34.121649",
+    "search_keyword": "brand manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Strong title alignment"
+    ]
+  },
+  "4469995397": {
+    "id": "4469995397",
+    "title": "Brand Manager",
+    "company": "ForceBrands",
+    "location": "Little Chute, WI",
+    "url": "https://www.linkedin.com/jobs/view/brand-manager-at-forcebrands-4469995397",
+    "found_date": "2026-09-22T00:25:34.122038",
+    "search_keyword": "brand manager",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 9,
+    "match_label": "Excellent Match",
+    "label_color": "#137333",
+    "label_bg": "#e6f4ea",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Cross-functional & Stakeholder",
+      "CPG / Consumer Goods",
+      "MBA preferred/required",
+      "Strong title alignment"
+    ]
+  },
+  "4470217365": {
+    "id": "4470217365",
+    "title": "Lead, Marketing - Sureel AI",
+    "company": "Warner Music Group",
+    "location": "United States",
+    "url": "https://www.linkedin.com/jobs/view/lead-marketing-sureel-ai-at-warner-music-group-4470217365",
+    "found_date": "2026-09-22T00:25:46.787443",
+    "search_keyword": "brand strategist",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$145,000 - $185,000 ",
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Marketing Analytics & Performance",
+      "Pricing, Segmentation & Competitive",
+      "Tech / SaaS / Startup"
     ]
   }
 }
