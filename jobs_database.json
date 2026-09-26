@@ -22459,5 +22459,91 @@
       "MBA preferred/required",
       "Strong title alignment"
     ]
+  },
+  "4454840098": {
+    "id": "4454840098",
+    "title": "Product Marketing Engineer",
+    "company": "Monolithic Power Systems, Inc.",
+    "location": "Durham, NC",
+    "url": "https://www.linkedin.com/jobs/view/product-marketing-engineer-at-monolithic-power-systems-inc-4454840098",
+    "found_date": "2026-09-26T18:52:25.909650",
+    "search_keyword": "product marketing associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "Consumer & Market Research",
+      "Pricing, Segmentation & Competitive",
+      "Strong title alignment"
+    ]
+  },
+  "4462077244": {
+    "id": "4462077244",
+    "title": "Brand Marketing Manager @NET-A-PORTER",
+    "company": "NET-A-PORTER",
+    "location": "New York, NY",
+    "url": "https://www.linkedin.com/jobs/view/brand-marketing-manager-%40net-a-porter-at-net-a-porter-4462077244",
+    "found_date": "2026-09-26T18:52:45.215660",
+    "search_keyword": "brand manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": "$100,000 - $120,000 ",
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Strong title alignment"
+    ]
+  },
+  "4472277466": {
+    "id": "4472277466",
+    "title": "Marketing Manager",
+    "company": "CEO Inc.",
+    "location": "Selma, NC",
+    "url": "https://www.linkedin.com/jobs/view/marketing-manager-at-ceo-inc-4472277466",
+    "found_date": "2026-09-26T18:52:51.935487",
+    "search_keyword": "brand marketing manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 4,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Marketing Analytics & Performance",
+      "Strong title alignment"
+    ]
+  },
+  "4472202708": {
+    "id": "4472202708",
+    "title": "Global Brand Manager, Product Strategy",
+    "company": "Stanley Black & Decker, Inc.",
+    "location": "United States",
+    "url": "https://www.linkedin.com/jobs/view/global-brand-manager-product-strategy-at-stanley-black-decker-inc-4472202708",
+    "found_date": "2026-09-26T18:52:51.935954",
+    "search_keyword": "brand marketing manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 7,
+    "match_label": "Strong Match",
+    "label_color": "#1a73e8",
+    "label_bg": "#e8f0fe",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Go-To-Market & Product Launch",
+      "Integrated & Campaign Marketing",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
   }
 }
