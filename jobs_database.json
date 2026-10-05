@@ -1,49 +1,4 @@
 {
-  "4453266820": {
-    "id": "4453266820",
-    "title": "Product Marketing Lead, Home & Property",
-    "company": "GEICO",
-    "location": "New York, NY",
-    "url": "https://www.linkedin.com/jobs/view/product-marketing-lead-home-property-at-geico-4453266820",
-    "found_date": "2026-09-05T02:44:46.042738",
-    "search_keyword": "product marketing specialist",
-    "years_required": "3+ years",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 5,
-    "match_label": "Good Match",
-    "label_color": "#e37400",
-    "label_bg": "#fef7e0",
-    "matched_skills": [
-      "Go-To-Market & Product Launch",
-      "Marketing Analytics & Performance",
-      "Cross-functional & Stakeholder",
-      "Strong title alignment"
-    ]
-  },
-  "4462325227": {
-    "id": "4462325227",
-    "title": "Junior Brand Manager",
-    "company": "Lotus Bakeries",
-    "location": "San Francisco Bay Area",
-    "url": "https://www.linkedin.com/jobs/view/junior-brand-manager-at-lotus-bakeries-4462325227",
-    "found_date": "2026-09-05T02:45:11.738002",
-    "search_keyword": "brand associate",
-    "years_required": "Not specified",
-    "key_skills": [],
-    "salary": null,
-    "relevance_score": 6,
-    "match_label": "Strong Match",
-    "label_color": "#1a73e8",
-    "label_bg": "#e8f0fe",
-    "matched_skills": [
-      "Brand Strategy & Management",
-      "Go-To-Market & Product Launch",
-      "Cross-functional & Stakeholder",
-      "CPG / Consumer Goods",
-      "Strong title alignment"
-    ]
-  },
   "4444604757": {
     "id": "4444604757",
     "title": "Associate Product Marketing Manager",
@@ -23133,6 +23088,110 @@
       "Brand Strategy & Management",
       "Go-To-Market & Product Launch",
       "Consumer & Market Research",
+      "Integrated & Campaign Marketing"
+    ]
+  },
+  "4475522663": {
+    "id": "4475522663",
+    "title": "Associate Channel Marketing Manager",
+    "company": "Wagner Spray Tech",
+    "location": "Plymouth, MN",
+    "url": "https://www.linkedin.com/jobs/view/associate-channel-marketing-manager-at-wagner-spray-tech-4475522663",
+    "found_date": "2026-10-05T03:51:16.202433",
+    "search_keyword": "product marketing associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": "$75,000-$85,000",
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Go-To-Market & Product Launch",
+      "B2B / Enterprise Marketing",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4439363476": {
+    "id": "4439363476",
+    "title": "Sandpiper Bay All Inclusive - Marketing Manager OEM",
+    "company": "Aimbridge Hospitality",
+    "location": "Port St Lucie, FL",
+    "url": "https://www.linkedin.com/jobs/view/sandpiper-bay-all-inclusive-marketing-manager-oem-at-aimbridge-hospitality-4439363476",
+    "found_date": "2026-10-05T03:51:44.096130",
+    "search_keyword": "brand marketing manager",
+    "years_required": "3+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 5,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Consumer & Market Research",
+      "Cross-functional & Stakeholder",
+      "Strong title alignment"
+    ]
+  },
+  "4475526404": {
+    "id": "4475526404",
+    "title": "Marketing & Brand Design Associate \u2014 Two Brands. Two Industries. A Lot to Create.",
+    "company": "Hylton-Rodic Law",
+    "location": "Washington, DC",
+    "url": "https://www.linkedin.com/jobs/view/marketing-brand-design-associate-%E2%80%94-two-brands-two-industries-a-lot-to-create-at-hylton-rodic-law-4475526404",
+    "found_date": "2026-10-05T03:51:47.208964",
+    "search_keyword": "brand associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 2,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Integrated & Campaign Marketing",
+      "Healthcare / Global Health"
+    ]
+  },
+  "4473493859": {
+    "id": "4473493859",
+    "title": "Marketing & Brand Ambassador\nMt. Juliet",
+    "company": "Hutsenpiller Insurance",
+    "location": "Mount Juliet, TN",
+    "url": "https://www.linkedin.com/jobs/view/marketing-brand-ambassador%0Amt-juliet-at-hutsenpiller-insurance-4473493859",
+    "found_date": "2026-10-05T03:51:47.209568",
+    "search_keyword": "brand associate",
+    "years_required": "Not specified",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 1,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "MBA preferred/required"
+    ]
+  },
+  "4474229367": {
+    "id": "4474229367",
+    "title": "Youth Sports / Community - Marketing Specialist - Full-Time",
+    "company": "Soccer Shots Los Angeles",
+    "location": "New York, NY",
+    "url": "https://www.linkedin.com/jobs/view/youth-sports-community-marketing-specialist-full-time-at-soccer-shots-los-angeles-4474229367",
+    "found_date": "2026-10-05T03:52:17.151225",
+    "search_keyword": "marketing associate",
+    "years_required": "1+ years",
+    "key_skills": [],
+    "salary": null,
+    "relevance_score": 3,
+    "match_label": "Good Match",
+    "label_color": "#e37400",
+    "label_bg": "#fef7e0",
+    "matched_skills": [
+      "Brand Strategy & Management",
+      "Marketing Analytics & Performance",
       "Integrated & Campaign Marketing"
     ]
   }
